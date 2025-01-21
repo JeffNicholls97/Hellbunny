@@ -139,6 +139,10 @@
   background-color: rgb(156 163 175 / var(--tw-bg-opacity, 1))
 }
 
+.tw-font-bold {
+  font-weight: 700
+}
+
 .tw-text-\[\#ff991c\] {
   --tw-text-opacity: 1;
   color: rgb(255 153 28 / var(--tw-text-opacity, 1))
