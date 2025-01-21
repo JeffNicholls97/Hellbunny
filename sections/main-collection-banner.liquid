@@ -44,9 +44,7 @@
     <div class="collection-tabs__wrapper tw-flex tw-flex-wrap tw-justify-start tw-gap-4 tw-px-8">
       {% for collection in collections limit: 5 %}
         <a href="{{ collection.url }}" 
-           class="collection-tab{% if collection.handle == collection.handle %} active{% endif %} 
-                  tw-px-4 tw-py-2 tw-border tw-rounded-lg hover:tw-bg-gray-100 tw-transition-colors
-                  {% if related.handle == collection.handle %}tw-bg-gray-200 tw-font-bold{% endif %}">
+           class="collection-tab tw-px-4 tw-py-2 tw-border tw-rounded-lg tw-bg-gray-100 hover:tw-bg-gray-200 tw-transition-colors">
           {{ collection.title }}
         </a>
       {% endfor %}
