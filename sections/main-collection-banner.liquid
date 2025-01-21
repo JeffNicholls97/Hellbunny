@@ -76,9 +76,9 @@
             </h1>
 
             {% if section.settings.show_product_count %}
-              <span class="font-heading collection-banner__count{% unless section.settings.text_align == "text-start" %} block {{ section.settings.text_align }}{% endunless %}">
+              {% comment %} <span class="font-heading collection-banner__count{% unless section.settings.text_align == "text-start" %} block {{ section.settings.text_align }}{% endunless %}">
                 ({{ 'sections.collection.product_count.other' | t: count: collection.all_products_count }})
-              </span>
+              </span> {% endcomment %}
             {% endif %}
           </div>
         {%- endif -%}
