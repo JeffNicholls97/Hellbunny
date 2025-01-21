@@ -122,6 +122,10 @@
   max-height: 10em
 }
 
+.tw-max-h-\[5em\] {
+  max-height: 5em
+}
+
 .tw-max-w-full {
   max-width: 100%
 }
