@@ -68,19 +68,18 @@
       endif
     -%}
 
-    {%- unless hide_single_color -%}
-      {%- if show_size_chart -%}
-        {%- capture size_chart_link -%}
-          <modal-opener class="no-js-hidden" data-modal="size-chart">
-            <button type="button" class="link block text-sm" aria-haspopup="dialog">
-              {{- 'products.product.size_chart' | t -}}
-            </button>
-          </modal-opener>
-          <noscript>
-            <a href="{{ block.settings.size_chart_page.url }}" class="link">{{ 'products.product.size_chart' | t }}</a>
-          </noscript>
-        {%- endcapture -%}
-      {%- endif -%}
+    {%- if show_size_chart -%}
+      {%- capture size_chart_link -%}
+        <modal-opener class="no-js-hidden" data-modal="size-chart">
+          <button type="button" class="link block text-sm" aria-haspopup="dialog">
+            {{- 'products.product.size_chart' | t -}}
+          </button>
+        </modal-opener>
+        <noscript>
+          <a href="{{ block.settings.size_chart_page.url }}" class="link">{{ 'products.product.size_chart' | t }}</a>
+        </noscript>
+      {%- endcapture -%}
+    {%- endif -%}
 
 
       {%- if block.settings.selector_style == 'dropdown' and is_variant_image_style == false and is_native_swatch_style == false -%}
@@ -188,7 +187,6 @@
           </div>
         </fieldset>
       {%- endif -%}
-    {%- endunless -%}
   {%- endfor -%}
 
   <script type="application/json">
