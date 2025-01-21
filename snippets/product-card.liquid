@@ -253,6 +253,8 @@
                     {%- capture option_id %}{{ section.id }}-{{ product.id }}-{{ option.name | handle }}{% endcapture -%}
                     {%- assign variant_key = 'option' | append: option.position -%}
 
+hello
+
                     {%- for value in option.values limit: 50 -%}
                       {%- liquid
                         assign variant_value = product.variants | where: variant_key, value | first
@@ -271,7 +273,6 @@
                                 {%- render 'image', image: value.swatch.image, src_width: image_width, srcset_2x: true -%}
                               </div>
                             {%- else -%}
-                            hello
                               <div class="opt-label__native-media media absolute inset-0">
                                 {%- assign image_width = value.swatch.image.aspect_ratio | at_least: 1.0 | times: 64 | ceil -%}
                                 {%- render 'image', image: value.swatch.image, src_width: image_width, srcset_2x: true, class: 'img-fit' -%}
