@@ -25,6 +25,7 @@
   {%- render 'doc-head-social' -%}
 
   <link rel="preload" href="{{ 'main.css' | asset_url }}" as="style">
+  {{ 'application.css' | asset_url | stylesheet_tag }}
 
   {%- style %}
     {{- settings.body_font | font_face: font_display: 'swap' -}}
