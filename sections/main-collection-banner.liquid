@@ -41,12 +41,12 @@
 <div class="collection-tabs">
 
 
-    <div class="collection-tabs__wrapper flex flex-wrap justify-center gap-4 mb-6">
+    <div class="collection-tabs__wrapper tw-flex tw-flex-wrap tw-justify-center tw-gap-4 tw-mb-6">
       {% for collection in collections limit: 5 %}
         <a href="{{ collection.url }}" 
            class="collection-tab{% if collection.handle == collection.handle %} active{% endif %} 
-                  px-4 py-2 border rounded-lg hover:bg-gray-100 transition-colors
-                  {% if related.handle == collection.handle %}bg-gray-200 font-bold{% endif %}">
+                  tw-px-4 tw-py-2 tw-border tw-rounded-lg hover:tw-bg-gray-100 tw-transition-colors
+                  {% if related.handle == collection.handle %}tw-bg-gray-200 tw-font-bold{% endif %}">
           {{ collection.title }}
         </a>
       {% endfor %}
