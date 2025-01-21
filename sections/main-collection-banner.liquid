@@ -38,8 +38,6 @@
   assign color_scheme = section.settings.color_scheme
 -%}
 
-here
-
 <div class="container">
   <div class="collection-banner flex flex-col md:flex-row{% if collection_image and collection_image_size != "fill" %} collection-banner--natural{% endif %}{% unless collection_image %} {{ section.settings.text_align }}{% endunless %}{% if section.settings.color_scheme == "default" %} gap-y-6{% endif %}">
     {% if collection_image %}
@@ -73,9 +71,9 @@ here
       <div class="collection-banner__content flex flex-col {% unless collection_image %}w-full {% endunless %}{{ section.settings.text_align }}{% unless color_scheme == 'default' %} color-scheme color-scheme--{{ color_scheme }}{% endunless %}{% if section.settings.text_width == "wide" or collection_image_size == "natural" %} collection-banner__content-wide{% endif %}{% if collection_image %} collection-banner__content--with-media{% elsif section.settings.text_align == "items-center text-center" %} mx-auto{% endif %}">
         {%- if section.settings.show_collection_title -%}
           <div class="block">
-            <h1 class="collection-banner__heading mb-0 inline">
+            {% comment %} <h1 class="collection-banner__heading mb-0 inline">
               {{- collection.title | escape -}}
-            </h1>
+            </h1> {% endcomment %}
 
             {% if section.settings.show_product_count %}
               {% comment %} <span class="font-heading collection-banner__count{% unless section.settings.text_align == "text-start" %} block {{ section.settings.text_align }}{% endunless %}">
