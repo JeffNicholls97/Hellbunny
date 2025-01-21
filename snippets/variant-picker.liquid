@@ -81,6 +81,7 @@
         <label class="label" id="{{ option_id }}-label">{{- option.name -}}</label>
       {%- endcapture -%}
       <div class="option-selector" data-selector-type="dropdown">
+        {{ forloop.length }}
         {%- if show_size_chart -%}
           <div class="flex justify-between">
             {{ selector_label }}
@@ -119,7 +120,6 @@
         {%- endif -%}
         <div class="option-selector__btns flex flex-wrap{% if is_variant_image_style %} items-start{% endif %}">
           {%- for value in option.values -%}
-            {{ forloop.length }}
             {%- assign value_index0 = forloop.index0 -%}
             <input type="radio" class="opt-btn visually-hidden focus-label js-option" name="{{ option_id }}-option" id="{{ option_id }}-opt-{{ value_index0 }}" value="{{ value | escape }}"{% if variant_is_selected and option.selected_value == value %} checked{% endif %}>
 
