@@ -38,6 +38,8 @@
   assign color_scheme = section.settings.color_scheme
 -%}
 
+here
+
 <div class="container">
   <div class="collection-banner flex flex-col md:flex-row{% if collection_image and collection_image_size != "fill" %} collection-banner--natural{% endif %}{% unless collection_image %} {{ section.settings.text_align }}{% endunless %}{% if section.settings.color_scheme == "default" %} gap-y-6{% endif %}">
     {% if collection_image %}
