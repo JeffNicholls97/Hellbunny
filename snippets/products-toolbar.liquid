@@ -64,7 +64,7 @@
     <script src="{{ 'custom-select.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
 
-  hello
+  <span class="products-count">{{ results.products_count }} {{ 'products.general.items' | t }}</span>
 
   {%- if settings.enable_compare and settings.compare_toggle != "none" -%}
     <div class="products-toolbar__compare end">
