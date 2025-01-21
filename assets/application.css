@@ -186,6 +186,11 @@
   padding-bottom: 0.5rem
 }
 
+.tw-px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem
+}
+
 .tw-font-bold {
   font-weight: 700
 }
