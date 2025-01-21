@@ -254,7 +254,7 @@
                     {%- assign variant_key = 'option' | append: option.position -%}
 
                     {%- for value in option.values limit: 50 -%}
-                      {{ product.variants }}
+                      {{  forloop.index }}
                       {%- liquid
                         assign variant_value = product.variants | where: variant_key, value | first
                         if option.selected_value == value
