@@ -81,7 +81,6 @@
       {%- capture selector_label -%}
         <label class="label" id="{{ option_id }}-label">{{- option.name -}}</label>
       {%- endcapture -%}
-      {{ forloop.length }}
       <div class="option-selector" data-selector-type="dropdown">
         {%- if show_size_chart -%}
           <div class="flex justify-between">
