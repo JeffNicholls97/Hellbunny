@@ -89,14 +89,14 @@
             <div 
               x-show="expanded"
               x-transition:enter="transition-all duration-300 ease-in-out"
-              x-transition:enter-start="tw-max-h-[5em] sm:tw-max-h-[10em] tw-opacity-0"
+              x-transition:enter-start="tw-max-h-[10em] sm:tw-max-h-[10em] tw-opacity-0"
               x-transition:enter-end="tw-max-h-[1000px] tw-opacity-100"
             >
               {{ collection.description }}
             </div>
             <div 
               x-show="!expanded" 
-              :class="{ 'tw-max-h-[5em] sm:tw-max-h-[10em] tw-overflow-hidden': !expanded }"
+              :class="{ 'tw-max-h-[10em] sm:tw-max-h-[10em] tw-overflow-hidden': !expanded }"
             >
               {{ collection.description }}
             </div>
