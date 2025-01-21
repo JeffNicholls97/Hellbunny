@@ -250,7 +250,7 @@
               {%- if is_native_swatch or settings.swatch_option_name contains option.name -%}
                 {%- if is_native_swatch or settings.card_colors_style == 'swatches' or settings.card_colors_style == 'variant-images' -%}
                   <div class="card__swatches{% if settings.show_dividers %} mt-3 border-top{% else %} mt-2 pb-1{% endif %} pt-3 flex items-start relative">
-                    here
+                    here 
                     {%- capture option_id %}{{ section.id }}-{{ product.id }}-{{ option.name | handle }}{% endcapture -%}
                     {%- assign variant_key = 'option' | append: option.position -%}
 
