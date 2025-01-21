@@ -269,6 +269,7 @@
                       {%- if is_native_swatch -%}
                         {%- if value.swatch.image -%}
                           <label{% if forloop.index > swatch_limit %} hidden {% endif %} class="opt-label {% if forloop.length < 2 %} tw-hidden {% endif %} opt-label--swatch btn relative swatch--native swatch-shape--{{ settings.card_swatch_shape }}{% if settings.card_swatch_shape != "circle" %} swatch-shape--not-circle{% endif %}" for="{{ option_id }}-opt-{{ forloop.index0 }}" data-swatch>
+                            here
                             <span class="visually-hidden js-value">{{ value }}</span>
                             {%- if settings.card_swatch_shape == 'natural' -%}
                               <div class="opt-label__native-media media">
