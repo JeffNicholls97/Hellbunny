@@ -249,16 +249,11 @@
               -%}
               {%- if is_native_swatch or settings.swatch_option_name contains option.name -%}
                 {%- if is_native_swatch or settings.card_colors_style == 'swatches' or settings.card_colors_style == 'variant-images' -%}
-                  <div class="card__swatches{% if settings.show_dividers %} mt-3 border-top{% else %} mt-2 pb-1{% endif %} pt-3 flex items-start relative {% if forloop.length < 2 %} tw-hidden {% endif %}">
+                  <div class="card__swatches{% if settings.show_dividers %} mt-3 border-top{% else %} mt-2 pb-1{% endif %} pt-3 flex items-start relative ">
                     {%- capture option_id %}{{ section.id }}-{{ product.id }}-{{ option.name | handle }}{% endcapture -%}
                     {%- assign variant_key = 'option' | append: option.position -%}
 
                     {%- for value in option.values limit: 50 -%}
-                      {% if forloop.length > 1 %}
-                        show
-                        {% else %}
-                        hide
-                      {% endif %}
                       {%- liquid
                         assign variant_value = product.variants | where: variant_key, value | first
                         if option.selected_value == value
@@ -284,7 +279,7 @@
                           </label>
 
                         {%- elsif value.swatch.color -%}
-                          <label{% if forloop.index > swatch_limit %} hidden{% endif %} class="opt-label opt-label--swatch btn relative swatch-shape--{{ settings.card_swatch_shape }}{% if settings.card_swatch_shape != "circle" %} swatch-shape--not-circle{% endif %}"
+                          <label{% if forloop.index > swatch_limit %} hidden{% endif %} class="opt-label {% if forloop.length < 2 %} tw-hidden {% endif %} opt-label--swatch btn relative swatch-shape--{{ settings.card_swatch_shape }}{% if settings.card_swatch_shape != "circle" %} swatch-shape--not-circle{% endif %}"
                                  data-swatch="{{ value | replace: '"', '' | downcase }}"
                                  for="{{ option_id }}-opt-{{ forloop.index0 }}"
                                  style="--swatch-color: rgb({{ value.swatch.color.rgb }});--swatch-image: none;">
