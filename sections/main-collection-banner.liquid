@@ -39,7 +39,18 @@
 -%}
 
 <div class="collection-tabs">
-
+  {% if related_collections != blank %}
+    <div class="collection-tabs__wrapper flex flex-wrap justify-center gap-4 mb-6">
+      {% for related in related_collections limit: 5 %}
+        <a href="{{ related.url }}" 
+           class="collection-tab{% if related.handle == collection.handle %} active{% endif %} 
+                  px-4 py-2 border rounded-lg hover:bg-gray-100 transition-colors
+                  {% if related.handle == collection.handle %}bg-gray-200 font-bold{% endif %}">
+          {{ related.title }}
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
 </div>
 
 <div class="container">
