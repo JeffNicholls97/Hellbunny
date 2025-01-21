@@ -142,6 +142,10 @@
   flex-wrap: wrap
 }
 
+.tw-justify-start {
+  justify-content: flex-start
+}
+
 .tw-justify-center {
   justify-content: center
 }
