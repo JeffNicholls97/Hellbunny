@@ -250,7 +250,6 @@
               {%- if is_native_swatch or settings.swatch_option_name contains option.name -%}
                 {%- if is_native_swatch or settings.card_colors_style == 'swatches' or settings.card_colors_style == 'variant-images' -%}
                   <div class="card__swatches{% if settings.show_dividers %} mt-3 border-top{% else %} mt-2 pb-1{% endif %} pt-3 flex items-start relative">
-                    here 
                     {%- capture option_id %}{{ section.id }}-{{ product.id }}-{{ option.name | handle }}{% endcapture -%}
                     {%- assign variant_key = 'option' | append: option.position -%}
 
@@ -264,6 +263,7 @@
                       <input type="radio" class="opt-btn visually-hidden js-option" name="{{ option_id }}-option" id="{{ option_id }}-opt-{{ forloop.index0 }}" value="{{ value | escape }}" data-variant-id="{{ variant_value.id }}"{% if variant_value.featured_media %} data-media-id="{{ variant_value.featured_media.id }}"{% endif %}{% if option.selected_value == value and settings.card_hover_action == 'slideshow' %} checked{% endif %}>
                       {%- if is_native_swatch -%}
                         {%- if value.swatch.image -%}
+                          {{ option.values }}
                           <label{% if forloop.index > swatch_limit %} hidden{% endif %} class="opt-label opt-label--swatch btn relative swatch--native swatch-shape--{{ settings.card_swatch_shape }}{% if settings.card_swatch_shape != "circle" %} swatch-shape--not-circle{% endif %}" for="{{ option_id }}-opt-{{ forloop.index0 }}" data-swatch>
                             <span class="visually-hidden js-value">{{ value }}</span>
                             {%- if settings.card_swatch_shape == 'natural' -%}
