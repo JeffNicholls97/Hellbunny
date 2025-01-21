@@ -254,7 +254,7 @@
                     {%- assign variant_key = 'option' | append: option.position -%}
 
                     {%- for value in option.values limit: 50 -%}
-                      {% if forloop.index > 1 %}
+                      {% if forloop.length > 1 %}
                         show
                         {% else %}
                         hide
