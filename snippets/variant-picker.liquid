@@ -76,12 +76,13 @@
       {%- endcapture -%}
     {%- endif -%}
 
+
+    {{ forloop.length }}
     {%- if block.settings.selector_style == 'dropdown' and is_variant_image_style == false and is_native_swatch_style == false -%}
       {%- capture selector_label -%}
         <label class="label" id="{{ option_id }}-label">{{- option.name -}}</label>
       {%- endcapture -%}
       <div class="option-selector" data-selector-type="dropdown">
-        {{ forloop.length }}
         {%- if show_size_chart -%}
           <div class="flex justify-between">
             {{ selector_label }}
