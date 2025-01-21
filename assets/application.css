@@ -118,6 +118,10 @@
   max-height: 3em
 }
 
+.tw-max-h-\[10em\] {
+  max-height: 10em
+}
+
 .tw-max-w-full {
   max-width: 100%
 }

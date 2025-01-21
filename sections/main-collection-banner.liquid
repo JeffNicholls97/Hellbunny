@@ -89,7 +89,7 @@
             <div 
               x-show="expanded"
               x-transition:enter="transition-all duration-300 ease-in-out"
-              x-transition:enter-start="tw-max-h-[3em] sm:tw-max-h-[4.5em] tw-opacity-0"
+              x-transition:enter-start="tw-max-h-[10em] sm:tw-max-h-[4.5em] tw-opacity-0"
               x-transition:enter-end="tw-max-h-[1000px] tw-opacity-100"
             >
               {{ collection.description }}
@@ -103,7 +103,7 @@
             <button 
               @click="expanded = !expanded" 
               x-text="expanded ? 'Read less' : 'Read more'" 
-              class="tw-text-[#ff991c] hover:tw-underline mt-2"
+              class="hover:tw-underline mt-2"
             ></button>
           </div>
           </div>
