@@ -110,7 +110,46 @@
   display: none
 }
 
+.tw-max-h-\[1000px\] {
+  max-height: 1000px
+}
+
+.tw-max-h-\[3em\] {
+  max-height: 3em
+}
+
+.tw-max-w-full {
+  max-width: 100%
+}
+
+.tw-overflow-hidden {
+  overflow: hidden
+}
+
 .tw-bg-gray-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(156 163 175 / var(--tw-bg-opacity, 1))
+}
+
+.tw-text-\[\#ff991c\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 153 28 / var(--tw-text-opacity, 1))
+}
+
+.tw-opacity-0 {
+  opacity: 0
+}
+
+.tw-opacity-100 {
+  opacity: 1
+}
+
+.hover\:tw-underline:hover {
+  text-decoration-line: underline
+}
+
+@media (min-width: 640px) {
+  .sm\:tw-max-h-\[4\.5em\] {
+    max-height: 4.5em
+  }
 }

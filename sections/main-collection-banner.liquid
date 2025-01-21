@@ -85,25 +85,25 @@
 
         {%- if is_description -%}
           <div class="rte mt-4">
-            <div x-data="{ expanded: false }" class="!max-w-full">
+            <div x-data="{ expanded: false }" class="tw-max-w-full">
             <div 
               x-show="expanded"
               x-transition:enter="transition-all duration-300 ease-in-out"
-              x-transition:enter-start="max-h-[3em] sm:max-h-[4.5em] opacity-0"
-              x-transition:enter-end="max-h-[1000px] opacity-100"
+              x-transition:enter-start="tw-max-h-[3em] sm:tw-max-h-[4.5em] tw-opacity-0"
+              x-transition:enter-end="tw-max-h-[1000px] tw-opacity-100"
             >
               {{ collection.description }}
             </div>
             <div 
               x-show="!expanded" 
-              :class="{ 'max-h-[3em] sm:max-h-[4.5em] overflow-hidden': !expanded }"
+              :class="{ 'tw-max-h-[3em] sm:tw-max-h-[4.5em] tw-overflow-hidden': !expanded }"
             >
               {{ collection.description }}
             </div>
             <button 
               @click="expanded = !expanded" 
               x-text="expanded ? 'Read less' : 'Read more'" 
-              class="text-[#ff991c] hover:underline mt-2"
+              class="tw-text-[#ff991c] hover:tw-underline mt-2"
             ></button>
           </div>
           </div>
