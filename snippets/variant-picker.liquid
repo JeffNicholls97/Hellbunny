@@ -114,7 +114,7 @@
         %}
       </div>
     {%- else -%}
-      <fieldset class="option-selector" data-selector-type="listed">
+      <fieldset class="option-selector {%- unless hide_single_color -%} working {%- endunless -%}" data-selector-type="listed">
         {%- if show_size_chart -%}
           <div class="flex justify-between">
             <legend class="label">{{- option.name -}}{% if is_color_selector and settings.variant_picker_color_style != 'text' %}: <span class="option-selector__label-value js-color-text">{% if variant_is_selected %}{{ option.selected_value }}{% endif %}</span>{% endif %}</legend>
