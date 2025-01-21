@@ -39,6 +39,9 @@
 -%}
 
 <div class="collection-tabs">
+
+  {{ collection | json }}
+
   {% if related_collections != blank %}
     <div class="collection-tabs__wrapper flex flex-wrap justify-center gap-4 mb-6">
       {% for related in related_collections limit: 5 %}
