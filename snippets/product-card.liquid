@@ -255,9 +255,9 @@
 
                     {%- for value in option.values limit: 50 -%}
                       {% if forloop.index > 1 %}
-                        hide
-                        {% else %}
                         show
+                        {% else %}
+                        hide
                       {% endif %}
                       {%- liquid
                         assign variant_value = product.variants | where: variant_key, value | first
