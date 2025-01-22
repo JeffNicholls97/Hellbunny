@@ -64,6 +64,8 @@
     <script src="{{ 'custom-select.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
 
+  <span class="products-count"><span class="tw-font-bold">{{ results.products_count }}</span> Products</span>
+
   {%- if settings.enable_compare and settings.compare_toggle != "none" -%}
     <div class="products-toolbar__compare end">
       <input type="checkbox" class="switch" id="compare-switch" {% if settings.compare_toggle == "toggle_on" %}checked="checked"{% endif %}>

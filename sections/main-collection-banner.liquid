@@ -38,6 +38,17 @@
   assign color_scheme = section.settings.color_scheme
 -%}
 
+
+
+    <div class="collection-tabs__wrapper tw-flex tw-flex-wrap tw-justify-start tw-gap-4 tw-px-9">
+      {% for collection in collections limit: 5 %}
+        <a href="{{ collection.url }}" 
+           class="collection-tab tw-px-4 tw-py-2 tw-border tw-rounded-lg tw-bg-gray-100 hover:tw-bg-gray-200 tw-transition-colors">
+          {{ collection.title }}
+        </a>
+      {% endfor %}
+</div>
+
 <div class="container">
   <div class="collection-banner flex flex-col md:flex-row{% if collection_image and collection_image_size != "fill" %} collection-banner--natural{% endif %}{% unless collection_image %} {{ section.settings.text_align }}{% endunless %}{% if section.settings.color_scheme == "default" %} gap-y-6{% endif %}">
     {% if collection_image %}
@@ -71,21 +82,41 @@
       <div class="collection-banner__content flex flex-col {% unless collection_image %}w-full {% endunless %}{{ section.settings.text_align }}{% unless color_scheme == 'default' %} color-scheme color-scheme--{{ color_scheme }}{% endunless %}{% if section.settings.text_width == "wide" or collection_image_size == "natural" %} collection-banner__content-wide{% endif %}{% if collection_image %} collection-banner__content--with-media{% elsif section.settings.text_align == "items-center text-center" %} mx-auto{% endif %}">
         {%- if section.settings.show_collection_title -%}
           <div class="block">
-            <h1 class="collection-banner__heading mb-0 inline">
+            {% comment %} <h1 class="collection-banner__heading mb-0 inline">
               {{- collection.title | escape -}}
-            </h1>
+            </h1> {% endcomment %}
 
             {% if section.settings.show_product_count %}
-              <span class="font-heading collection-banner__count{% unless section.settings.text_align == "text-start" %} block {{ section.settings.text_align }}{% endunless %}">
+              {% comment %} <span class="font-heading collection-banner__count{% unless section.settings.text_align == "text-start" %} block {{ section.settings.text_align }}{% endunless %}">
                 ({{ 'sections.collection.product_count.other' | t: count: collection.all_products_count }})
-              </span>
+              </span> {% endcomment %}
             {% endif %}
           </div>
         {%- endif -%}
 
         {%- if is_description -%}
           <div class="rte mt-4">
-            {{ collection.description }}
+            <div x-data="{ expanded: false }" class="tw-max-w-full">
+            <div 
+              x-show="expanded"
+              x-transition:enter="transition-all duration-300 ease-in-out"
+              x-transition:enter-start="tw-max-h-[10em] sm:tw-max-h-[10em] tw-opacity-0"
+              x-transition:enter-end="tw-max-h-[1000px] tw-opacity-100"
+            >
+              {{ collection.description }}
+            </div>
+            <div 
+              x-show="!expanded" 
+              :class="{ 'tw-max-h-[10em] sm:tw-max-h-[10em] tw-overflow-hidden': !expanded }"
+            >
+              {{ collection.description }}
+            </div>
+            <button 
+              @click="expanded = !expanded" 
+              x-text="expanded ? 'Read less' : 'Read more'" 
+              class="hover:tw-underline mt-2 tw-font-bold"
+            ></button>
+          </div>
           </div>
         {%- endif -%}
       </div>
