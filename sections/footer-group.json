@@ -102,12 +102,26 @@
             "heading": "Hell Bunny",
             "menu": "terms-menu"
           }
+        },
+        "text_BNJEVn": {
+          "type": "text",
+          "settings": {
+            "image_width": 150,
+            "heading": "Follow Us",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "enable_follow_on_shop": false,
+            "show_social": true,
+            "text_align": "text-start"
+          }
         }
       },
       "block_order": [
         "text",
         "link-list-1",
-        "link-list-2"
+        "link-list-2",
+        "text_BNJEVn"
       ],
       "settings": {
         "show_back_to_top": false,
