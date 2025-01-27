@@ -309,21 +309,6 @@
         "prevent_animation": false
       }
     },
-    "17373219430d0ec05e": {
-      "type": "apps",
-      "blocks": {
-        "klaviyo_reviews_featured_reviews_carousel_dTCJHd": {
-          "type": "shopify://apps/klaviyo-reviews/blocks/featured-reviews-carousel/db20e365-d984-4ac4-9655-e1588d951ca9",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "klaviyo_reviews_featured_reviews_carousel_dTCJHd"
-      ],
-      "settings": {
-        "full_width": true
-      }
-    },
     "slideshow": {
       "type": "slideshow",
       "blocks": {
@@ -490,20 +475,35 @@
         "button_style": "btn btn--primary"
       }
     },
+    "17373219430d0ec05e": {
+      "type": "apps",
+      "blocks": {
+        "klaviyo_reviews_featured_reviews_carousel_dTCJHd": {
+          "type": "shopify://apps/klaviyo-reviews/blocks/featured-reviews-carousel/db20e365-d984-4ac4-9655-e1588d951ca9",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "klaviyo_reviews_featured_reviews_carousel_dTCJHd"
+      ],
+      "settings": {
+        "full_width": true
+      }
+    },
     "newsletter_mAMLxR": {
       "type": "newsletter",
       "blocks": {
         "heading_PRpJza": {
           "type": "heading",
           "settings": {
-            "heading": "Subscribe to our emails",
+            "heading": "Wanna get 10% off your first order?",
             "heading_size": "h4"
           }
         },
         "text_EibAB7": {
           "type": "text",
           "settings": {
-            "text": "<p>Be the first to know about new collections and exclusive offers.</p>",
+            "text": "<p>Subscribe to receive discounts & be the first to know about new collections and exclusive offers.</p>",
             "enlarge_text": false
           }
         },
@@ -1113,10 +1113,10 @@
     "collection-list",
     "featured_collection_KEenRw",
     "image-banner",
-    "17373219430d0ec05e",
     "slideshow",
     "countdown-timer",
     "featured_blog_zeEnG7",
+    "17373219430d0ec05e",
     "newsletter_mAMLxR",
     "product-features",
     "media-with-text",
