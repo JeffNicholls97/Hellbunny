@@ -92,32 +92,22 @@
         "link-list-1": {
           "type": "link_list",
           "settings": {
-            "heading": "Footer links",
+            "heading": "Help",
             "menu": "footer"
           }
         },
         "link-list-2": {
           "type": "link_list",
           "settings": {
-            "heading": "Footer links",
-            "menu": "footer"
-          }
-        },
-        "newsletter": {
-          "type": "newsletter",
-          "disabled": true,
-          "settings": {
-            "heading": "Newsletter",
-            "text": "<p>Sign up for exclusive offers, original stories, events and more.</p>",
-            "collapse_mobile": true
+            "heading": "Hell Bunny",
+            "menu": "terms-menu"
           }
         }
       },
       "block_order": [
         "text",
         "link-list-1",
-        "link-list-2",
-        "newsletter"
+        "link-list-2"
       ],
       "settings": {
         "show_back_to_top": false,
