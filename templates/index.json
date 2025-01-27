@@ -190,7 +190,8 @@
         "collection-0": {
           "type": "collection",
           "settings": {
-            "collection": ""
+            "collection": "default-category-collections-hearts",
+            "image": "shopify://shop_images/Valentine_s_Romance_isnt_dead.png"
           }
         },
         "collection-1": {
@@ -204,40 +205,12 @@
           "settings": {
             "collection": ""
           }
-        },
-        "collection-3": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "collection-4": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "collection-5": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "collection-6": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
         }
       },
       "block_order": [
         "collection-0",
         "collection-1",
-        "collection-2",
-        "collection-3",
-        "collection-4",
-        "collection-5",
-        "collection-6"
+        "collection-2"
       ],
       "settings": {
         "title": "Our Collections",
