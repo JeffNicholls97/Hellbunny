@@ -1,1 +1,221 @@
-{"type":"header","name":"Header Group","sections":{"announcement":{"type":"announcement","blocks":{"announcement-1":{"type":"announcement","settings":{"text":"<p><strong>Welcome to our store<\/strong> <a href=\"#\" title=\"#\">Learn more<\/a><\/p>"}},"announcement-2":{"type":"announcement","settings":{"text":"<p><strong>New collections added!<\/strong> <a href=\"#\" title=\"#\">Learn more<\/a><\/p>"}}},"block_order":["announcement-1","announcement-2"],"settings":{"link1":"","link1_label":"","link2":"","link2_label":"","enable_country_selector":false,"enable_language_selector":false,"bg_color":"#000000","text_color":"#ffffff","text_type_scale":"small","read_time":9}},"header":{"type":"header","blocks":{"columns_biYGfU":{"type":"columns","settings":{"title":"New In","collection_images":"large","collection_use_product_image":false,"collection_circle_image":false,"show_underline":false,"promo_position":"bottom","promo_min_height":200,"promo_text_color":"#ffffff","promo_tint_color":"#000000","promo_tint_opacity":20,"promo1_image":"shopify:\/\/shop_images\/DRESSES_BLOCK_74ced6e5-bbac-45b1-8a77-6d6adb663c0e.jpg","promo1_content":"","promo1_link_url":"shopify:\/\/products\/hlb40231p-adelina-dress","promo1_text_size":16,"promo1_text_width":100,"promo1_text_alignment":"justify-center items-center text-center","promo2_image":"shopify:\/\/shop_images\/SALE_NEW_BLOCK.jpg","promo2_content":"","promo2_link_url":"","promo2_text_size":16,"promo2_text_width":100,"promo2_text_alignment":"justify-center items-center text-center","promo3_image":"shopify:\/\/shop_images\/GABRIELLA_TOP_-_IRVINE_SKIRT_3.jpg","promo3_content":"","promo3_link_url":"","promo3_text_size":16,"promo3_text_width":100,"promo3_text_alignment":"justify-center items-center text-center","badge1_color":"#000000","badge1_link":"","badge1_text":"","badge2_color":"#000000","badge2_link":"","badge2_text":"","badge3_color":"#000000","badge3_link":"","badge3_text":""}}},"block_order":["columns_biYGfU"],"settings":{"enable_sticky":true,"mobile_menu_position":"burger-left","logo_text":"Hell Bunny","logo_type_scale":"2","logo":"shopify:\/\/shop_images\/Hell-Bunny.webp","logo_width":170,"logo_h1":false,"logo_center":false,"enable_search":true,"minimise_search_mobile":false,"minimise_search_desktop":false,"menu":"main-menu","menu_center":true,"repeat_links":true,"menu_featured_link":"Sale","quicklinks_menu":"","cta_show":false,"cta_icon":"phone","cta_label":"Call us","cta_link":"","cta_border_color":"#333333","cta_bg_color":"#333333","cta_text_color":"#ffffff","bg_color":"#ffffff","text_color":"#070707","accent_color":"#777777"}},"promo-strip":{"type":"promo-strip","blocks":{"heading-0":{"type":"heading","settings":{"heading":"Announce a promotion","heading_size":"h6","show_on_mobile":true,"show_on_desktop":true}}},"block_order":["heading-0"],"disabled":true,"settings":{"section_height":"medium","color_scheme":"none","full_width":true,"dividers":"border-top","prevent_animation":true}},"icons_with_text_VzhpNw":{"type":"icons-with-text","blocks":{"item_VcRa8V":{"type":"item","settings":{"icon":"truck","heading":"Free shipping","text":"<p>On all orders over $100<\/p>","link":""}},"item_7jVJ36":{"type":"item","settings":{"icon":"price_tag","heading":"Special offers","text":"<p>Regular sales and discounts<\/p>","link":""}},"item_qyKAyz":{"type":"item","settings":{"icon":"return","heading":"Easy returns","text":"<p>Hassle free returns policy<\/p>","link":""}},"item_pfizj9":{"type":"item","settings":{"icon":"chat_bubble","heading":"Chat facility","text":"<p>Talk to a real person<\/p>","link":""}}},"block_order":["item_VcRa8V","item_7jVJ36","item_qyKAyz","item_pfizj9"],"custom_css":[".container.relative {padding: 10px;}"],"settings":{"heading":"","heading_align":"text-start","icon_size":24,"title_type_scale":"extra_small","text_type_scale":"extra_small","icon_position":"beside","mobile_stack":false,"section_height":"xsmall","color_scheme":"none","full_width":true,"dividers":"border-bottom","prevent_animation":false}}},"order":["announcement","header","promo-strip","icons_with_text_VzhpNw"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "Header Group",
+  "sections": {
+    "announcement": {
+      "type": "announcement",
+      "blocks": {
+        "announcement-1": {
+          "type": "announcement",
+          "settings": {
+            "text": "<p><strong>Welcome to our store</strong> <a href=\"#\" title=\"#\">Learn more</a></p>"
+          }
+        },
+        "announcement-2": {
+          "type": "announcement",
+          "settings": {
+            "text": "<p><strong>New collections added!</strong> <a href=\"#\" title=\"#\">Learn more</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "announcement-1",
+        "announcement-2"
+      ],
+      "settings": {
+        "link1": "",
+        "link1_label": "",
+        "link2": "",
+        "link2_label": "",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "bg_color": "#000000",
+        "text_color": "#ffffff",
+        "text_type_scale": "small",
+        "read_time": 9
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "columns_biYGfU": {
+          "type": "columns",
+          "settings": {
+            "title": "New In",
+            "collection_images": "large",
+            "collection_use_product_image": false,
+            "collection_circle_image": false,
+            "show_underline": false,
+            "promo_position": "bottom",
+            "promo_min_height": 200,
+            "promo_text_color": "#ffffff",
+            "promo_tint_color": "#000000",
+            "promo_tint_opacity": 20,
+            "promo1_image": "shopify://shop_images/DRESSES_BLOCK_74ced6e5-bbac-45b1-8a77-6d6adb663c0e.jpg",
+            "promo1_content": "",
+            "promo1_link_url": "shopify://products/hlb40231p-adelina-dress",
+            "promo1_text_size": 16,
+            "promo1_text_width": 100,
+            "promo1_text_alignment": "justify-center items-center text-center",
+            "promo2_image": "shopify://shop_images/SALE_NEW_BLOCK.jpg",
+            "promo2_content": "",
+            "promo2_link_url": "",
+            "promo2_text_size": 16,
+            "promo2_text_width": 100,
+            "promo2_text_alignment": "justify-center items-center text-center",
+            "promo3_image": "shopify://shop_images/GABRIELLA_TOP_-_IRVINE_SKIRT_3.jpg",
+            "promo3_content": "",
+            "promo3_link_url": "",
+            "promo3_text_size": 16,
+            "promo3_text_width": 100,
+            "promo3_text_alignment": "justify-center items-center text-center",
+            "badge1_color": "#000000",
+            "badge1_link": "",
+            "badge1_text": "",
+            "badge2_color": "#000000",
+            "badge2_link": "",
+            "badge2_text": "",
+            "badge3_color": "#000000",
+            "badge3_link": "",
+            "badge3_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "columns_biYGfU"
+      ],
+      "settings": {
+        "enable_sticky": true,
+        "mobile_menu_position": "burger-left",
+        "logo_text": "Hell Bunny",
+        "logo_type_scale": "2",
+        "logo": "shopify://shop_images/Hell-Bunny.webp",
+        "logo_width": 170,
+        "logo_h1": false,
+        "logo_center": false,
+        "enable_search": false,
+        "minimise_search_mobile": true,
+        "minimise_search_desktop": true,
+        "menu": "main-menu",
+        "menu_center": true,
+        "repeat_links": true,
+        "menu_featured_link": "Sale",
+        "quicklinks_menu": "",
+        "cta_show": false,
+        "cta_icon": "phone",
+        "cta_label": "Call us",
+        "cta_link": "",
+        "cta_border_color": "#333333",
+        "cta_bg_color": "#333333",
+        "cta_text_color": "#ffffff",
+        "bg_color": "#ffffff",
+        "text_color": "#070707",
+        "accent_color": "#777777"
+      }
+    },
+    "promo-strip": {
+      "type": "promo-strip",
+      "blocks": {
+        "heading-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Announce a promotion",
+            "heading_size": "h6",
+            "show_on_mobile": true,
+            "show_on_desktop": true
+          }
+        }
+      },
+      "block_order": [
+        "heading-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_height": "medium",
+        "color_scheme": "none",
+        "full_width": true,
+        "dividers": "border-top",
+        "prevent_animation": true
+      }
+    },
+    "icons_with_text_VzhpNw": {
+      "type": "icons-with-text",
+      "blocks": {
+        "item_VcRa8V": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "heading": "Free shipping",
+            "text": "<p>On all orders over $100</p>",
+            "link": ""
+          }
+        },
+        "item_7jVJ36": {
+          "type": "item",
+          "settings": {
+            "icon": "price_tag",
+            "heading": "Special offers",
+            "text": "<p>Regular sales and discounts</p>",
+            "link": ""
+          }
+        },
+        "item_qyKAyz": {
+          "type": "item",
+          "settings": {
+            "icon": "return",
+            "heading": "Easy returns",
+            "text": "<p>Hassle free returns policy</p>",
+            "link": ""
+          }
+        },
+        "item_pfizj9": {
+          "type": "item",
+          "settings": {
+            "icon": "chat_bubble",
+            "heading": "Chat facility",
+            "text": "<p>Talk to a real person</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_VcRa8V",
+        "item_7jVJ36",
+        "item_qyKAyz",
+        "item_pfizj9"
+      ],
+      "custom_css": [
+        ".container.relative {padding: 10px;}"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_align": "text-start",
+        "icon_size": 24,
+        "title_type_scale": "extra_small",
+        "text_type_scale": "extra_small",
+        "icon_position": "beside",
+        "mobile_stack": false,
+        "section_height": "xsmall",
+        "color_scheme": "none",
+        "full_width": true,
+        "dividers": "border-bottom",
+        "prevent_animation": false
+      }
+    }
+  },
+  "order": [
+    "announcement",
+    "header",
+    "promo-strip",
+    "icons_with_text_VzhpNw"
+  ]
+}
