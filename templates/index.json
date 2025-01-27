@@ -215,7 +215,8 @@
         "collection-2"
       ],
       "custom_css": [
-        "ul.grid.grid-cols-2.sm\\:grid-cols-3.xl\\:grid-cols-4.gap-x-theme.gap-y-10 {gap: 2px;}"
+        "ul.grid.grid-cols-2.sm\\:grid-cols-3.xl\\:grid-cols-4.gap-x-theme.gap-y-10 {gap: 2px;}",
+        "@media (min-width: 1280px) {.xl\\:grid-cols-4 {grid-template-columns: repeat(3, minmax(0, 1fr)); }}"
       ],
       "settings": {
         "title": "Our Collections",
