@@ -197,13 +197,15 @@
         "collection-1": {
           "type": "collection",
           "settings": {
-            "collection": ""
+            "collection": "chinese-new-year",
+            "image": "shopify://shop_images/Venom_dress_mobile_2.png"
           }
         },
         "collection-2": {
           "type": "collection",
           "settings": {
-            "collection": ""
+            "collection": "default-category-clothing-coats-jackets",
+            "image": "shopify://shop_images/Coats_Jackets_Tile.png"
           }
         }
       },
