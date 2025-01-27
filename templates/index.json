@@ -171,6 +171,7 @@
         "scrolling-text-3",
         "scrolling-button-4"
       ],
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "section_height": "default",
@@ -195,7 +196,7 @@
         "card_size": "small",
         "products_to_show": 8,
         "show_highlight_products": true,
-        "show_promo_info": true,
+        "show_promo_info": false,
         "image": "shopify://shop_images/GABRIELLA_TOP_-_IRVINE_SKIRT_3.jpg",
         "image_ratio": "natural",
         "promo_title": "A headline",
