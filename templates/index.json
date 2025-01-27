@@ -457,11 +457,12 @@
     },
     "featured_blog_zeEnG7": {
       "type": "featured-blog",
+      "disabled": true,
       "settings": {
         "title": "Featured blog",
         "heading_align": "text-start",
         "show_view_all": true,
-        "blog": "",
+        "blog": "news",
         "layout": "carousel",
         "posts_to_show": 8,
         "show_featured_image": true,
