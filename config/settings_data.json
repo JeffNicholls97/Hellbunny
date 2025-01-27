@@ -435,7 +435,7 @@
     "free_shipping_minimum": "GBP:100",
     "free_shipping_color_scheme": "none",
     "animations_enabled": "mobile_desktop",
-    "image_quality": "0.75",
+    "image_quality": "1",
     "show_blur_messages": true,
     "blur_message_delay": 4,
     "vibrate_on_atc": true,
