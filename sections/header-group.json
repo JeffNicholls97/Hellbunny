@@ -102,7 +102,7 @@
         "logo_width": 170,
         "logo_h1": false,
         "logo_center": false,
-        "enable_search": false,
+        "enable_search": true,
         "minimise_search_mobile": true,
         "minimise_search_desktop": true,
         "menu": "main-menu",
