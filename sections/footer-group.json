@@ -57,7 +57,6 @@
         "icons-with-text-3",
         "icons-with-text-4"
       ],
-      "disabled": true,
       "settings": {
         "heading": "",
         "heading_align": "text-start",
@@ -66,8 +65,8 @@
         "text_type_scale": "medium",
         "icon_position": "beside",
         "mobile_stack": false,
-        "section_height": "small",
-        "color_scheme": "1",
+        "section_height": "xsmall",
+        "color_scheme": "2",
         "full_width": true,
         "dividers": "border-top",
         "prevent_animation": false
@@ -79,9 +78,10 @@
         "text": {
           "type": "text",
           "settings": {
+            "image": "shopify://shop_images/Hell-Bunny.webp",
             "image_width": 150,
-            "heading": "Talk about your store",
-            "text": "<p>Share store details, promotions, or brand content with your customers.</p>",
+            "heading": "",
+            "text": "",
             "button_label": "",
             "button_link": "",
             "enable_follow_on_shop": false,
