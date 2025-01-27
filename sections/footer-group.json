@@ -126,7 +126,7 @@
         "enable_country_selector": false,
         "enable_language_selector": false,
         "secondary_menu": "",
-        "bg_color": "#f4f4f4",
+        "bg_color": "#ffffff",
         "text_color": "#070707"
       }
     }
