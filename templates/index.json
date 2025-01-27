@@ -111,7 +111,7 @@
         "title": "New In",
         "heading_align": "text-start",
         "show_view_all": true,
-        "collection": "aw24",
+        "collection": "all-new-in",
         "layout": "carousel",
         "card_size_mobile": "small",
         "card_size": "small",
