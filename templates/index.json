@@ -13,6 +13,7 @@
       "type": "image-banner",
       "settings": {
         "image_desktop": "shopify://shop_images/Haze_Blouse_Sale_Web_Banner.png",
+        "image_mobile": "shopify://shop_images/Haze_Blouse_Sale_Mobile_Banner_Final_2.png",
         "url": "",
         "height_mode": "auto",
         "fixed_height_desktop": 600,
@@ -107,7 +108,7 @@
       "type": "featured-collection",
       "custom_css": [],
       "settings": {
-        "title": "New Products",
+        "title": "New In",
         "heading_align": "text-start",
         "show_view_all": true,
         "collection": "aw24",
@@ -116,7 +117,7 @@
         "card_size": "small",
         "products_to_show": 8,
         "show_highlight_products": true,
-        "show_promo_info": true,
+        "show_promo_info": false,
         "image": "shopify://shop_images/SALE_NEW_BLOCK.jpg",
         "image_ratio": "fill",
         "promo_title": "Example Title",
