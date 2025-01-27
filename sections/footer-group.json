@@ -120,7 +120,7 @@
         "newsletter"
       ],
       "settings": {
-        "show_back_to_top": true,
+        "show_back_to_top": false,
         "show_payment_icons": true,
         "show_powered_by": false,
         "enable_country_selector": false,
