@@ -219,7 +219,7 @@
         "heading_align": "text-center",
         "button_label": "",
         "button_link": "",
-        "layout": "carousel",
+        "layout": "grid",
         "card_size": "large",
         "use_product_image": false,
         "circle_image": false,
