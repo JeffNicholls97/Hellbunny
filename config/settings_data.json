@@ -462,7 +462,7 @@
       "a.main-nav__item {text-transform: uppercase; letter-spacing: 3px; margin: 0px 0px 0px 70px;}",
       ".main-menu {--nav-line-color: rgba(var(--nav-child-text-color) / 0.2); font-family: var(--navigation-font-family); font-style: var(--navigation-font-style); font-weight: var(--navigation-font-weight); background: #f6f6f6 !important; padding: 5px; border-radius: 6px 6px 0px 0px;}",
       ".header__icon {padding: 11px; background: #f6f6f6; border-radius: 6px;}",
-      ".section {margin-top: 0px;}"
+      ".section {margin-top: 30px;}"
     ]
   }
 }
