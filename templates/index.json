@@ -214,6 +214,9 @@
         "collection-1",
         "collection-2"
       ],
+      "custom_css": [
+        "ul.grid.grid-cols-2.sm\\:grid-cols-3.xl\\:grid-cols-4.gap-x-theme.gap-y-10 {gap: 2px;}"
+      ],
       "settings": {
         "title": "Our Collections",
         "heading_align": "text-center",
