@@ -99,7 +99,7 @@
         "minimise_search_mobile": true,
         "minimise_search_desktop": true,
         "menu": "main-menu",
-        "menu_center": true,
+        "menu_center": false,
         "repeat_links": true,
         "menu_featured_link": "Sale",
         "quicklinks_menu": "",
