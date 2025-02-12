@@ -203,6 +203,10 @@
   cursor: pointer
 }
 
+.tw-flex-row {
+  flex-direction: row
+}
+
 .tw-flex-col {
   flex-direction: column
 }
