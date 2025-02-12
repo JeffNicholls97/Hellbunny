@@ -19,31 +19,21 @@ class VariantImageSwitcher {
       this.buttons.forEach(btn => btn.classList.remove('!tw-opacity-100'));
       this.buttons.forEach(btn => btn.classList.add('tw-opacity-50'));
       button.classList.add('!tw-opacity-100');
-      // Add active state to clicked button
-      
-  
+
       // Get all product cards in the collection
       const productCards = document.querySelectorAll('.card--product');
       
-      productCards.forEach(async (card) => {
-        const productHandle = card.dataset.productHandle;
-        if (!productHandle) return;
-  
-        // Fetch product data
-        const response = await fetch(`/products/${productHandle}.js`);
-        const productData = await response.json();
-        
-        // Find variant that matches the selected size
-        const variant = productData.variants.find(variant => 
-          variant.options.includes(variantOption)
-        );
-  
-        // If variant exists and has an image, update the product card image
-        if (variant && variant.featured_image) {
-          const productImage = card.querySelector('.card__main-image');
-          if (productImage) {
-            productImage.src = variant.featured_image.src;
-          }
+      productCards.forEach(card => {
+        const productImage = card.querySelector('.card__main-image');
+        if (!productImage) return;
+
+        // Set image based on variant size
+        if (variantOption === 'XS') {
+          productImage.src = card.dataset.smallImage;
+        } else if (variantOption === '2XL') {
+          productImage.src = card.dataset.largeImage;
+        } else {
+          productImage.src = card.dataset.defaultImage;
         }
       });
     }
