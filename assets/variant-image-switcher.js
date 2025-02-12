@@ -18,9 +18,10 @@ class VariantImageSwitcher {
       console.log(e)
       
       // Remove active state from all buttons
-      this.buttons.forEach(btn => btn.classList.add('tw-opacity-100'));
+      this.buttons.forEach(btn => btn.classList.remove('tw-opacity-100'));
+      button.classList.add('tw-opacity-100');
       // Add active state to clicked button
-      button.classList.add('tw-opacity-50');
+      
   
       // Get all product cards in the collection
       const productCards = document.querySelectorAll('.product-card');
