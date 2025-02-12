@@ -110,7 +110,7 @@
 {%- if product and product != empty -%}
   {{ product.variants | json }}
   <product-card
-  data-small-image="{{ product.variants | where: 'option1', 'Small' | first | image | img_url: '533x' }}
+  data-small-image="{{ product.variants | where: 'option2', 'XS' | first | image | img_url: '533x' }}
   class="card card--product{{ card_class }} h-full{% if settings.card_contain %} card--product-contained{% endif %}{% unless settings.show_dividers %} card--no-lines{% endunless %}{% if show_compare %} card--product-compare{% endif %} relative flex{% if is_highlighted %} card--highlight-product{% endif %}">
 
     {%- if show_compare -%}
