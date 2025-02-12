@@ -18,7 +18,7 @@
 %}
 <div x-show="showFilterSidebar" class="tw-fixed tw-z-50 tw-bg-black/50 tw-inset-0">
   <div x-on:click.outside="showFilterSidebar = false" class="tw-w-[400px] tw-bg-white tw-p-10 tw-h-full">
-
+    {% render 'facet-filters', results: collection %}
   </div>
 </div>
 
