@@ -1,10 +1,14 @@
 class VariantImageSwitcher {
     constructor() {
       this.buttons = document.querySelectorAll('.variant-size-selector');
+      this.clicked = null;  // Track the clicked button
       this.init();
     }
   
     init() {
+      this.buttons.forEach(button => {
+        button.classList.add('tw-opacity-50');
+      });
       this.buttons.forEach(button => {
         button.addEventListener('click', (e) => this.handleVariantSelect(e));
       });
@@ -15,9 +19,15 @@ class VariantImageSwitcher {
       const variantOption = button.dataset.variantOption;
       const sectionId = button.dataset.sectionId;
       
-      // Remove active state from all buttons
-      this.buttons.forEach(btn => btn.classList.remove('tw-opacity-50'));
-      // Add active state to clicked button
+      // If there was a previously clicked button, set it to opacity-50
+      if (this.clicked) {
+        this.clicked.classList.remove('tw-opacity-100');
+        this.clicked.classList.add('tw-opacity-50');
+      }
+  
+      // Update the clicked button and set it to opacity-100
+      this.clicked = button;
+      button.classList.remove('tw-opacity-50');
       button.classList.add('tw-opacity-100');
   
       // Get all product cards in the collection
