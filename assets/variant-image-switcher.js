@@ -12,7 +12,7 @@ class VariantImageSwitcher {
   
     async handleVariantSelect(e) {
       const button = e.target;
-      const variantOption = button.dataset.variantOption;
+      const sizeOption = button.dataset.size;
       
       // Remove active state from all buttons
       this.buttons.forEach(btn => btn.classList.remove('!tw-opacity-100'));
@@ -26,12 +26,12 @@ class VariantImageSwitcher {
         const productImage = card.querySelector('.card__main-image');
         if (!productImage) return;
 
-        // Set image based on variant size
-        if (variantOption === 'XS') {
+        // Set image based on size option
+        if (sizeOption === 'regular') {
           productImage.src = card.dataset.smallImage;
-        } else if (variantOption === '2XL') {
+        } else if (sizeOption === 'large') {
           productImage.src = card.dataset.largeImage;
-        } else {
+        } else if (sizeOption === 'off') {
           productImage.src = card.dataset.defaultImage;
         }
       });
