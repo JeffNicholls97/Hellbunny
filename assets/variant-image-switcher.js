@@ -24,17 +24,30 @@ class VariantImageSwitcher {
       
       productCards.forEach(card => {
         const productImage = card.querySelector('.card__main-image');
-
-        console.log(productImage)
         if (!productImage) return;
 
+        let newSrc;
         // Set image based on size option
         if (sizeOption === 'regular') {
-          productImage.src = card.dataset.smallImage;
+          newSrc = card.dataset.smallImage;
         } else if (sizeOption === 'large') {
-          productImage.src = card.dataset.largeImage;
+          newSrc = card.dataset.largeImage;
         } else if (sizeOption === 'off') {
-          productImage.src = card.dataset.defaultImage;
+          newSrc = card.dataset.defaultImage;
+        }
+
+        if (newSrc) {
+          // Update both src and srcset
+          productImage.src = newSrc;
+          
+          // Generate new srcset based on the new image URL
+          const baseUrl = newSrc.split('?')[0];
+          const version = newSrc.split('?v=')[1];
+          const srcset = [320, 460, 600, 700, 800, 900]
+            .map(width => `${baseUrl}?v=${version}&width=${width} ${width}w`)
+            .join(', ');
+          
+          productImage.srcset = srcset;
         }
       });
     }
