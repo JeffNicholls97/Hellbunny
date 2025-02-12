@@ -11,6 +11,7 @@ class VariantImageSwitcher {
     }
   
     async handleVariantSelect(e) {
+        console.log('working here')
       const button = e.target;
       const variantOption = button.dataset.variantOption;
       const sectionId = button.dataset.sectionId;
