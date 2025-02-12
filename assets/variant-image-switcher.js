@@ -14,6 +14,9 @@ class VariantImageSwitcher {
       const button = e.target;
       const sizeOption = button.dataset.size;
       
+      // If clicking the already active button, do nothing
+      if (button.classList.contains('!tw-opacity-100')) return;
+      
       // Remove active state from all buttons
       this.buttons.forEach(btn => btn.classList.remove('!tw-opacity-100'));
       this.buttons.forEach(btn => btn.classList.add('tw-opacity-50'));
@@ -37,6 +40,11 @@ class VariantImageSwitcher {
         }
 
         if (newSrc) {
+          // Ensure URL is absolute
+          if (newSrc.startsWith('//')) {
+            newSrc = 'https:' + newSrc;
+          }
+
           // Update both src and srcset
           productImage.src = newSrc;
           
