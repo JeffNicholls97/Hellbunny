@@ -71,7 +71,7 @@
 {%- if section.settings.stick_on_scroll -%}
 <script src="{{ 'sticky-scroll-direction.js' | asset_url }}" defer="defer"></script>
 
-<sticky-scroll-direction data-min-sticky-size="lg">
+<sticky-scroll-direction class="tw-w-full" data-min-sticky-size="lg">
 {%- endif -%}
   <facet-filters class="facets drawer tw-h-full flex flex-col w-full has-motion" data-name="facet-filters" id="facet-filters" data-filtering="{{ section.settings.enable_filtering }}" data-sorting="{{ section.settings.enable_sorting }}" role="dialog" aria-labelledby="facets-title" aria-modal="true" aria-hidden="true" tabindex="-1">
     <header class="drawer__header flex justify-between items-center lg:hidden">
