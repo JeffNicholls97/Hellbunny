@@ -15,7 +15,7 @@ class VariantImageSwitcher {
       const variantOption = button.dataset.variantOption;
       const sectionId = button.dataset.sectionId;
 
-      console.log(this.buttons)
+      console.log(e)
       
       // Remove active state from all buttons
       this.buttons.forEach(btn => btn.classList.add('tw-opacity-100'));
