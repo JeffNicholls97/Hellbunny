@@ -108,7 +108,11 @@
 -%}
 
 {%- if product and product != empty -%}
-  <product-card class="card card--product{{ card_class }} h-full{% if settings.card_contain %} card--product-contained{% endif %}{% unless settings.show_dividers %} card--no-lines{% endunless %}{% if show_compare %} card--product-compare{% endif %} relative flex{% if is_highlighted %} card--highlight-product{% endif %}">
+  <product-card
+  data-small-image="{% assign xs_variant = product.variants | where: 'option1', 'XS' | first %}{% unless xs_variant %}{% assign xs_variant = product.variants | where: 'option2', 'XS' | first %}{% endunless %}{{ xs_variant.image | img_url: '533x' }}"
+data-large-image="{% assign xxl_variant = product.variants | where: 'option1', '2XL' | first %}{% unless xxl_variant %}{% assign xxl_variant = product.variants | where: 'option2', '2XL' | first %}{% endunless %}{{ xxl_variant.image | img_url: '533x' }}"
+data-default-image="{{ product.featured_image | img_url: '533x' }}"
+  class="card card--product{{ card_class }} h-full{% if settings.card_contain %} card--product-contained{% endif %}{% unless settings.show_dividers %} card--no-lines{% endunless %}{% if show_compare %} card--product-compare{% endif %} relative flex{% if is_highlighted %} card--highlight-product{% endif %}">
 
     {%- if show_compare -%}
       <div class="card__compare no-js-hidden text-sm">

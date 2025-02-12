@@ -16,10 +16,31 @@
     assign filters_enabled = false
   endif
 %}
+<div x-show="showFilterSidebar" class="tw-fixed tw-left-0 tw-top-0 tw-z-50">
+  <span
+  x-transition:enter="tw-transition-opacity tw-duration-300"
+    x-transition:enter-start="tw-opacity-0"
+    x-transition:enter-end="tw-opacity-100"
+    x-transition:leave="tw-transition-opacity tw-duration-200"
+    x-transition:leave-start="tw-opacity-100"
+    x-transition:leave-end="tw-opacity-0"
+  x-show="showFilterSidebar" x-on:click="showFilterSidebar = false" class="tw-bg-black/50 tw-inset-0 tw-fixed"></span>
+  <div
+  x-transition:enter="tw-transition-transform tw-duration-300"
+    x-transition:enter-start="tw--translate-x-full"
+    x-transition:enter-end="tw-translate-x-0"
+    x-transition:leave="tw-transition-transform tw-duration-200"
+    x-transition:leave-start="tw-translate-x-0"
+    x-transition:leave-end="tw--translate-x-full"
+  x-show="showFilterSidebar" class="tw-w-[400px] tw-absolute tw-left-0 tw-top-0 tw-z-50 tw-overflow-y-auto tw-flex tw-flex-row tw-items-start tw-justify-start tw-bg-white tw-p-10 tw-h-screen">
+    {% render 'facet-filters', results: collection %}
+  </div>
+</div>
+
 <products-toolbar class="products-toolbar flex items-center mb-8{% if settings.enable_compare and settings.compare_toggle != "none" %} products-toolbar--compare{% if section.settings.show_layout_toggle and sort_or_filters_visible %} products-toolbar--compare-shift-xs mt-16{% endif %}{% endif %} no-js-hidden" id="products-toolbar">
   {%- if filters_enabled -%}
     <div class="products-toolbar__filter">
-      <button type="button" class="products-toolbar__filter-btn flex justify-between items-center text-current font-bold {% if section.settings.filters_open_lg %}is-active {% endif %}js-toggle-filters" aria-controls="facet-filters" aria-expanded="false">
+      <button x-on:click="showFilterSidebar = true" type="button" class="products-toolbar__filter-btn flex justify-between items-center text-current font-bold {% if section.settings.filters_open_lg %}is-active {% endif %}" aria-controls="facet-filters" aria-expanded="false">
         <span class="hidden md:block">{{ 'products.filtering.filter' | t }}</span>
         {%- if section.settings.enable_sorting -%}
           <span class="md:hidden">{{ 'products.filtering.filter_sort' | t }}</span>

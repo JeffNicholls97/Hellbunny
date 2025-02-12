@@ -303,7 +303,7 @@
   {%- endif -%}
 </head>
 
-<body{% if settings.animations_enabled != "disabled" %} class="cc-animate-enabled"{% endif %}>
+<body x-data="{ showFilterSidebar: false }" {% if settings.animations_enabled != "disabled" %} class="cc-animate-enabled"{% endif %}>
   <a class="skip-link btn btn--primary visually-hidden" href="#main-content" data-ce-role="skip">
     {{- 'accessibility.skip_to_content' | t -}}
   </a>
