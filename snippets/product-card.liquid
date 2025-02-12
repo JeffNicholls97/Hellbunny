@@ -111,7 +111,7 @@
   <product-card
     data-small-image="{% for option in product.options_with_values %}{% if option.name == 'Size' %}{{ product.variants | where: 'option' | append: option.position, 'XS' | first | image | img_url: '533x' }}{% endif %}{% endfor %}"
   class="card card--product{{ card_class }} h-full{% if settings.card_contain %} card--product-contained{% endif %}{% unless settings.show_dividers %} card--no-lines{% endunless %}{% if show_compare %} card--product-compare{% endif %} relative flex{% if is_highlighted %} card--highlight-product{% endif %}">
-  <img class="tw-w-28" src="{% for option in product.options_with_values %}{% if option.name == 'Size' %}{{ product.variants | where: 'option' | append: option.position, 'XS' | first | image | img_url: '533x' }}{% endif %}{% endfor %}" alt="">
+  <img class="tw-w-28" src="{% for option in product.options_with_values %}{% if option.name == 'size' %}{{ product.variants | where: 'option' | append: option.position, 'XS' | first | image | img_url: '533x' }}{% endif %}{% endfor %}" alt="">
 
     {%- if show_compare -%}
       <div class="card__compare no-js-hidden text-sm">
