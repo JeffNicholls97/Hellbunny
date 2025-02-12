@@ -13,7 +13,6 @@ class VariantImageSwitcher {
     async handleVariantSelect(e) {
       const button = e.target;
       const variantOption = button.dataset.variantOption;
-      const sectionId = button.dataset.sectionId;
       
       // Remove active state from all buttons
       this.buttons.forEach(btn => btn.classList.remove('!tw-opacity-100'));
