@@ -280,7 +280,7 @@
       },
       {
         "type": "paragraph",
-        "content": "If all collection or product images are set on a very light background, this can blend that background into a light color. [Read more](https://cleancanvas.co.uk/support/enterprise/settings/product-image-blend)"
+        "content": "If all collection or product images are set on a very light background, this can blend that background into a light color. [Read more]()"
       },
       {
         "type": "checkbox",
@@ -746,7 +746,7 @@
       },
       {
         "type": "paragraph",
-        "content": "To show a custom label on collection cards, add a Collection metafield with the namespace and key \"theme.label\", with the \"Single line text\" type. [Read more](https://cleancanvas.co.uk/support/enterprise/settings/custom-collection-message)"
+        "content": "To show a custom label on collection cards, add a Collection metafield with the namespace and key \"theme.label\", with the \"Single line text\" type. [Read more]()"
       },
       {
         "type": "color",
@@ -1052,7 +1052,7 @@
         "type": "select",
         "id": "compare_toggle",
         "label": "Compare toggle",
-        "info": "This utilizes browser caching. Your Compare toggle might not update until the browser cache is cleared. [Read more](https://cleancanvas.co.uk/support/enterprise/templates/collection-page/comparison-grid)",
+        "info": "This utilizes browser caching. Your Compare toggle might not update until the browser cache is cleared. [Read more]()",
         "default": "toggle_on",
         "options": [
           {
@@ -1841,7 +1841,7 @@
       },
       {
         "type": "paragraph",
-        "content": "A product is a preorder if its template name contains the word \"preorder\". [Read more](https://cleancanvas.co.uk/support/enterprise/settings/product-labels)"
+        "content": "A product is a preorder if its template name contains the word \"preorder\". [Read more](#support/enterprise/settings/product-labels)"
       },
       {
         "type": "select",
@@ -2013,7 +2013,7 @@
       },
       {
         "type": "paragraph",
-        "content": "For custom labels, add a product metafield with the namespace and key \"theme.label\", with the \"Single line text\" type. [Read more](https://cleancanvas.co.uk/support/enterprise/settings/product-labels)"
+        "content": "For custom labels, add a product metafield with the namespace and key \"theme.label\", with the \"Single line text\" type. [Read more](#support/enterprise/settings/product-labels)"
       },
       {
         "type": "checkbox",
@@ -2192,7 +2192,7 @@
     "settings": [
       {
         "type": "paragraph",
-        "content": "Swatches are small visual indicators that display the colors, patterns, and materials in which a product is available to customers. [Learn more](https://cleancanvas.co.uk/support/enterprise/swatches)"
+        "content": "Swatches are small visual indicators that display the colors, patterns, and materials in which a product is available to customers. [Learn more](#support/enterprise/swatches)"
       },
       {
         "type": "text",
@@ -2374,7 +2374,7 @@
         "id": "swatch_colors",
         "label": "Swatch color list",
         "placeholder": "Red:#ff0000\nLight Blue:#add8e6\nHot Pink:hot-pink.png\nRed Blue Stripes:#e22#22e",
-        "info": "One color name:value per line. [Learn more](https://cleancanvas.co.uk/support/enterprise/swatches)"
+        "info": "One color name:value per line. [Learn more](#support/enterprise/swatches)"
       }
     ]
   },
@@ -2518,7 +2518,7 @@
       },
       {
         "type": "paragraph",
-        "content": "To show a custom message below each collection result, add a Collection metafield with the namespace and key \"theme.label\", with the \"Single line text\" type. [Read more](https://cleancanvas.co.uk/support/enterprise/settings/custom-collection-message)"
+        "content": "To show a custom message below each collection result, add a Collection metafield with the namespace and key \"theme.label\", with the \"Single line text\" type. [Read more](#support/enterprise/settings/custom-collection-message)"
       },
       {
         "type": "checkbox",
@@ -2629,7 +2629,7 @@
       },
       {
         "type": "paragraph",
-        "content": "Speech search is only available on Chrome for desktop or Android (will not work on iPhone). [Read more](https://cleancanvas.co.uk/support/enterprise/settings/voice-search)"
+        "content": "Speech search is only available on Chrome for desktop or Android (will not work on iPhone). [Read more](#support/enterprise/settings/voice-search)"
       },
       {
         "type": "checkbox",
@@ -2803,7 +2803,7 @@
       },
       {
         "type": "paragraph",
-        "content": "This draws attention to the cart icon when it has items, and could encourage checkouts.  [Read more](https://cleancanvas.co.uk/support/enterprise/settings/shaking-cart-icon)"
+        "content": "This draws attention to the cart icon when it has items, and could encourage checkouts.  [Read more](#support/enterprise/settings/shaking-cart-icon)"
       },
       {
         "type": "checkbox",
@@ -2826,7 +2826,7 @@
       },
       {
         "type": "paragraph",
-        "content": "Shows a bar on the cart page and cart drawer which indicates how far the user is away from free shipping. [Read more](https://cleancanvas.co.uk/support/enterprise/shipping-bar)"
+        "content": "Shows a bar on the cart page and cart drawer which indicates how far the user is away from free shipping. [Read more](#support/enterprise/shipping-bar)"
       },
       {
         "type": "checkbox",
@@ -2855,7 +2855,7 @@
       },
       {
         "type": "paragraph",
-        "content": "[Read more](https://cleancanvas.co.uk/support/enterprise/shipping-bar)"
+        "content": "[Read more](#support/enterprise/shipping-bar)"
       },
       {
         "type": "select",
@@ -2987,7 +2987,7 @@
           }
         ],
         "default": "1",
-        "info": "Changing the image quality can affect the page load speed. [Learn more](https://cleancanvas.co.uk/support/enterprise/settings/image-quality)"
+        "info": "Changing the image quality can affect the page load speed. [Learn more](#support/enterprise/settings/image-quality)"
       },
       {
         "type": "header",
@@ -3057,7 +3057,7 @@
       },
       {
         "type": "paragraph",
-        "content": "For a full list of JavaScript events included with Enterprise, please refer to the /assets/custom.js file within the theme code, or read our [JavaScript Technical Guide](https://cleancanvas.co.uk/support/enterprise/technical-guides/js)."
+        "content": "For a full list of JavaScript events included with Enterprise, please refer to the /assets/custom.js file within the theme code, or read our [JavaScript Technical Guide](#support/enterprise/technical-guides/js)."
       }
     ]
   }
