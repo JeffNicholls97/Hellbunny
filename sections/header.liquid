@@ -104,7 +104,7 @@
           </a>
         {%- endif -%}
 
-        {% render 'predictive-search', id: 'header-search', show_search_types: show_search_types %}
+        {% comment %} {% render 'predictive-search', id: 'header-search', show_search_types: show_search_types %} {% endcomment %}
       </div>
     {%- elsif section.settings.logo_center -%}
       <div class="header__search"></div>
