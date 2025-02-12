@@ -23,7 +23,7 @@ class VariantImageSwitcher {
       
   
       // Get all product cards in the collection
-      const productCards = document.querySelectorAll('.product-card');
+      const productCards = document.querySelectorAll('.card--product');
       
       productCards.forEach(async (card) => {
         const productHandle = card.dataset.productHandle;
@@ -40,7 +40,7 @@ class VariantImageSwitcher {
   
         // If variant exists and has an image, update the product card image
         if (variant && variant.featured_image) {
-          const productImage = card.querySelector('.product-card__image');
+          const productImage = card.querySelector('.card__main-image');
           if (productImage) {
             productImage.src = variant.featured_image.src;
           }
