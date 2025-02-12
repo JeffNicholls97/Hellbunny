@@ -63,7 +63,6 @@
 {%- endif -%}
 
 <script src="{{ 'facet-filters.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'variant-image-switcher.js' | asset_url }}" defer="defer"></script>
 {%- if has_price_filter -%}
   <script src="{{ 'price-range.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
@@ -71,9 +70,9 @@
 {%- if section.settings.stick_on_scroll -%}
 <script src="{{ 'sticky-scroll-direction.js' | asset_url }}" defer="defer"></script>
 
-<sticky-scroll-direction class="tw-w-full" data-min-sticky-size="lg">
+<sticky-scroll-direction data-min-sticky-size="lg">
 {%- endif -%}
-  <facet-filters class="facets drawer tw-h-full flex flex-col w-full has-motion" data-name="facet-filters" id="facet-filters" data-filtering="{{ section.settings.enable_filtering }}" data-sorting="{{ section.settings.enable_sorting }}" role="dialog" aria-labelledby="facets-title" aria-modal="true" aria-hidden="true" tabindex="-1">
+  <facet-filters class="facets drawer fixed top-0 left-0 flex flex-col w-full has-motion" data-name="facet-filters" id="facet-filters" data-filtering="{{ section.settings.enable_filtering }}" data-sorting="{{ section.settings.enable_sorting }}" role="dialog" aria-labelledby="facets-title" aria-modal="true" aria-hidden="true" tabindex="-1">
     <header class="drawer__header flex justify-between items-center lg:hidden">
       <h2 class="h4 mb-0" id="facets-title">
         <span class="hidden md:block">{{ 'products.filtering.title' | t }}</span>
@@ -90,14 +89,6 @@
     </header>
 
     <div class="drawer__content">
-      <div class="tw-flex tw-mb-20 tw-flex-col tw-items-center">
-        <p>Choose Preview Size:</p>
-        <div class="tw-mt-3 tw-flex tw-w-full tw-items-center tw-justify-between" data-sizes="">
-          <button class="variant-size-selector tw-relative tw-cursor-pointer tw-transition-all tw-duration-200 tw-opacity-50" data-size="regular">XS - XL</button>
-          <button class="variant-size-selector tw-relative tw-cursor-pointer tw-transition-all tw-duration-200 !tw-opacity-100" data-size="off">Off</button>
-          <button class="variant-size-selector tw-relative tw-cursor-pointer tw-transition-all tw-duration-200 tw-opacity-50" data-size="large">2XL - 6XL</button>
-        </div>
-      </div>
       <form id="facets" data-filter-section-id="{{ section.id }}" novalidate>
         {%- if results.current_vendor or results.current_type -%}
           <input type="hidden" name="q" value="{{ results.current_vendor }}{{ results.current_type }}">
