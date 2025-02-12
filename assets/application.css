@@ -170,6 +170,10 @@
   height: 100%
 }
 
+.tw-h-screen {
+  height: 100vh
+}
+
 .tw-max-h-\[1000px\] {
   max-height: 1000px
 }

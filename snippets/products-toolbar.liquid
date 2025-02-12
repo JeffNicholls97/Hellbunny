@@ -18,7 +18,7 @@
 %}
 <div x-show="showFilterSidebar" class="tw-fixed tw-z-50">
   <span x-on:click="showFilterSidebar = false" class="tw-bg-black/50 tw-inset-0 tw-fixed"></span>
-  <div class="tw-w-[400px] tw-absolute tw-left-0 tw-top-0 tw-z-50 tw-overflow-y-auto tw-flex tw-flex-row tw-items-start tw-justify-start tw-bg-white tw-p-10 tw-h-full">
+  <div class="tw-w-[400px] tw-absolute tw-left-0 tw-top-0 tw-z-50 tw-overflow-y-auto tw-flex tw-flex-row tw-items-start tw-justify-start tw-bg-white tw-p-10 tw-h-screen">
     {% render 'facet-filters', results: collection %}
   </div>
 </div>
