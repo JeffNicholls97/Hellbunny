@@ -106,12 +106,20 @@
   --tw-contain-style:  
 }
 
+.tw-fixed {
+  position: fixed
+}
+
 .tw-absolute {
   position: absolute
 }
 
 .tw-relative {
   position: relative
+}
+
+.tw-inset-0 {
+  inset: 0px
 }
 
 .tw-left-1\/2 {
@@ -164,6 +172,10 @@
 
 .tw-w-28 {
   width: 7rem
+}
+
+.tw-w-\[400px\] {
+  width: 400px
 }
 
 .tw-max-w-full {
@@ -236,6 +248,10 @@
 .tw-bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1))
+}
+
+.tw-bg-black\/50 {
+  background-color: rgb(0 0 0 / 0.5)
 }
 
 .tw-px-4 {
