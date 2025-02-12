@@ -258,6 +258,11 @@
   line-height: 1rem
 }
 
+.tw-text-base {
+  font-size: 1rem;
+  line-height: 1.5rem
+}
+
 .tw-font-bold {
   font-weight: 700
 }
