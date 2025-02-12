@@ -126,6 +126,10 @@
   left: 50%
 }
 
+.tw-z-50 {
+  z-index: 50
+}
+
 .tw-mb-10 {
   margin-bottom: 2.5rem
 }
