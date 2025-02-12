@@ -102,9 +102,10 @@
             </span>
             <span class="visually-hidden">{{ 'general.icon_labels.search' | t }}</span>
           </a>
+          {% render 'nav-menu' %}
         {%- endif -%}
 
-        {% comment %} {% render 'predictive-search', id: 'header-search', show_search_types: show_search_types %} {% endcomment %}
+        
       </div>
     {%- elsif section.settings.logo_center -%}
       <div class="header__search"></div>
@@ -170,7 +171,8 @@
     {%- if section.settings.menu != blank -%}
       {%- assign total_promo_count = 0 -%}
       {%- assign featured_links = section.settings.menu_featured_link | downcase | replace: ', ', ',' | replace: ' ,', ',' | split: ',' -%}
-      {% render 'nav-menu' %}
+      {% render 'predictive-search', id: 'header-search', show_search_types: show_search_types %}
+      
     {%- endif -%}
   </header>
 </store-header>
