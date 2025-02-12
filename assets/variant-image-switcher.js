@@ -21,6 +21,8 @@ class VariantImageSwitcher {
 
       // Get all product cards in the collection
       const productCards = document.querySelectorAll('.card--product');
+
+      console.log(productCards)
       
       productCards.forEach(card => {
         const productImage = card.querySelector('.card__main-image');
