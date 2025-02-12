@@ -231,6 +231,10 @@
   overflow: hidden
 }
 
+.tw-overflow-y-auto {
+  overflow-y: auto
+}
+
 .tw-rounded-lg {
   border-radius: 0.5rem
 }
