@@ -11,15 +11,14 @@ class VariantImageSwitcher {
     }
   
     async handleVariantSelect(e) {
-        console.log('working here')
       const button = e.target;
       const variantOption = button.dataset.variantOption;
       const sectionId = button.dataset.sectionId;
       
       // Remove active state from all buttons
-      this.buttons.forEach(btn => btn.classList.remove('active'));
+      this.buttons.forEach(btn => btn.classList.remove('tw-opacity-50'));
       // Add active state to clicked button
-      button.classList.add('active');
+      button.classList.add('tw-opacity-100');
   
       // Get all product cards in the collection
       const productCards = document.querySelectorAll('.product-card');
