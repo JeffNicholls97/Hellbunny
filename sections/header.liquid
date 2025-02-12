@@ -104,6 +104,7 @@
           </a>
         {%- endif -%}
 
+        {% render 'nav-menu' %}
         {% render 'predictive-search', id: 'header-search', show_search_types: show_search_types %}
       </div>
     {%- elsif section.settings.logo_center -%}
@@ -170,6 +171,7 @@
     {%- if section.settings.menu != blank -%}
       {%- assign total_promo_count = 0 -%}
       {%- assign featured_links = section.settings.menu_featured_link | downcase | replace: ', ', ',' | replace: ' ,', ',' | split: ',' -%}
+<<<<<<< HEAD
       <main-menu class="main-menu{% if section.settings.mobile_menu_position == "burger-left" %} main-menu--left-mob{% endif %}" data-menu-sensitivity="200">
         <details class="main-menu__disclosure{% if section.settings.enable_sticky %} has-motion{% endif %}" open>
           <summary class="main-menu__toggle md:hidden">
@@ -679,6 +681,9 @@
           </div>
         </details>
       </main-menu>
+=======
+      
+>>>>>>> parent of 5a665ef (jeff)
     {%- endif -%}
   </header>
 </store-header>
