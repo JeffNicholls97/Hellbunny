@@ -162,6 +162,10 @@
   width: 100%
 }
 
+.tw-w-28 {
+  width: 7rem
+}
+
 .tw-max-w-full {
   max-width: 100%
 }

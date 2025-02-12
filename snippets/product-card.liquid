@@ -108,10 +108,10 @@
 -%}
 
 {%- if product and product != empty -%}
-  <img src="{{ product.variants | where: 'option2', 'XS' | first | image | img_url: '533x' }}" alt="">
   <product-card
   data-small-image="{{ product.variants | where: 'option2', 'XS' | first | image | img_url: '533x' }}"
   class="card card--product{{ card_class }} h-full{% if settings.card_contain %} card--product-contained{% endif %}{% unless settings.show_dividers %} card--no-lines{% endunless %}{% if show_compare %} card--product-compare{% endif %} relative flex{% if is_highlighted %} card--highlight-product{% endif %}">
+  <img class="tw-w-28" src="{{ product.variants | where: 'option2', 'XS' | first | image | img_url: '533x' }}" alt="">
 
     {%- if show_compare -%}
       <div class="card__compare no-js-hidden text-sm">
