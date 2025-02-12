@@ -104,7 +104,6 @@
           </a>
         {%- endif -%}
 
-        {% render 'nav-menu' %}
         {% render 'predictive-search', id: 'header-search', show_search_types: show_search_types %}
       </div>
     {%- elsif section.settings.logo_center -%}
@@ -171,7 +170,7 @@
     {%- if section.settings.menu != blank -%}
       {%- assign total_promo_count = 0 -%}
       {%- assign featured_links = section.settings.menu_featured_link | downcase | replace: ', ', ',' | replace: ' ,', ',' | split: ',' -%}
-      
+      {% render 'nav-menu' %}
     {%- endif -%}
   </header>
 </store-header>
