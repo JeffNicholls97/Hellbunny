@@ -19,7 +19,7 @@
           "settings": {
             "icon": "chat_bubble",
             "heading": "Visit our support center",
-            "text": "<p>Expert help & advice<\/p>",
+            "text": "<p>Expert help & advice</p>",
             "link": ""
           }
         },
@@ -28,7 +28,7 @@
           "settings": {
             "icon": "box",
             "heading": "Check your order status",
-            "text": "<p>Updates & tracking<\/p>",
+            "text": "<p>Updates & tracking</p>",
             "link": ""
           }
         },
@@ -37,7 +37,7 @@
           "settings": {
             "icon": "return",
             "heading": "Returns & exchanges",
-            "text": "<p>All you need to know<\/p>",
+            "text": "<p>All you need to know</p>",
             "link": ""
           }
         },
@@ -46,7 +46,7 @@
           "settings": {
             "icon": "dollar_sign",
             "heading": "Price-match guarantee",
-            "text": "<p>Our promise to you<\/p>",
+            "text": "<p>Our promise to you</p>",
             "link": ""
           }
         }
@@ -78,7 +78,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Hell-Bunny.webp",
+            "image": "shopify://shop_images/Hell-Bunny.webp",
             "image_width": 150,
             "heading": "",
             "text": "",
