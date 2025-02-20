@@ -203,7 +203,7 @@ if (!customElements.get('gallery-zoom')) {
       this.currentZoomImage.style.top = `${this.clientHeight / 2 - this.currentZoomImage.clientHeight / 2}px`;
       this.currentZoomImage.style.left = `${this.clientWidth / 2 - this.currentZoomImage.clientWidth / 2}px`;
       this.currentTransform.zoom = 0.4;
-      this.isZoomedIn = false; // Ensure we start in zoomed out state
+      this.isZoomedIn = false;
       this.updateImagePosition();
     }
 
@@ -410,7 +410,9 @@ if (!customElements.get('gallery-zoom')) {
         this.setCurrentTransform(0, 0, 0.4);
         this.isZoomedIn = false;
       } else {
-        this.setCurrentTransform(0, 0, 1.0);
+        // Calculate scale needed to fit container width
+        const fullWidthScale = this.clientWidth / this.currentZoomImage.naturalWidth;
+        this.setCurrentTransform(0, 0, fullWidthScale);
         this.panZoomImageFromCoordinate(evt.clientX, evt.clientY);
         this.isZoomedIn = true;
       }
@@ -443,8 +445,9 @@ if (!customElements.get('gallery-zoom')) {
       // Set minimum zoom to 0.4
       this.currentTransform.zoom = Math.max(this.currentTransform.zoom, 0.4);
       
-      // Set maximum zoom to 1.0
-      this.currentTransform.zoom = Math.min(this.currentTransform.zoom, 1.0);
+      // Set maximum zoom to full width scale
+      const fullWidthScale = this.clientWidth / this.currentZoomImage.naturalWidth;
+      this.currentTransform.zoom = Math.min(this.currentTransform.zoom, fullWidthScale);
 
       // reasses pan bounds
       this.alterCurrentPanBy(0, 0);
