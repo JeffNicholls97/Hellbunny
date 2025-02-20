@@ -73,7 +73,7 @@
 
 <sticky-scroll-direction class="tw-w-full" data-min-sticky-size="lg">
 {%- endif -%}
-  <facet-filters class="facets drawer tw-h-full flex flex-col w-full has-motion" data-name="facet-filters" id="facet-filters" data-filtering="{{ section.settings.enable_filtering }}" data-sorting="{{ section.settings.enable_sorting }}" role="dialog" aria-labelledby="facets-title" aria-modal="true" aria-hidden="true" tabindex="-1">
+  <facet-filters class="tw-h-full flex flex-col w-full has-motion" data-name="facet-filters" id="facet-filters" data-filtering="{{ section.settings.enable_filtering }}" data-sorting="{{ section.settings.enable_sorting }}" role="dialog" aria-labelledby="facets-title" aria-modal="true" aria-hidden="true" tabindex="-1">
     <header class="drawer__header flex justify-between items-center lg:hidden">
       <h2 class="h4 mb-0" id="facets-title">
         <span class="hidden md:block">{{ 'products.filtering.title' | t }}</span>
@@ -83,13 +83,13 @@
           <span class="md:hidden">{{ 'products.filtering.filter' | t }}</span>
         {%- endif -%}
       </h2>
-      <button type="button" class="drawer__close-btn js-close-drawer">
+      <button type="button" class="drawer__close-btn !tw-hidden js-close-drawer">
         <span class="visually-hidden">{{ 'accessibility.close' | t }}</span>
         {% render 'icon-close' %}
       </button>
     </header>
 
-    <div class="drawer__content">
+    <div class="drawer__content !tw-opacity-100 !tw-block">
       <div class="tw-flex tw-mb-20 tw-flex-col tw-items-center">
         <p>Choose Preview Size:</p>
         <div class="tw-mt-3 tw-flex tw-w-full tw-items-center tw-justify-between" data-sizes="">

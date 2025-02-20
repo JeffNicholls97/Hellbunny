@@ -49,9 +49,15 @@
   a.main-nav__item {
     text-transform: uppercase;
     letter-spacing: 3px;
-    margin: 0px 0px 0px 20px!important;
-    font-size: 14px;
+    margin: 0px 10px 0px 10px !important;
+    font-size: 11px;
 }
+main-menu.main-menu.main-menu--left-mob {
+    background-color: transparent !important;
+}
+.header {
+        padding: 0px;
+    }
 {%- endstyle -%}
 
 <store-header class="header bg-theme-bg text-theme-text{% if section.settings.enable_sticky or search_is_minimised %} has-motion{% endif %}{% if search_is_minimised %} search-is-collapsed{% endif %}"
@@ -72,7 +78,7 @@
               endif
               assign alt_text = section.settings.logo.alt | default: shop.name
             -%}
-            <span class="flex" style="max-width: {{ section.settings.logo_width | plus: 0 }}px;">
+            <span class="flex" style="max-width: 140px;">
               {% render 'image',
                 image: section.settings.logo,
                 src_width: logo_width,
