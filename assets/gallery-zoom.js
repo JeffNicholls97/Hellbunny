@@ -144,35 +144,34 @@ if (!customElements.get('gallery-zoom')) {
      * @param {number} inputY - Mouse/touch input Y.
      */
     panZoomImageFromCoordinate(inputX, inputY) {
-      // do nothing if the image fits, pan if not
-      const doPanX = this.currentZoomImage.clientWidth > this.clientWidth;
-      const doPanY = this.currentZoomImage.clientHeight > this.clientHeight;
+      const midX = this.clientWidth / 2;
+      const midY = this.clientHeight / 2;
 
-      if (doPanX || doPanY) {
-        const midX = this.clientWidth / 2;
-        const midY = this.clientHeight / 2;
+      const offsetFromCentreX = inputX - midX;
+      const offsetFromCentreY = inputY - midY;
 
-        const offsetFromCentreX = inputX - midX;
-        const offsetFromCentreY = inputY - midY;
+      // Calculate the maximum pan values based on image size
+      const maxPanX = (this.currentZoomImage.naturalWidth * this.currentTransform.zoom - this.clientWidth) / 2.0;
+      const maxPanY = (this.currentZoomImage.naturalHeight * this.currentTransform.zoom - this.clientHeight) / 2.0;
 
-        // the offsetMultipler ensures it can only pan to the edge of the image, no further
-        let finalOffsetX = 0;
-        let finalOffsetY = 0;
+      // Calculate pan values proportional to click position
+      let finalOffsetX = 0;
+      let finalOffsetY = 0;
 
-        if (doPanX) {
-          const offsetMultiplierX = ((this.currentZoomImage.clientWidth - this.clientWidth) / 2) / midX;
-          finalOffsetX = Math.round(-offsetFromCentreX * offsetMultiplierX);
-        }
-        if (doPanY) {
-          const offsetMultiplierY = ((this.currentZoomImage.clientHeight - this.clientHeight) / 2) / midY;
-          finalOffsetY = Math.round(-offsetFromCentreY * offsetMultiplierY);
-        }
-
-        this.currentTransform.panX = finalOffsetX;
-        this.currentTransform.panY = finalOffsetY;
-        this.alterCurrentPanBy(0, 0); // sanitise
-        this.updateImagePosition();
+      if (maxPanX > 0) {
+        const offsetMultiplierX = maxPanX / midX;
+        finalOffsetX = Math.round(-offsetFromCentreX * offsetMultiplierX);
       }
+      if (maxPanY > 0) {
+        const offsetMultiplierY = maxPanY / midY;
+        finalOffsetY = Math.round(-offsetFromCentreY * offsetMultiplierY);
+      }
+
+      // Apply the pan values
+      this.currentTransform.panX = finalOffsetX;
+      this.currentTransform.panY = finalOffsetY;
+      this.alterCurrentPanBy(0, 0); // sanitise bounds
+      this.updateImagePosition();
     }
 
     /**
@@ -412,7 +411,9 @@ if (!customElements.get('gallery-zoom')) {
       } else {
         // Calculate scale needed to fit container width
         const fullWidthScale = this.clientWidth / this.currentZoomImage.naturalWidth;
+        // First set the zoom level
         this.setCurrentTransform(0, 0, fullWidthScale);
+        // Then calculate and apply the pan based on click position
         this.panZoomImageFromCoordinate(evt.clientX, evt.clientY);
         this.isZoomedIn = true;
       }
