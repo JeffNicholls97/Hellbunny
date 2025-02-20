@@ -142,6 +142,10 @@
   margin-top: 0.75rem
 }
 
+.tw-block {
+  display: block
+}
+
 .tw-flex {
   display: flex
 }
