@@ -5203,7 +5203,7 @@ body > .os-scrollbar {
   .header__logo {
     order: 0;
     padding-inline-start: 0;
-    padding-inline-end: calc(6 * var(--space-unit));
+    padding-inline-end: 0;
   }
   .header__search {
     display: block;
