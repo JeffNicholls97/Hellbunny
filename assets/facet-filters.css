@@ -1,3 +1,6 @@
+.facets.drawer:not([open]) {
+  transform: none;
+}
 
 .facets .disclosure {
   margin: 0 2px;
