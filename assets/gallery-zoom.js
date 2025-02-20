@@ -55,6 +55,7 @@ if (!customElements.get('gallery-zoom')) {
         this.wheelZoomMultiplier = -0.001;
         this.pinchZoomMultiplier = 0.003;
         this.touchPanModifier = 1.0;
+        this.isZoomedIn = false;  // Add this flag to track zoom state
 
         // vars
         this.currentZoomImage = null;
@@ -277,6 +278,7 @@ if (!customElements.get('gallery-zoom')) {
       this.currentZoomImage = GalleryZoom.createEl('img', 'gallery-zoom__zoom-image');
       this.currentZoomImage.alt = thumb.querySelector('.gallery-zoom__thumb-img')?.alt;
       this.currentZoomImage.style.visibility = 'hidden';
+      this.currentZoomImage.draggable = false; // Prevent image dragging
       this.currentZoomImage.onload = () => {
         this.zoomContainer.classList.remove('gallery-zoom__zoom-container--loading');
         this.currentZoomImage.style.visibility = '';
@@ -284,6 +286,7 @@ if (!customElements.get('gallery-zoom')) {
       };
       this.currentZoomImage.src = thumb.dataset.zoomUrl;
       this.zoomContainer.replaceChildren(this.currentZoomImage);
+      this.isZoomedIn = false; // Reset zoom state when changing images
     }
 
     /**
@@ -355,6 +358,7 @@ if (!customElements.get('gallery-zoom')) {
      * @param {object} evt - Event object.
      */
     trackInputMovement(evt) {
+      if (!this.isZoomedIn) return; // Only handle events when zoomed in
       evt.preventDefault();
       if (evt.type === 'touchmove' && evt.touches.length > 0) {
         // pan
@@ -389,7 +393,7 @@ if (!customElements.get('gallery-zoom')) {
         }
       } else {
         // Change mousemove to implement drag-to-pan
-        if (!this.touchTracking.isTracking && evt.buttons === 1) { // Only track when primary mouse button is pressed
+        if (!this.touchTracking.isTracking && evt.buttons === 1) {
           this.touchTracking.isTracking = true;
           this.touchTracking.lastTouchX = evt.clientX;
           this.touchTracking.lastTouchY = evt.clientY;
@@ -411,6 +415,7 @@ if (!customElements.get('gallery-zoom')) {
      * @param {object} evt - Event object.
      */
     trackWheel(evt) {
+      if (!this.isZoomedIn) return; // Only handle wheel events when zoomed in
       evt.preventDefault();
       if (evt.deltaY !== 0) {
         this.alterCurrentTransformZoomBy(evt.deltaY * this.wheelZoomMultiplier);
@@ -441,10 +446,12 @@ if (!customElements.get('gallery-zoom')) {
       if (this.currentTransform.zoom >= maxZoom * 0.9) { // Using 0.9 to account for floating point imprecision
         this.currentTransform.zoom = baseZoom;
         this.alterCurrentTransformZoomBy(0);
+        this.isZoomedIn = false;
       } else {
         this.currentTransform.zoom = maxZoom;
         this.alterCurrentTransformZoomBy(0);
         this.panZoomImageFromCoordinate(evt.clientX, evt.clientY);
+        this.isZoomedIn = true;
       }
     }
 
