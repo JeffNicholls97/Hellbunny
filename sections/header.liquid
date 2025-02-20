@@ -46,6 +46,11 @@
     --shake-delay: 4s;
   {% endif %}
   }
+  a.main-nav__item {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0px 0px 0px 20px!important;
+}
 {%- endstyle -%}
 
 <store-header class="header bg-theme-bg text-theme-text{% if section.settings.enable_sticky or search_is_minimised %} has-motion{% endif %}{% if search_is_minimised %} search-is-collapsed{% endif %}"
