@@ -55,6 +55,7 @@ if (!customElements.get('gallery-zoom')) {
         this.wheelZoomMultiplier = -0.001;
         this.pinchZoomMultiplier = 0.003;
         this.touchPanModifier = 1.0;
+        this.isZoomedIn = false;  // Add this flag to track zoom state
 
         // vars
         this.currentZoomImage = null;
@@ -143,35 +144,34 @@ if (!customElements.get('gallery-zoom')) {
      * @param {number} inputY - Mouse/touch input Y.
      */
     panZoomImageFromCoordinate(inputX, inputY) {
-      // do nothing if the image fits, pan if not
-      const doPanX = this.currentZoomImage.clientWidth > this.clientWidth;
-      const doPanY = this.currentZoomImage.clientHeight > this.clientHeight;
+      const midX = this.clientWidth / 2;
+      const midY = this.clientHeight / 2;
 
-      if (doPanX || doPanY) {
-        const midX = this.clientWidth / 2;
-        const midY = this.clientHeight / 2;
+      const offsetFromCentreX = inputX - midX;
+      const offsetFromCentreY = inputY - midY;
 
-        const offsetFromCentreX = inputX - midX;
-        const offsetFromCentreY = inputY - midY;
+      // Calculate the maximum pan values based on image size
+      const maxPanX = (this.currentZoomImage.naturalWidth * this.currentTransform.zoom - this.clientWidth) / 2.0;
+      const maxPanY = (this.currentZoomImage.naturalHeight * this.currentTransform.zoom - this.clientHeight) / 2.0;
 
-        // the offsetMultipler ensures it can only pan to the edge of the image, no further
-        let finalOffsetX = 0;
-        let finalOffsetY = 0;
+      // Calculate pan values proportional to click position
+      let finalOffsetX = 0;
+      let finalOffsetY = 0;
 
-        if (doPanX) {
-          const offsetMultiplierX = ((this.currentZoomImage.clientWidth - this.clientWidth) / 2) / midX;
-          finalOffsetX = Math.round(-offsetFromCentreX * offsetMultiplierX);
-        }
-        if (doPanY) {
-          const offsetMultiplierY = ((this.currentZoomImage.clientHeight - this.clientHeight) / 2) / midY;
-          finalOffsetY = Math.round(-offsetFromCentreY * offsetMultiplierY);
-        }
-
-        this.currentTransform.panX = finalOffsetX;
-        this.currentTransform.panY = finalOffsetY;
-        this.alterCurrentPanBy(0, 0); // sanitise
-        this.updateImagePosition();
+      if (maxPanX > 0) {
+        const offsetMultiplierX = maxPanX / midX;
+        finalOffsetX = Math.round(-offsetFromCentreX * offsetMultiplierX);
       }
+      if (maxPanY > 0) {
+        const offsetMultiplierY = maxPanY / midY;
+        finalOffsetY = Math.round(-offsetFromCentreY * offsetMultiplierY);
+      }
+
+      // Apply the pan values
+      this.currentTransform.panX = finalOffsetX;
+      this.currentTransform.panY = finalOffsetY;
+      this.alterCurrentPanBy(0, 0); // sanitise bounds
+      this.updateImagePosition();
     }
 
     /**
@@ -196,51 +196,23 @@ if (!customElements.get('gallery-zoom')) {
     }
 
     /**
-     * Set current zoom image transform to specific values.
-     * @param {number} panX - Pan X value.
-     * @param {number} panY - Pan Y value.
-     * @param {number} zoom - Current zoom amount.
-     */
-    setCurrentTransform(panX, panY, zoom) {
-      this.currentTransform.panX = panX;
-      this.currentTransform.panY = panY;
-      this.currentTransform.zoom = zoom;
-      this.alterCurrentTransformZoomBy(0);
-    }
-
-    /**
-     * Update zoom amount by a delta.
-     * @param {number} delta - Amount to adjust.
-     */
-    alterCurrentTransformZoomBy(delta) {
-      this.currentTransform.zoom += delta;
-      // do not zoom out further than fit
-      const maxZoomX = this.clientWidth / this.currentZoomImage.naturalWidth;
-      const maxZoomY = this.clientHeight / this.currentZoomImage.naturalHeight;
-      this.currentTransform.zoom = Math.max(this.currentTransform.zoom, Math.min(maxZoomX, maxZoomY));
-
-      // do not zoom in further than native size
-      this.currentTransform.zoom = Math.min(this.currentTransform.zoom, 1.0);
-
-      // reasses pan bounds
-      this.alterCurrentPanBy(0, 0);
-      this.updateImagePosition();
-    }
-
-    /**
      * Position the current image in the centre, zoomed out
      */
     setInitialImagePosition() {
       this.currentZoomImage.style.top = `${this.clientHeight / 2 - this.currentZoomImage.clientHeight / 2}px`;
       this.currentZoomImage.style.left = `${this.clientWidth / 2 - this.currentZoomImage.clientWidth / 2}px`;
-      this.setCurrentTransform(0, 0, 0);
+      this.currentTransform.zoom = 0.4;
+      this.isZoomedIn = false;
+      this.updateImagePosition();
     }
 
     /**
      * Set current zoom image transform based on pan & zoom values.
      */
     updateImagePosition() {
-      this.currentZoomImage.style.transform = `translate3d(${this.currentTransform.panX}px, ${this.currentTransform.panY}px, 0) scale(${this.currentTransform.zoom})`;
+      requestAnimationFrame(() => {
+        this.currentZoomImage.style.transform = `translate3d(${this.currentTransform.panX}px, ${this.currentTransform.panY}px, 0) scale(${this.currentTransform.zoom})`;
+      });
     }
 
     /**
@@ -274,6 +246,7 @@ if (!customElements.get('gallery-zoom')) {
       this.currentZoomImage = GalleryZoom.createEl('img', 'gallery-zoom__zoom-image');
       this.currentZoomImage.alt = thumb.querySelector('.gallery-zoom__thumb-img')?.alt;
       this.currentZoomImage.style.visibility = 'hidden';
+      this.currentZoomImage.draggable = false;
       this.currentZoomImage.onload = () => {
         this.zoomContainer.classList.remove('gallery-zoom__zoom-container--loading');
         this.currentZoomImage.style.visibility = '';
@@ -352,6 +325,7 @@ if (!customElements.get('gallery-zoom')) {
      * @param {object} evt - Event object.
      */
     trackInputMovement(evt) {
+      if (!this.isZoomedIn) return; // Only handle events when zoomed in
       evt.preventDefault();
       if (evt.type === 'touchmove' && evt.touches.length > 0) {
         // pan
@@ -385,8 +359,21 @@ if (!customElements.get('gallery-zoom')) {
           this.pinchTracking.isTracking = false;
         }
       } else {
-        // mousemove
-        this.panZoomImageFromCoordinate(evt.clientX, evt.clientY);
+        // Change mousemove to implement drag-to-pan
+        if (!this.touchTracking.isTracking && evt.buttons === 1) {
+          this.touchTracking.isTracking = true;
+          this.touchTracking.lastTouchX = evt.clientX;
+          this.touchTracking.lastTouchY = evt.clientY;
+        } else if (this.touchTracking.isTracking && evt.buttons === 1) {
+          this.alterCurrentPanBy(
+            (evt.clientX - this.touchTracking.lastTouchX) * this.touchPanModifier,
+            (evt.clientY - this.touchTracking.lastTouchY) * this.touchPanModifier
+          );
+          this.touchTracking.lastTouchX = evt.clientX;
+          this.touchTracking.lastTouchY = evt.clientY;
+        } else {
+          this.touchTracking.isTracking = false;
+        }
       }
     }
 
@@ -395,6 +382,7 @@ if (!customElements.get('gallery-zoom')) {
      * @param {object} evt - Event object.
      */
     trackWheel(evt) {
+      if (!this.isZoomedIn) return; // Only handle wheel events when zoomed in
       evt.preventDefault();
       if (evt.deltaY !== 0) {
         this.alterCurrentTransformZoomBy(evt.deltaY * this.wheelZoomMultiplier);
@@ -417,13 +405,17 @@ if (!customElements.get('gallery-zoom')) {
     onZoomContainerClick(evt) {
       evt.preventDefault();
 
-      if (this.currentTransform.zoom === 1.0) {
-        this.currentTransform.zoom = 0;
-        this.alterCurrentTransformZoomBy(0);
+      if (this.isZoomedIn) {
+        this.setCurrentTransform(0, 0, 0.4);
+        this.isZoomedIn = false;
       } else {
-        this.currentTransform.zoom = 1;
-        this.alterCurrentTransformZoomBy(0);
+        // Calculate scale needed to fit container width
+        const fullWidthScale = this.clientWidth / this.currentZoomImage.naturalWidth;
+        // First set the zoom level
+        this.setCurrentTransform(0, 0, fullWidthScale);
+        // Then calculate and apply the pan based on click position
         this.panZoomImageFromCoordinate(evt.clientX, evt.clientY);
+        this.isZoomedIn = true;
       }
     }
 
@@ -442,6 +434,38 @@ if (!customElements.get('gallery-zoom')) {
           this.selectNextThumb();
           break;
       }
+    }
+
+    /**
+     * Update zoom amount by a delta.
+     * @param {number} delta - Amount to adjust.
+     */
+    alterCurrentTransformZoomBy(delta) {
+      this.currentTransform.zoom += delta;
+      
+      // Set minimum zoom to 0.4
+      this.currentTransform.zoom = Math.max(this.currentTransform.zoom, 0.4);
+      
+      // Set maximum zoom to full width scale
+      const fullWidthScale = this.clientWidth / this.currentZoomImage.naturalWidth;
+      this.currentTransform.zoom = Math.min(this.currentTransform.zoom, fullWidthScale);
+
+      // reasses pan bounds
+      this.alterCurrentPanBy(0, 0);
+      this.updateImagePosition();
+    }
+
+    /**
+     * Set current zoom image transform to specific values.
+     * @param {number} panX - Pan X value.
+     * @param {number} panY - Pan Y value.
+     * @param {number} zoom - Current zoom amount.
+     */
+    setCurrentTransform(panX, panY, zoom) {
+      this.currentTransform.panX = panX;
+      this.currentTransform.panY = panY;
+      this.currentTransform.zoom = zoom;
+      this.updateImagePosition();
     }
   }
 
