@@ -214,13 +214,16 @@ if (!customElements.get('gallery-zoom')) {
      */
     alterCurrentTransformZoomBy(delta) {
       this.currentTransform.zoom += delta;
-      // do not zoom out further than fit
+      // Change zoom limits to use container width
       const maxZoomX = this.clientWidth / this.currentZoomImage.naturalWidth;
       const maxZoomY = this.clientHeight / this.currentZoomImage.naturalHeight;
-      this.currentTransform.zoom = Math.max(this.currentTransform.zoom, Math.min(maxZoomX, maxZoomY));
-
-      // do not zoom in further than native size
-      this.currentTransform.zoom = Math.min(this.currentTransform.zoom, 1.0);
+      
+      // Set minimum zoom to fill container width/height
+      this.currentTransform.zoom = Math.max(this.currentTransform.zoom, Math.max(maxZoomX, maxZoomY));
+      
+      // Allow zooming in up to 2x the container-filling size
+      const maxZoom = Math.max(maxZoomX, maxZoomY) * 2;
+      this.currentTransform.zoom = Math.min(this.currentTransform.zoom, maxZoom);
 
       // reasses pan bounds
       this.alterCurrentPanBy(0, 0);
@@ -385,8 +388,21 @@ if (!customElements.get('gallery-zoom')) {
           this.pinchTracking.isTracking = false;
         }
       } else {
-        // mousemove
-        this.panZoomImageFromCoordinate(evt.clientX, evt.clientY);
+        // Change mousemove to implement drag-to-pan
+        if (!this.touchTracking.isTracking && evt.buttons === 1) { // Only track when primary mouse button is pressed
+          this.touchTracking.isTracking = true;
+          this.touchTracking.lastTouchX = evt.clientX;
+          this.touchTracking.lastTouchY = evt.clientY;
+        } else if (this.touchTracking.isTracking && evt.buttons === 1) {
+          this.alterCurrentPanBy(
+            (evt.clientX - this.touchTracking.lastTouchX) * this.touchPanModifier,
+            (evt.clientY - this.touchTracking.lastTouchY) * this.touchPanModifier
+          );
+          this.touchTracking.lastTouchX = evt.clientX;
+          this.touchTracking.lastTouchY = evt.clientY;
+        } else {
+          this.touchTracking.isTracking = false;
+        }
       }
     }
 
@@ -417,11 +433,16 @@ if (!customElements.get('gallery-zoom')) {
     onZoomContainerClick(evt) {
       evt.preventDefault();
 
-      if (this.currentTransform.zoom === 1.0) {
-        this.currentTransform.zoom = 0;
+      const maxZoomX = this.clientWidth / this.currentZoomImage.naturalWidth;
+      const maxZoomY = this.clientHeight / this.currentZoomImage.naturalHeight;
+      const baseZoom = Math.max(maxZoomX, maxZoomY);
+      const maxZoom = baseZoom * 2;
+
+      if (this.currentTransform.zoom >= maxZoom * 0.9) { // Using 0.9 to account for floating point imprecision
+        this.currentTransform.zoom = baseZoom;
         this.alterCurrentTransformZoomBy(0);
       } else {
-        this.currentTransform.zoom = 1;
+        this.currentTransform.zoom = maxZoom;
         this.alterCurrentTransformZoomBy(0);
         this.panZoomImageFromCoordinate(evt.clientX, evt.clientY);
       }
