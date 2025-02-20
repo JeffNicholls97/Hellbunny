@@ -343,3 +343,9 @@
     max-height: 10em
   }
 }
+
+@media (min-width: 768px) {
+  .md\:tw-w-\[400px\] {
+    width: 400px
+  }
+}
