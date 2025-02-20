@@ -5197,7 +5197,7 @@ body > .os-scrollbar {
   .header__logo,
 .header__icons {
     flex: 1 1 auto;
-    margin-bottom: 16px;
+    margin-bottom: 0px;
     padding-inline-start: calc(6 * var(--space-unit));
   }
   .header__logo {
