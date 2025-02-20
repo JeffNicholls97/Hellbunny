@@ -30,7 +30,7 @@
               <details{% if mega_nav %} class="js-mega-nav" {{ mega_nav.shopify_attributes }}{% endif %}>
                 <summary class="main-nav__item--toggle relative js-nav-hover js-toggle">
                   <a class="main-nav__item main-nav__item--primary main-nav__item-content{% if link.current %} is-active{% endif %}{% if featured_links contains link_title_downcase %} main-nav__link--featured{% endif %}" href="{{ link.url }}"{% if link.current %} aria-current="page"{% endif %}>
-                    {{ link.title | escape }}{% render 'icon-chevron-down' %}
+                    {{ link.title | escape }}
                   </a>
                 </summary>
                 {%- liquid
