@@ -4,9 +4,6 @@
   overflow: hidden;
   border-radius: 0;
 }
-.facets.drawer:not([open]) {
-  transform: translate3d(-100%, 0, 0);
-}
 .facets .drawer__content {
   overflow: auto;
 }
