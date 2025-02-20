@@ -197,54 +197,22 @@ if (!customElements.get('gallery-zoom')) {
     }
 
     /**
-     * Set current zoom image transform to specific values.
-     * @param {number} panX - Pan X value.
-     * @param {number} panY - Pan Y value.
-     * @param {number} zoom - Current zoom amount.
-     */
-    setCurrentTransform(panX, panY, zoom) {
-      this.currentTransform.panX = panX;
-      this.currentTransform.panY = panY;
-      this.currentTransform.zoom = zoom;
-      this.alterCurrentTransformZoomBy(0);
-    }
-
-    /**
-     * Update zoom amount by a delta.
-     * @param {number} delta - Amount to adjust.
-     */
-    alterCurrentTransformZoomBy(delta) {
-      this.currentTransform.zoom += delta;
-      // Change zoom limits to use container width
-      const maxZoomX = this.clientWidth / this.currentZoomImage.naturalWidth;
-      const maxZoomY = this.clientHeight / this.currentZoomImage.naturalHeight;
-      
-      // Set minimum zoom to fill container width/height
-      this.currentTransform.zoom = Math.max(this.currentTransform.zoom, Math.max(maxZoomX, maxZoomY));
-      
-      // Allow zooming in up to 2x the container-filling size
-      const maxZoom = Math.max(maxZoomX, maxZoomY) * 2;
-      this.currentTransform.zoom = Math.min(this.currentTransform.zoom, maxZoom);
-
-      // reasses pan bounds
-      this.alterCurrentPanBy(0, 0);
-      this.updateImagePosition();
-    }
-
-    /**
      * Position the current image in the centre, zoomed out
      */
     setInitialImagePosition() {
       this.currentZoomImage.style.top = `${this.clientHeight / 2 - this.currentZoomImage.clientHeight / 2}px`;
       this.currentZoomImage.style.left = `${this.clientWidth / 2 - this.currentZoomImage.clientWidth / 2}px`;
-      this.setCurrentTransform(0, 0, 0);
+      this.currentTransform.zoom = 0.4;
+      this.updateImagePosition();
     }
 
     /**
      * Set current zoom image transform based on pan & zoom values.
      */
     updateImagePosition() {
-      this.currentZoomImage.style.transform = `translate3d(${this.currentTransform.panX}px, ${this.currentTransform.panY}px, 0) scale(${this.currentTransform.zoom})`;
+      requestAnimationFrame(() => {
+        this.currentZoomImage.style.transform = `translate3d(${this.currentTransform.panX}px, ${this.currentTransform.panY}px, 0) scale(${this.currentTransform.zoom})`;
+      });
     }
 
     /**
@@ -438,18 +406,11 @@ if (!customElements.get('gallery-zoom')) {
     onZoomContainerClick(evt) {
       evt.preventDefault();
 
-      const maxZoomX = this.clientWidth / this.currentZoomImage.naturalWidth;
-      const maxZoomY = this.clientHeight / this.currentZoomImage.naturalHeight;
-      const baseZoom = Math.max(maxZoomX, maxZoomY);
-      const maxZoom = baseZoom * 2;
-
-      if (this.currentTransform.zoom >= maxZoom * 0.9) { // Using 0.9 to account for floating point imprecision
-        this.currentTransform.zoom = baseZoom;
-        this.alterCurrentTransformZoomBy(0);
+      if (this.currentTransform.zoom >= 0.9) { // If zoomed in (using 0.9 to account for floating point)
+        this.setCurrentTransform(0, 0, 0.4); // Return to 0.4 scale
         this.isZoomedIn = false;
       } else {
-        this.currentTransform.zoom = maxZoom;
-        this.alterCurrentTransformZoomBy(0);
+        this.setCurrentTransform(0, 0, 1.0); // Zoom to full scale (1.0)
         this.panZoomImageFromCoordinate(evt.clientX, evt.clientY);
         this.isZoomedIn = true;
       }
@@ -470,6 +431,37 @@ if (!customElements.get('gallery-zoom')) {
           this.selectNextThumb();
           break;
       }
+    }
+
+    /**
+     * Update zoom amount by a delta.
+     * @param {number} delta - Amount to adjust.
+     */
+    alterCurrentTransformZoomBy(delta) {
+      this.currentTransform.zoom += delta;
+      
+      // Set minimum zoom to 0.4
+      this.currentTransform.zoom = Math.max(this.currentTransform.zoom, 0.4);
+      
+      // Set maximum zoom to 1.0
+      this.currentTransform.zoom = Math.min(this.currentTransform.zoom, 1.0);
+
+      // reasses pan bounds
+      this.alterCurrentPanBy(0, 0);
+      this.updateImagePosition();
+    }
+
+    /**
+     * Set current zoom image transform to specific values.
+     * @param {number} panX - Pan X value.
+     * @param {number} panY - Pan Y value.
+     * @param {number} zoom - Current zoom amount.
+     */
+    setCurrentTransform(panX, panY, zoom) {
+      this.currentTransform.panX = panX;
+      this.currentTransform.panY = panY;
+      this.currentTransform.zoom = zoom;
+      this.updateImagePosition();
     }
   }
 
