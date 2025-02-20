@@ -1,12 +1,4 @@
-.facets.drawer {
-  max-width: 550px;
-  height: var(--viewport-height, 100vh);
-  overflow: hidden;
-  border-radius: 0;
-}
-.facets .drawer__content {
-  overflow: auto;
-}
+
 .facets .disclosure {
   margin: 0 2px;
   border-bottom: 1px solid rgba(var(--text-color)/0.15);
