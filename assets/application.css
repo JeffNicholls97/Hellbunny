@@ -178,6 +178,10 @@
   width: 75%
 }
 
+.tw-w-\[300px\] {
+  width: 300px
+}
+
 .tw-max-w-full {
   max-width: 100%
 }
