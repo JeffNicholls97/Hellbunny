@@ -75,7 +75,7 @@ main-menu.main-menu.main-menu--left-mob {
               endif
               assign alt_text = section.settings.logo.alt | default: shop.name
             -%}
-            <span class="flex" style="max-width: {{ section.settings.logo_width | plus: 0 }}px;">
+            <span class="flex" style="max-width: 140px;">
               {% render 'image',
                 image: section.settings.logo,
                 src_width: logo_width,
