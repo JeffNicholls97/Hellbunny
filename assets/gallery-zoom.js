@@ -203,6 +203,7 @@ if (!customElements.get('gallery-zoom')) {
       this.currentZoomImage.style.top = `${this.clientHeight / 2 - this.currentZoomImage.clientHeight / 2}px`;
       this.currentZoomImage.style.left = `${this.clientWidth / 2 - this.currentZoomImage.clientWidth / 2}px`;
       this.currentTransform.zoom = 0.4;
+      this.isZoomedIn = false; // Ensure we start in zoomed out state
       this.updateImagePosition();
     }
 
@@ -246,7 +247,7 @@ if (!customElements.get('gallery-zoom')) {
       this.currentZoomImage = GalleryZoom.createEl('img', 'gallery-zoom__zoom-image');
       this.currentZoomImage.alt = thumb.querySelector('.gallery-zoom__thumb-img')?.alt;
       this.currentZoomImage.style.visibility = 'hidden';
-      this.currentZoomImage.draggable = false; // Prevent image dragging
+      this.currentZoomImage.draggable = false;
       this.currentZoomImage.onload = () => {
         this.zoomContainer.classList.remove('gallery-zoom__zoom-container--loading');
         this.currentZoomImage.style.visibility = '';
@@ -254,7 +255,6 @@ if (!customElements.get('gallery-zoom')) {
       };
       this.currentZoomImage.src = thumb.dataset.zoomUrl;
       this.zoomContainer.replaceChildren(this.currentZoomImage);
-      this.isZoomedIn = false; // Reset zoom state when changing images
     }
 
     /**
@@ -406,11 +406,11 @@ if (!customElements.get('gallery-zoom')) {
     onZoomContainerClick(evt) {
       evt.preventDefault();
 
-      if (this.currentTransform.zoom >= 0.9) { // If zoomed in (using 0.9 to account for floating point)
-        this.setCurrentTransform(0, 0, 0.4); // Return to 0.4 scale
+      if (this.isZoomedIn) {
+        this.setCurrentTransform(0, 0, 0.4);
         this.isZoomedIn = false;
       } else {
-        this.setCurrentTransform(0, 0, 1.0); // Zoom to full scale (1.0)
+        this.setCurrentTransform(0, 0, 1.0);
         this.panZoomImageFromCoordinate(evt.clientX, evt.clientY);
         this.isZoomedIn = true;
       }
