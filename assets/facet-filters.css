@@ -7,12 +7,6 @@
 .facets .drawer__content {
   overflow: auto;
 }
-.facets .drawer__footer {
-  position: -webkit-sticky;
-  position: sticky;
-  bottom: 0;
-  background-color: rgba(var(--drawer-bg-color));
-}
 .facets .disclosure {
   margin: 0 2px;
   border-bottom: 1px solid rgba(var(--text-color)/0.15);
