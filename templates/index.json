@@ -12,8 +12,8 @@
     "image_banner_JGm6dC": {
       "type": "image-banner",
       "settings": {
-        "image_desktop": "shopify://shop_images/Copy_of_Smiley_Banner_Final.png",
-        "image_mobile": "shopify://shop_images/1_0896c2e4-ce0d-4bd8-b443-e8b23feb13fd.png",
+        "image_desktop": "shopify://shop_images/Copy_of_HB_x_Smiley_banners.png",
+        "image_mobile": "shopify://shop_images/Gaia_Mobile_3.png",
         "url": "",
         "height_mode": "auto",
         "fixed_height_desktop": 600,
@@ -126,6 +126,27 @@
         "button_label": "View All New Products",
         "color_scheme": "none",
         "button_style": "btn btn--secondary"
+      }
+    },
+    "image_banner_HjmHPc": {
+      "type": "image-banner",
+      "settings": {
+        "image_desktop": "shopify://shop_images/Copy_of_Smiley_Banner_Final.png",
+        "image_mobile": "shopify://shop_images/1_0896c2e4-ce0d-4bd8-b443-e8b23feb13fd.png",
+        "url": "",
+        "height_mode": "auto",
+        "fixed_height_desktop": 600,
+        "fixed_height_mobile": 350,
+        "overlay_position": "justify-center items-center",
+        "overlay_text_align": "text-center",
+        "mob_center_text": false,
+        "mobile_stacked": false,
+        "color_scheme": "white",
+        "full_width": true,
+        "transparent_content_color": "#ffffff",
+        "tint_color": "#000000",
+        "tint_opacity": 0,
+        "prevent_animation": false
       }
     },
     "scrolling-banner": {
@@ -1107,9 +1128,10 @@
     }
   },
   "order": [
-    "image_banner_JGm6dC",
+    "image_banner_HjmHPc",
     "promo-grid",
     "featured-collection",
+    "image_banner_JGm6dC",
     "scrolling-banner",
     "collection-list",
     "featured_collection_KEenRw",
