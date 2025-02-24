@@ -9,11 +9,11 @@
  */
 {
   "sections": {
-    "image_banner_JGm6dC": {
+    "image_banner_HjmHPc": {
       "type": "image-banner",
       "settings": {
-        "image_desktop": "shopify://shop_images/Copy_of_HB_x_Smiley_banners.png",
-        "image_mobile": "shopify://shop_images/Gaia_Mobile_3.png",
+        "image_desktop": "shopify://shop_images/Copy_of_Smiley_Banner_Final.png",
+        "image_mobile": "shopify://shop_images/1_0896c2e4-ce0d-4bd8-b443-e8b23feb13fd.png",
         "url": "",
         "height_mode": "auto",
         "fixed_height_desktop": 600,
@@ -128,11 +128,11 @@
         "button_style": "btn btn--secondary"
       }
     },
-    "image_banner_HjmHPc": {
+    "image_banner_JGm6dC": {
       "type": "image-banner",
       "settings": {
-        "image_desktop": "shopify://shop_images/Copy_of_Smiley_Banner_Final.png",
-        "image_mobile": "shopify://shop_images/1_0896c2e4-ce0d-4bd8-b443-e8b23feb13fd.png",
+        "image_desktop": "shopify://shop_images/Copy_of_HB_x_Smiley_banners.png",
+        "image_mobile": "shopify://shop_images/Gaia_Mobile_3.png",
         "url": "",
         "height_mode": "auto",
         "fixed_height_desktop": 600,
@@ -211,8 +211,8 @@
         "collection-0": {
           "type": "collection",
           "settings": {
-            "collection": "default-category-collections-hearts",
-            "image": "shopify://shop_images/Valentine_s_Romance_isnt_dead.png"
+            "collection": "back-in-stock",
+            "image": "shopify://shop_images/Back_In_Stock_Tile_2.png"
           }
         },
         "collection-1": {
