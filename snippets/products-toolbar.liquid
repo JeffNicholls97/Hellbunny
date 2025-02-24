@@ -27,11 +27,11 @@
   x-show="showFilterSidebar" x-on:click="showFilterSidebar = false" class="tw-bg-black/50 tw-inset-0 tw-fixed"></span>
   <div
   x-transition:enter="tw-transition-transform tw-duration-300"
-    x-transition:enter-start="tw--translate-x-full"
+    x-transition:enter-start="tw-translate-x-full"
     x-transition:enter-end="tw-translate-x-0"
     x-transition:leave="tw-transition-transform tw-duration-200"
     x-transition:leave-start="tw-translate-x-0"
-    x-transition:leave-end="tw--translate-x-full"
+    x-transition:leave-end="tw-translate-x-full"
   x-show="showFilterSidebar" class="md:tw-w-[400px] tw-absolute tw-w-[300px] tw-right-0 tw-top-0 tw-z-50 tw-overflow-y-auto tw-flex tw-flex-row tw-items-start tw-justify-start tw-bg-white tw-p-10 tw-h-screen">
     {% render 'facet-filters', results: collection %}
   </div>
