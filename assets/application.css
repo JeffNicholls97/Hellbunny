@@ -130,6 +130,10 @@
   top: 0px
 }
 
+.tw-right-0 {
+  right: 0px
+}
+
 .tw-z-50 {
   z-index: 50
 }
@@ -140,6 +144,10 @@
 
 .tw-mt-3 {
   margin-top: 0.75rem
+}
+
+.tw-mr-5 {
+  margin-right: 1.25rem
 }
 
 .tw-block {
@@ -208,6 +216,11 @@
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
 
+.tw-translate-x-full {
+  --tw-translate-x: 100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+
 .tw-cursor-pointer {
   cursor: pointer
 }
@@ -234,6 +247,10 @@
 
 .tw-justify-start {
   justify-content: flex-start
+}
+
+.tw-justify-center {
+  justify-content: center
 }
 
 .tw-justify-between {
