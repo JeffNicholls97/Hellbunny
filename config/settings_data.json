@@ -472,7 +472,9 @@
       "/* Force larger images in the products panel */#psearch-products .predictive-result__media img {width: 448px !important; height: auto !important; max-width: none !important;}",
       "/* Force the suggestions list to stack items vertically */.predictive-result__list-suggestions {display: block !important;}",
       "/* Ensure each suggestion item takes full width and stacks */.predictive-result__list-suggestions li {display: block !important; width: 100%; margin-bottom: 0.5rem;}",
-      "/* Ensure the suggestion links are block-level */.predictive-result--suggestion {display: block !important;}"
+      "/* Ensure the suggestion links are block-level */.predictive-result--suggestion {display: block !important;}",
+      "/* Make the entire link layout stack vertically (image on top, title below) */a.predictive-result.flex.items-start.focus-inset.js-search-link {flex-direction: column !important; align-items: center;}",
+      "/* Enlarge the image to 4× its original size */a.predictive-result.flex.items-start.focus-inset.js-search-link .predictive-result__media img {width: 448px !important; /* 112px × 4 */ height: auto !important; /* maintain aspect ratio */}"
     ]
   }
 }
