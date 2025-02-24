@@ -81,9 +81,9 @@
   {%- endif -%}
 
   {%- if section.settings.show_layout_toggle -%}
-    <div class="products-toolbar__layout tw-mr-5 flex items-center mis-auto">
+    <div class="products-toolbar__layout flex items-center mis-auto">
       {%- if filters_enabled -%}
-        <div class="products-toolbar__filter">
+        <div class="products-toolbar__filter tw-mr-5">
           <button x-on:click="showFilterSidebar = true" type="button" class="products-toolbar__filter-btn flex justify-between items-center text-current font-bold {% if section.settings.filters_open_lg %}is-active {% endif %}" aria-controls="facet-filters" aria-expanded="false">
             <span class="hidden md:block">{{ 'products.filtering.filter' | t }}</span>
             {%- if section.settings.enable_sorting -%}
