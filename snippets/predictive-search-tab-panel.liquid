@@ -1,6 +1,5 @@
 <div class="predictive-search__tabpanel focus-inset" id="psearch-{{ type }}" role="tabpanel" tabindex="0" aria-labelledby="psearch-{{ type }}-tab"{% unless forloop.first %} hidden{% endunless %}>
-  <!-- Added grid classes for a 3-column layout -->
-  <ul class="predictive-search__list grid grid-cols-3 gap-4" role="list">
+  <ul class="predictive-search__list" role="list">
     {%- for item in items -%}
       <li class="predictive-search__item" role="option">
         <a class="predictive-result flex items-start focus-inset js-search-link" href="{{ item.url }}"{% if settings.preload_links %} data-instant{% endif %}>
@@ -14,8 +13,7 @@
             -%}
             {%- if img != blank -%}
               <div class="predictive-result__media media relative{% if settings.blend_product_images and type == 'products' %} image-blend{% elsif settings.blend_collection_images and type == 'collections' %} image-blend{% endif %}">
-                <!-- Updated image size from 112 to 448 -->
-                {{ img | image_url: width: 448 | image_tag: loading: 'eager', class: 'predictive-result__media' }}
+                {{ img | image_url: width: 112 | image_tag: loading: 'eager', class: 'predictive-result__media' }}
               </div>
             {%- else -%}
               <div class="predictive-result__media media relative">
@@ -24,8 +22,7 @@
             {%- endif -%}
           {%- elsif group_articles_pages or type == 'articles' -%}
             {%- if item.image != blank -%}
-              <!-- Updated image size from 112 to 448 -->
-              {{ item.image | image_url: width: 448 | image_tag: loading: 'eager', class: 'predictive-result__media' }}
+              {{ item.image | image_url: width: 112 | image_tag: loading: 'eager', class: 'predictive-result__media' }}
             {%- else -%}
               <div class="predictive-result__media"></div>
             {%- endif -%}
