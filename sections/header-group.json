@@ -87,7 +87,8 @@
         "columns_biYGfU"
       ],
       "custom_css": [
-        ".cc-header--sticky .header.is-out {margin-bottom: 0px !important; transition: unset !important;}"
+        ".cc-header--sticky .header.is-out {margin-bottom: 0px !important; transition: unset !important;}",
+        ".cc-header--sticky .main-menu__disclosure {max-height: unset !important; transition: unset !important;}"
       ],
       "settings": {
         "enable_sticky": true,
