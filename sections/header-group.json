@@ -17,7 +17,7 @@
         "announcement-1": {
           "type": "announcement",
           "settings": {
-            "text": "<p>UP TO 80% OFF - NEW STYLES ADDED  <a href=\"https:\/\/www.hellbunny.com\/collections\/default-category-sale\" title=\"https:\/\/www.hellbunny.com\/collections\/default-category-sale\">Shop Now<\/a><\/p>"
+            "text": "<p>UP TO 80% OFF - NEW STYLES ADDED  <a href=\"https://www.hellbunny.com/collections/default-category-sale\" title=\"https://www.hellbunny.com/collections/default-category-sale\">Shop Now</a></p>"
           }
         }
       },
@@ -53,19 +53,19 @@
             "promo_text_color": "#ffffff",
             "promo_tint_color": "#000000",
             "promo_tint_opacity": 20,
-            "promo1_image": "shopify:\/\/shop_images\/DRESSES_BLOCK_74ced6e5-bbac-45b1-8a77-6d6adb663c0e.jpg",
+            "promo1_image": "shopify://shop_images/DRESSES_BLOCK_74ced6e5-bbac-45b1-8a77-6d6adb663c0e.jpg",
             "promo1_content": "",
-            "promo1_link_url": "shopify:\/\/products\/hlb40231p-adelina-dress",
+            "promo1_link_url": "shopify://products/hlb40231p-adelina-dress",
             "promo1_text_size": 16,
             "promo1_text_width": 100,
             "promo1_text_alignment": "justify-center items-center text-center",
-            "promo2_image": "shopify:\/\/shop_images\/SALE_NEW_BLOCK.jpg",
+            "promo2_image": "shopify://shop_images/SALE_NEW_BLOCK.jpg",
             "promo2_content": "",
             "promo2_link_url": "",
             "promo2_text_size": 16,
             "promo2_text_width": 100,
             "promo2_text_alignment": "justify-center items-center text-center",
-            "promo3_image": "shopify:\/\/shop_images\/GABRIELLA_TOP_-_IRVINE_SKIRT_3.jpg",
+            "promo3_image": "shopify://shop_images/GABRIELLA_TOP_-_IRVINE_SKIRT_3.jpg",
             "promo3_content": "",
             "promo3_link_url": "",
             "promo3_text_size": 16,
@@ -86,12 +86,15 @@
       "block_order": [
         "columns_biYGfU"
       ],
+      "custom_css": [
+        ".cc-header--sticky .header.is-out {margin-bottom: 0px !important; transition: unset !important;}"
+      ],
       "settings": {
         "enable_sticky": true,
         "mobile_menu_position": "burger-left",
         "logo_text": "Hell Bunny",
         "logo_type_scale": "2",
-        "logo": "shopify:\/\/shop_images\/Hell-Bunny.webp",
+        "logo": "shopify://shop_images/Hell-Bunny.webp",
         "logo_width": 170,
         "logo_h1": false,
         "logo_center": false,
@@ -148,7 +151,7 @@
           "settings": {
             "icon": "truck",
             "heading": "Free shipping",
-            "text": "<p>On all orders over $100<\/p>",
+            "text": "<p>On all orders over $100</p>",
             "link": ""
           }
         },
@@ -157,7 +160,7 @@
           "settings": {
             "icon": "price_tag",
             "heading": "Special offers",
-            "text": "<p>Regular sales and discounts<\/p>",
+            "text": "<p>Regular sales and discounts</p>",
             "link": ""
           }
         },
@@ -166,7 +169,7 @@
           "settings": {
             "icon": "return",
             "heading": "Easy returns",
-            "text": "<p>Hassle free returns policy<\/p>",
+            "text": "<p>Hassle free returns policy</p>",
             "link": ""
           }
         },
@@ -175,7 +178,7 @@
           "settings": {
             "icon": "chat_bubble",
             "heading": "Chat facility",
-            "text": "<p>Talk to a real person<\/p>",
+            "text": "<p>Talk to a real person</p>",
             "link": ""
           }
         }
