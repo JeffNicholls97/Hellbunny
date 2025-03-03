@@ -68,7 +68,7 @@ main-menu.main-menu.main-menu--left-mob {
     {% comment %} <div class="tw-block md:!tw-hidden">
       {% render 'nav-mobile' %}
     </div> {% endcomment %}
-    <div class="header__logo logo{% if section.settings.logo_center %} text-center{% endif %} flex js-closes-menu">
+    <div class="header__logo logo{% if section.settings.logo_center %} text-center{% endif %} flex js-closes-menu tw-ml-[21px] md:tw-ml-0">
       {%- if request.page_type == 'index' and section.settings.logo_h1 -%}
         <h1 class="logo__h1 m-0">
       {%- endif -%}

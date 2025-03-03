@@ -154,6 +154,10 @@
   margin-top: 0.75rem
 }
 
+.tw-ml-\[21px\] {
+  margin-left: 21px
+}
+
 .\!tw-block {
   display: block !important
 }
@@ -373,6 +377,10 @@
 }
 
 @media (min-width: 768px) {
+  .md\:tw-ml-0 {
+    margin-left: 0px
+  }
+
   .md\:tw-block {
     display: block
   }
