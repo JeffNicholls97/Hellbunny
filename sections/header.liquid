@@ -65,7 +65,7 @@ main-menu.main-menu.main-menu--left-mob {
   {%- if search_is_minimised -%} data-is-search-minimised="true"{%- endif -%}
   style="--header-transition-speed: 300ms">
   <header class="header__grid{% if section.settings.logo_center %} header__grid--centered-logo{% else %} header__grid--left-logo{% endif %} container flex flex-wrap items-center">
-    <a class="header__icon tw-ml-[40px] {{ search_button_class }} js-show-search" href="{{ routes.search_url }}" aria-controls="search-bar">
+    <a class="header__icon tw-ml-[40px] tw-block md:tw-hidden {{ search_button_class }} js-show-search" href="{{ routes.search_url }}" aria-controls="search-bar">
             {% render 'icon-search' %}
             <span class="visually-hidden">{{ 'general.icon_labels.search' | t }}</span>
           </a>
