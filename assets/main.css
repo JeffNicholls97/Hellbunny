@@ -2645,8 +2645,8 @@ td {
     flex: 1 1 auto;
   }
   .main-products-grid[data-layout=list] .card .card__info-container {
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: start;
   }
   .card--article.card--featured {
     flex-direction: row;
