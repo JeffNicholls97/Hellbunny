@@ -98,6 +98,7 @@ if (!customElements.get('gallery-zoom')) {
         this.zoomContainer.addEventListener('mousemove', this.trackInputMovement.bind(this));
         this.zoomContainer.addEventListener('mouseup', this.onMouseUp.bind(this));
         this.zoomContainer.addEventListener('mouseleave', this.onMouseUp.bind(this)); // Handle mouse leaving the container
+        this.zoomContainer.addEventListener('dragstart', (evt) => evt.preventDefault()); // Prevent default drag behavior
       }
 
       document.documentElement.classList.add('gallery-zoom-open');
