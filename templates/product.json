@@ -211,7 +211,7 @@
         "enable_video_looping": true,
         "enable_zoom": true,
         "zoom_mode": "lightbox",
-        "enable_lightbox_mobile": false,
+        "enable_lightbox_mobile": true,
         "hover_zoom": "large",
         "stacked_scroll": "always",
         "underline_active": true,
