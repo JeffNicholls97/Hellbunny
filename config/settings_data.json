@@ -468,7 +468,11 @@
     "custom_css": [
       "a.main-nav__item {text-transform: uppercase; letter-spacing: 3px; margin: 0px 0px 0px 20px;}",
       ".main-menu {--nav-line-color: rgba(var(--nav-child-text-color) / 0.2); font-family: var(--navigation-font-family); font-style: var(--navigation-font-style); font-weight: var(--navigation-font-weight); background: #f6f6f6 !important; padding: 5px; border-radius: 6px 6px 0px 0px;}",
-      ".header__icon {padding: 11px; background: #f6f6f6; border-radius: 6px;}"
+      ".header__icon {padding: 11px; background: #f6f6f6; border-radius: 6px;}",
+      "/* Container to simulate the slider effect */[data-sizes] {position: relative; display: flex; background: #e5e7eb; /* Light grey background */ border-radius: 50px; padding: 5px; width: 100%; max-width: 300px; /* Adjust based on your design */ justify-content: space-between;}",
+      "/* Style all buttons */.variant-size-selector {flex: 1; padding: 10px 20px; border: none; background: transparent; color: #000; font-weight: bold; cursor: pointer; text-align: center; border-radius: 50px; position: relative; transition: all 0.3s ease-in-out; opacity: 0.5; z-index: 2; /* Ensure text is above slider */}",
+      "/* Active button */.variant-size-selector.active {background: #000; color: #fff; opacity: 1;}",
+      "/* Slider Effect - Positioned dynamically */.size-slider {position: absolute; top: 5px; left: 0; width: 33.33%; /* Adjust based on number of buttons */ height: calc(100% - 10px); background: #000; border-radius: 50px; transition: all 0.3s ease-in-out; z-index: 1;}"
     ]
   }
 }

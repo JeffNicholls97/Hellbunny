@@ -158,6 +158,10 @@
   display: block
 }
 
+.tw-inline-block {
+  display: inline-block
+}
+
 .tw-flex {
   display: flex
 }
