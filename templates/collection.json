@@ -1,1 +1,51 @@
-{"sections":{"collection-banner":{"type":"main-collection-banner","settings":{"show_collection_title":true,"show_product_count":true,"show_collection_description":true,"text_align":"text-start","collection_image":"none","use_product_image":false,"text_width":"wide","color_scheme":"default"}},"collection-products":{"type":"main-collection-products","settings":{"products_per_page":32,"card_size_mobile":"small","card_size":"large","show_layout_toggle":true,"enable_filtering":true,"filters_open_lg":false,"stick_on_scroll":true,"show_filter_counts":false,"expand_filters":false,"max_filter_options":7,"enable_sorting":true,"show_feat_sort_opt":true,"sort_first":true}}},"order":["collection-banner","collection-products"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "collection-banner": {
+      "type": "main-collection-banner",
+      "custom_css": [
+        ".collection-banner__content-wide {width: 80%; margin: 0 auto; text-align: center;}"
+      ],
+      "settings": {
+        "show_collection_title": true,
+        "show_product_count": true,
+        "show_collection_description": true,
+        "text_align": "text-start",
+        "collection_image": "none",
+        "use_product_image": false,
+        "text_width": "wide",
+        "color_scheme": "default"
+      }
+    },
+    "collection-products": {
+      "type": "main-collection-products",
+      "settings": {
+        "products_per_page": 32,
+        "card_size_mobile": "small",
+        "card_size": "large",
+        "show_layout_toggle": true,
+        "enable_filtering": true,
+        "filters_open_lg": false,
+        "stick_on_scroll": true,
+        "show_filter_counts": false,
+        "expand_filters": false,
+        "max_filter_options": 7,
+        "enable_sorting": true,
+        "show_feat_sort_opt": true,
+        "sort_first": true
+      }
+    }
+  },
+  "order": [
+    "collection-banner",
+    "collection-products"
+  ]
+}
