@@ -18,7 +18,7 @@
         "show_collection_title": true,
         "show_product_count": true,
         "show_collection_description": true,
-        "text_align": "text-start",
+        "text_align": "items-center text-center",
         "collection_image": "none",
         "use_product_image": false,
         "text_width": "wide",
