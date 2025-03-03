@@ -384,7 +384,7 @@
     "card_atc_mobile": "text_button_bottom",
     "card_atc_desktop": "text_button_hover",
     "show_dividers": false,
-    "card_contain": true,
+    "card_contain": false,
     "card_bg_color": "#ffffff",
     "card_text_color": "#26262b",
     "card_border_color": "#f2f2f2",
@@ -467,14 +467,7 @@
     "custom_css": [
       "a.main-nav__item {text-transform: uppercase; letter-spacing: 3px; margin: 0px 0px 0px 20px;}",
       ".main-menu {--nav-line-color: rgba(var(--nav-child-text-color) / 0.2); font-family: var(--navigation-font-family); font-style: var(--navigation-font-style); font-weight: var(--navigation-font-weight); background: #f6f6f6 !important; padding: 5px; border-radius: 6px 6px 0px 0px;}",
-      ".header__icon {padding: 11px; background: #f6f6f6; border-radius: 6px;}",
-      "/* Force a three-column grid for the products panel */.predictive-search__list {display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 1rem !important;}",
-      "/* Force larger images in the products panel */#psearch-products .predictive-result__media img {width: 448px !important; height: auto !important; max-width: none !important;}",
-      "/* Force the suggestions list to stack items vertically */.predictive-result__list-suggestions {display: block !important;}",
-      "/* Ensure each suggestion item takes full width and stacks */.predictive-result__list-suggestions li {display: block !important; width: 100%; margin-bottom: 0.5rem;}",
-      "/* Ensure the suggestion links are block-level */.predictive-result--suggestion {display: block !important;}",
-      "/* Make the entire link layout stack vertically (image on top, title below) */a.predictive-result.flex.items-start.focus-inset.js-search-link {flex-direction: column !important; align-items: center;}",
-      "/* Enlarge the image to 4× its original size */a.predictive-result.flex.items-start.focus-inset.js-search-link .predictive-result__media img {width: 448px !important; /* 112px × 4 */ height: auto !important; /* maintain aspect ratio */}"
+      ".header__icon {padding: 11px; background: #f6f6f6; border-radius: 6px;}"
     ]
   }
 }
