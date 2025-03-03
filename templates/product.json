@@ -267,6 +267,7 @@
         },
         "payment-methods": {
           "type": "payment-methods",
+          "disabled": true,
           "settings": {
             "title": "Payment & Security",
             "title1": "Payment methods",
