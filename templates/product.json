@@ -134,9 +134,9 @@
         "collapsible_content_aLhCAe": {
           "type": "collapsible-content",
           "settings": {
-            "heading": "Care information",
-            "icon": "heart",
-            "text": "<p>Display general product information or specific product information using metafields.</p>",
+            "heading": "Shipping Information",
+            "icon": "truck",
+            "text": "<p>{{ block.settings.page.metafields.custom.delivery_and_returns | metafield_tag }}</p>",
             "page": "",
             "open": false
           }

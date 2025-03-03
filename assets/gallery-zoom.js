@@ -73,6 +73,7 @@ if (!customElements.get('gallery-zoom')) {
           lastTouchX: 0,
           lastTouchY: 0
         };
+        this.isDragging = false; // Add a flag to track dragging state
 
         // events
         this.querySelectorAll('.gallery-zoom__thumb').forEach((el) => {
@@ -313,14 +314,6 @@ if (!customElements.get('gallery-zoom')) {
     }
 
     /**
-     * Call to stop tracking touch events.
-     */
-    stopTrackingTouch() {
-      this.pinchTracking.isTracking = false;
-      this.touchTracking.isTracking = false;
-    }
-
-    /**
      * Handle mouse and touch events.
      * @param {object} evt - Event object.
      */
@@ -364,6 +357,7 @@ if (!customElements.get('gallery-zoom')) {
           this.touchTracking.isTracking = true;
           this.touchTracking.lastTouchX = evt.clientX;
           this.touchTracking.lastTouchY = evt.clientY;
+          this.isDragging = true; // Set dragging flag
         } else if (this.touchTracking.isTracking && evt.buttons === 1) {
           this.alterCurrentPanBy(
             (evt.clientX - this.touchTracking.lastTouchX) * this.touchPanModifier,
@@ -405,18 +399,22 @@ if (!customElements.get('gallery-zoom')) {
     onZoomContainerClick(evt) {
       evt.preventDefault();
 
-      if (this.isZoomedIn) {
-        this.setCurrentTransform(0, 0, 0.4);
-        this.isZoomedIn = false;
-      } else {
-        // Calculate scale needed to fit container width
-        const fullWidthScale = this.clientWidth / this.currentZoomImage.naturalWidth;
-        // First set the zoom level
-        this.setCurrentTransform(0, 0, fullWidthScale);
-        // Then calculate and apply the pan based on click position
-        this.panZoomImageFromCoordinate(evt.clientX, evt.clientY);
-        this.isZoomedIn = true;
+      // Only toggle zoom if not dragging
+      if (!this.isDragging) {
+        if (this.isZoomedIn) {
+          this.setCurrentTransform(0, 0, 0.4);
+          this.isZoomedIn = false;
+        } else {
+          // Calculate scale needed to fit container width
+          const fullWidthScale = this.clientWidth / this.currentZoomImage.naturalWidth;
+          // First set the zoom level
+          this.setCurrentTransform(0, 0, fullWidthScale);
+          // Then calculate and apply the pan based on click position
+          this.panZoomImageFromCoordinate(evt.clientX, evt.clientY);
+          this.isZoomedIn = true;
+        }
       }
+      this.isDragging = false; // Reset dragging flag after click handling
     }
 
     /**
@@ -466,6 +464,15 @@ if (!customElements.get('gallery-zoom')) {
       this.currentTransform.panY = panY;
       this.currentTransform.zoom = zoom;
       this.updateImagePosition();
+    }
+
+    /**
+     * Call to stop tracking touch events.
+     */
+    stopTrackingTouch() {
+      this.pinchTracking.isTracking = false;
+      this.touchTracking.isTracking = false;
+      this.isDragging = false; // Reset dragging flag when touch ends
     }
   }
 
