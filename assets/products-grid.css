@@ -30,7 +30,7 @@
 .main-products-grid[data-layout=list] .grid {
   grid-template-columns: repeat(2,minmax(0,1fr));
 }
-.main-products-grid:not(.main-products-grid--contained)[data-layout=list] .grid {
+/* .main-products-grid:not(.main-products-grid--contained)[data-layout=list] .grid {
   row-gap: 0;
 }
 .main-products-grid:not(.main-products-grid--contained)[data-layout=list] .grid > li:not(.slider__item):not(:has(.card--highlight-product)):not(.promo-item--grid_list) {
@@ -50,7 +50,7 @@
 }
 .main-products-grid:not(.main-products-grid--contained)[data-layout=list][data-compare=false] .grid > li:not(.slider__item):has(.card--highlight-product) {
   padding-bottom: calc(5 * var(--space-unit));
-}
+} */
 
 .products-toolbar__filter-btn circle {
   transition: transform 0.3s, color 0.3s;
