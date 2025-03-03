@@ -369,6 +369,10 @@
 }
 
 @media (min-width: 768px) {
+  .md\:tw-hidden {
+    display: none
+  }
+
   .md\:tw-w-\[400px\] {
     width: 400px
   }
