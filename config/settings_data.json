@@ -381,7 +381,7 @@
     "card_show_subtitle": true,
     "card_show_rating": true,
     "card_show_inventory": false,
-    "card_atc_mobile": "text_button_bottom",
+    "card_atc_mobile": "icon",
     "card_atc_desktop": "text_button_hover",
     "show_dividers": false,
     "card_contain": false,
