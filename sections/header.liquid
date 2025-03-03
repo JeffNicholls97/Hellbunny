@@ -117,15 +117,6 @@ main-menu.main-menu.main-menu--left-mob {
             </span>
             <span class="visually-hidden">{{ 'general.icon_labels.search' | t }}</span>
           </a>
-          <a class="header__icon header__icon--search-left absolute hidden md:block js-show-search-left" href="{{ routes.search_url }}" aria-controls="search-bar">
-            <span class="header__icon--search-left-search">
-              {% render 'icon-search' %}
-            </span>
-            <span class="header__icon--search-left-close">
-              {% render 'icon-close' %}
-            </span>
-            <span class="visually-hidden">{{ 'general.icon_labels.search' | t }}</span>
-          </a>
         {%- endif -%}
 
         <div class="tw-h-0 md:tw-h-auto">
@@ -149,10 +140,6 @@ main-menu.main-menu.main-menu--left-mob {
               assign search_button_class = "hidden md:block"
             endif
           -%}
-          <a class="header__icon {{ search_button_class }} js-show-search" href="{{ routes.search_url }}" aria-controls="search-bar">
-            {% render 'icon-search' %}
-            <span class="visually-hidden">{{ 'general.icon_labels.search' | t }}</span>
-          </a>
         {%- endunless -%}
       {%- endif -%}
       {%- if shop.customer_accounts_enabled -%}
