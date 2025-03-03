@@ -99,7 +99,6 @@
         },
         "message-1": {
           "type": "message",
-          "disabled": true,
           "settings": {
             "icon": "clock",
             "title": "<p><strong>Popular right now<br/></strong>Lots of people have looked at this recently</p>",
@@ -112,7 +111,6 @@
         },
         "message-2": {
           "type": "message",
-          "disabled": true,
           "settings": {
             "icon": "price_tag",
             "title": "<p><strong>Selling fast!<br/></strong>Grab yours while you can</p>",
@@ -128,7 +126,7 @@
           "settings": {
             "heading": "Description",
             "icon": "question_mark",
-            "text": "{{ product.description }}",
+            "text": "<p>{{ product.description }}</p>",
             "page": "",
             "open": false
           }
@@ -136,9 +134,9 @@
         "collapsible_content_aLhCAe": {
           "type": "collapsible-content",
           "settings": {
-            "heading": "Shipping Information",
-            "icon": "truck",
-            "text": "<p>Orders placed before 12 pm Monday - Thursday will be posted with our Next Day Shipping service. If you place an order after 12 pm on Thursdays or over a weekend, your order will be sent on the next working day, for instance, Saturday orders will be posted on Monday. To read in full, please click <a href=\"https://www.hellbunny.com/pages/faqs-delivery\" target=\"_blank\" title=\"Delivery\"><span style=\"text-decoration:underline\">here.</span></a></p>",
+            "heading": "Care information",
+            "icon": "heart",
+            "text": "<p>Display general product information or specific product information using metafields.</p>",
             "page": "",
             "open": false
           }
@@ -146,9 +144,9 @@
         "collapsible-content-2": {
           "type": "collapsible-content",
           "settings": {
-            "heading": "Sizing",
-            "icon": "ruler",
-            "text": "<p>For more information on sizing, please visit the sizing guide <a href=\"https://www.hellbunny.com/pages/size-guide\" title=\"Size Guide\"><span style=\"text-decoration:underline\">here</span></a></p>",
+            "heading": "Delivery and Shipping",
+            "icon": "truck",
+            "text": "<p>Add some general information about your delivery and shipping policies.</p>",
             "page": "",
             "open": false
           }
@@ -167,14 +165,15 @@
         },
         "message-3": {
           "type": "message",
+          "disabled": true,
           "settings": {
             "icon": "none",
-            "title": "<p>Need help? Speak to us via live chat between 9am-5pm GMT Mon-Fri and 9am-5pm GMT on weekends.</p>",
+            "title": "<p>Add a stand out message for your customers</p>",
             "close": "once",
             "show_over_media": false,
             "visibility_duration": 7,
-            "bg_color": "#f4f4f4",
-            "text_color": "#2a2b2a"
+            "bg_color": "#e4edfa",
+            "text_color": "#1a66d2"
           }
         }
       },
@@ -268,7 +267,6 @@
         },
         "payment-methods": {
           "type": "payment-methods",
-          "disabled": true,
           "settings": {
             "title": "Payment & Security",
             "title1": "Payment methods",

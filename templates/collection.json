@@ -11,14 +11,11 @@
   "sections": {
     "collection-banner": {
       "type": "main-collection-banner",
-      "custom_css": [
-        ".collection-banner__content-wide {width: 80%; margin: 0 auto; text-align: center;}"
-      ],
       "settings": {
         "show_collection_title": true,
         "show_product_count": true,
         "show_collection_description": true,
-        "text_align": "items-center text-center",
+        "text_align": "text-start",
         "collection_image": "none",
         "use_product_image": false,
         "text_width": "wide",
