@@ -482,7 +482,7 @@
       ".footer__payment {display: flex; flex-direction: column; align-items: center;}",
       ".payment-icons {display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;}",
       ".md\\:tw-w-\\[400px\\] {width: 405px;}",
-      ".gallery-zoom__zoom-image {transform: scale(0.8) !important;}"
+      ".gallery-zoom__zoom-image {transform: scale(0.7) !important;}"
     ]
   }
 }
