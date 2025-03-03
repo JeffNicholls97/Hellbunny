@@ -293,13 +293,11 @@ if (!customElements.get('gallery-zoom')) {
       if (evt.buttons === 1) {
         const deltaX = evt.clientX - this.initialMouseX;
         const deltaY = evt.clientY - this.initialMouseY;
-        console.log('Delta X:', deltaX, 'Delta Y:', deltaY);
 
         // Check if movement exceeds threshold
         if (!this.isDragging && (Math.abs(deltaX) > this.dragThreshold || Math.abs(deltaY) > this.dragThreshold)) {
           this.isDragging = true;
           this.dragged = true;
-          console.log('Dragging started');
         }
 
         if (this.isDragging) {
@@ -393,13 +391,11 @@ if (!customElements.get('gallery-zoom')) {
         this.isDragging = false;
         this.dragged = false; // Reset dragged flag
         evt.preventDefault();
-        console.log('Mouse Down:', evt.clientX, evt.clientY);
       }
     }
 
     onMouseUp(evt) {
       if (this.isDragging) {
-        console.log('Mouse Up - Dragging:', this.isDragging);
         this.isDragging = false;
       }
     }
