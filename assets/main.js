@@ -847,7 +847,7 @@ class StoreHeader extends HTMLElement {
   constructor() {
     super();
     this.menu = this.querySelector('.main-menu__content');
-    this.searchToggle = this.querySelector('.js-show-search');
+    this.searchToggle = this.querySelectorAll('.js-show-search');
     this.searchToggleLeft = this.querySelector('.js-show-search-left');
     this.mobNavToggle = this.querySelector('.main-menu__toggle');
     this.shakeyCartIcon = this.querySelector('.header__icon--cart-shake');
