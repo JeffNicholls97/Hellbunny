@@ -158,6 +158,7 @@
   .mob\:card__quick-add--below {
     position: static;
     padding: calc(4 * var(--space-unit)) 0 0 0;
+    display:none;
   }
   .mob\:card__quick-add--below .btn {
     padding-right: 10px;
