@@ -42,6 +42,7 @@
       "blocks": {
         "columns_biYGfU": {
           "type": "columns",
+          "disabled": true,
           "settings": {
             "title": "New In",
             "collection_images": "large",
@@ -102,7 +103,7 @@
         "enable_search": true,
         "minimise_search_mobile": true,
         "minimise_search_desktop": true,
-        "menu": "main-menu",
+        "menu": "new-site-main-menu",
         "menu_center": true,
         "repeat_links": true,
         "menu_featured_link": "Sale",

@@ -1,0 +1,119 @@
+a.main-nav__item {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 0px 0px 0px 20px;
+}
+.main-menu {
+  --nav-line-color: rgba(var(--nav-child-text-color) / 0.2);
+  font-family: var(--navigation-font-family);
+  font-style: var(--navigation-font-style);
+  font-weight: var(--navigation-font-weight);
+  background: #f6f6f6 !important;
+  padding: 5px;
+  border-radius: 6px 6px 0px 0px;
+}
+.header__icon {
+  padding: 11px;
+  background: #f6f6f6;
+  border-radius: 6px;
+}
+.predictive-search__list {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1rem !important;
+}
+
+#psearch-products .predictive-result__media img {
+  width: 448px !important;
+  height: auto !important;
+  max-width: none !important;
+}
+
+.predictive-result__list-suggestions {
+  display: block !important;
+}
+
+.predictive-result__list-suggestions li {
+  display: block !important;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.predictive-result--suggestion {
+  display: block !important;
+}
+a.predictive-result.flex.items-start.focus-inset.js-search-link {
+  flex-direction: column !important;
+  align-items: center;
+}
+a.predictive-result.flex.items-start.focus-inset.js-search-link
+  .predictive-result__media
+  img {
+  width: 448px !important;
+  height: auto !important;
+}
+
+.footer__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer__payment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.payment-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+[data-sizes] {
+  position: relative;
+  display: flex;
+  background: #e5e7eb;
+  border-radius: 50px;
+  padding: 5px;
+  width: 100%;
+  max-width: 300px;
+  justify-content: space-between;
+}
+
+.variant-size-selector {
+  flex: 1;
+  padding: 10px 20px;
+  border: none;
+  background: transparent;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 50px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.5;
+  z-index: 2;
+}
+
+.variant-size-selector.active {
+  background: #000;
+  color: #fff;
+  opacity: 1;
+}
+
+.size-slider {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 33.33%;
+  height: calc(100% - 10px);
+  background: #000;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
