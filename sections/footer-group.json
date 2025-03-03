@@ -18,8 +18,9 @@
           "type": "item",
           "settings": {
             "icon": "chat_bubble",
-            "heading": "Visit our support center",
-            "text": "<p>Expert help & advice<\/p>",
+            "custom_icon": "shopify://shop_images/united-kingdom_1.png",
+            "heading": "Designed in the UK",
+            "text": "",
             "link": ""
           }
         },
@@ -27,8 +28,8 @@
           "type": "item",
           "settings": {
             "icon": "box",
-            "heading": "Check your order status",
-            "text": "<p>Updates & tracking<\/p>",
+            "heading": "Buy Now, Pay Later",
+            "text": "<p>with Klarna</p>",
             "link": ""
           }
         },
@@ -36,8 +37,8 @@
           "type": "item",
           "settings": {
             "icon": "return",
-            "heading": "Returns & exchanges",
-            "text": "<p>All you need to know<\/p>",
+            "heading": "Free Delivery on",
+            "text": "<p>all orders over £65</p>",
             "link": ""
           }
         },
@@ -45,8 +46,8 @@
           "type": "item",
           "settings": {
             "icon": "dollar_sign",
-            "heading": "Price-match guarantee",
-            "text": "<p>Our promise to you<\/p>",
+            "heading": "Sizes from",
+            "text": "<p>XS to 6XL</p>",
             "link": ""
           }
         }
@@ -78,7 +79,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Hell-Bunny.webp",
+            "image": "shopify://shop_images/Hell-Bunny.webp",
             "image_width": 150,
             "heading": "",
             "text": "",
