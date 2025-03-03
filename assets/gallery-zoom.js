@@ -466,7 +466,7 @@ if (!customElements.get('gallery-zoom')) {
       if (this.isZoomedIn) {
         this.initialMouseX = evt.clientX;
         this.initialMouseY = evt.clientY;
-        this.isDragging = true; // Reset dragging flag
+        this.isDragging = false; // Reset dragging flag
         evt.preventDefault(); // Prevent default behavior
         console.log('Mouse Down:', evt.clientX, evt.clientY); // Log mouse down position
       }
