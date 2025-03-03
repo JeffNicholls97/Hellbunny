@@ -891,6 +891,7 @@ class StoreHeader extends HTMLElement {
     if (this.dataset.isSearchMinimised) {
       if (this.searchToggle) {
         this.searchToggle.addEventListener('click', this.handleSearchToggleClick.bind(this));
+        this.searchToggleMobile.addEventListener('click', this.handleSearchToggleClick.bind(this));
       }
 
       if (this.searchToggleLeft) {
