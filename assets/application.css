@@ -114,6 +114,10 @@
   position: absolute
 }
 
+.\!tw-absolute {
+  position: absolute !important
+}
+
 .tw-relative {
   position: relative
 }
