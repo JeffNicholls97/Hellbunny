@@ -393,10 +393,7 @@ data-default-image="{{ product.featured_image | img_url: '533x' }}"
 
       {%- if settings.enable_quick_add and disable_quickbuy != true -%}
         <div class="card__quick-add
-          {% if settings.card_atc_mobile == "text_button_bottom" %}mob:card__quick-add--below{% endif %}
-          {% if settings.card_atc_mobile == "icon" %}mob:card__quick-add--icon{% endif %}
-          {% if settings.card_atc_desktop == "text_button_bottom" %}desktop:card__quick-add--below{% endif %}
-          {% if settings.card_atc_desktop == "icon" %}desktop:card__quick-add--icon{% endif %}
+
         ">
           {%- assign product_form_id = 'quick-add-' | append: section_id | append: product.id -%}
 
