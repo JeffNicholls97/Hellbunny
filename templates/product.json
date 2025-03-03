@@ -99,6 +99,7 @@
         },
         "message-1": {
           "type": "message",
+          "disabled": true,
           "settings": {
             "icon": "clock",
             "title": "<p><strong>Popular right now<br/></strong>Lots of people have looked at this recently</p>",
@@ -111,6 +112,7 @@
         },
         "message-2": {
           "type": "message",
+          "disabled": true,
           "settings": {
             "icon": "price_tag",
             "title": "<p><strong>Selling fast!<br/></strong>Grab yours while you can</p>",
