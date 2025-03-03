@@ -2637,8 +2637,8 @@ td {
     padding: calc(4 * var(--space-unit));
   }
   .main-products-grid[data-layout=list] .card .card__media {
-    flex: 0 0 calc(33.333333% - calc(8 * var(--space-unit)));
-    max-width: 245px;
+    flex: 1;
+    max-width: 100%;
     margin-inline-end: calc(10 * var(--space-unit));
   }
   .main-products-grid[data-layout=list] .card .card__info {
