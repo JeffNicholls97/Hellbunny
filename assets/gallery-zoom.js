@@ -74,6 +74,7 @@ if (!customElements.get('gallery-zoom')) {
           lastTouchY: 0
         };
         this.isDragging = false; // Add a flag to track dragging state
+        this.dragThreshold = 5; // Set a threshold for drag detection
 
         // events
         this.querySelectorAll('.gallery-zoom__thumb').forEach((el) => {
@@ -354,17 +355,27 @@ if (!customElements.get('gallery-zoom')) {
       } else {
         // Change mousemove to implement drag-to-pan
         if (!this.touchTracking.isTracking && evt.buttons === 1) {
-          this.touchTracking.isTracking = true;
-          this.touchTracking.lastTouchX = evt.clientX;
-          this.touchTracking.lastTouchY = evt.clientY;
-          this.isDragging = true; // Set dragging flag
-        } else if (this.touchTracking.isTracking && evt.buttons === 1) {
-          this.alterCurrentPanBy(
-            (evt.clientX - this.touchTracking.lastTouchX) * this.touchPanModifier,
-            (evt.clientY - this.touchTracking.lastTouchY) * this.touchPanModifier
-          );
-          this.touchTracking.lastTouchX = evt.clientX;
-          this.touchTracking.lastTouchY = evt.clientY;
+          if (!this.isDragging) {
+            this.touchTracking.lastTouchX = evt.clientX;
+            this.touchTracking.lastTouchY = evt.clientY;
+            this.isDragging = false; // Reset dragging flag
+          }
+          const deltaX = evt.clientX - this.touchTracking.lastTouchX;
+          const deltaY = evt.clientY - this.touchTracking.lastTouchY;
+
+          // Check if the movement exceeds the drag threshold
+          if (Math.abs(deltaX) > this.dragThreshold || Math.abs(deltaY) > this.dragThreshold) {
+            this.isDragging = true; // Set dragging flag
+          }
+
+          if (this.isDragging) {
+            this.touchTracking.lastTouchX = evt.clientX;
+            this.touchTracking.lastTouchY = evt.clientY;
+            this.alterCurrentPanBy(
+              deltaX * this.touchPanModifier,
+              deltaY * this.touchPanModifier
+            );
+          }
         } else {
           this.touchTracking.isTracking = false;
         }
