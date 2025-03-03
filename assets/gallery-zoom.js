@@ -75,6 +75,8 @@ if (!customElements.get('gallery-zoom')) {
         };
         this.isDragging = false; // Add a flag to track dragging state
         this.dragThreshold = 5; // Set a threshold for drag detection
+        this.initialMouseX = 0; // Track initial mouse X position
+        this.initialMouseY = 0; // Track initial mouse Y position
 
         // events
         this.querySelectorAll('.gallery-zoom__thumb').forEach((el) => {
@@ -356,12 +358,12 @@ if (!customElements.get('gallery-zoom')) {
         // Change mousemove to implement drag-to-pan
         if (!this.touchTracking.isTracking && evt.buttons === 1) {
           if (!this.isDragging) {
-            this.touchTracking.lastTouchX = evt.clientX;
-            this.touchTracking.lastTouchY = evt.clientY;
+            this.initialMouseX = evt.clientX; // Store initial mouse position
+            this.initialMouseY = evt.clientY; // Store initial mouse position
             this.isDragging = false; // Reset dragging flag
           }
-          const deltaX = evt.clientX - this.touchTracking.lastTouchX;
-          const deltaY = evt.clientY - this.touchTracking.lastTouchY;
+          const deltaX = evt.clientX - this.initialMouseX;
+          const deltaY = evt.clientY - this.initialMouseY;
 
           // Check if the movement exceeds the drag threshold
           if (Math.abs(deltaX) > this.dragThreshold || Math.abs(deltaY) > this.dragThreshold) {
@@ -369,12 +371,12 @@ if (!customElements.get('gallery-zoom')) {
           }
 
           if (this.isDragging) {
-            this.touchTracking.lastTouchX = evt.clientX;
-            this.touchTracking.lastTouchY = evt.clientY;
             this.alterCurrentPanBy(
               deltaX * this.touchPanModifier,
               deltaY * this.touchPanModifier
             );
+            this.initialMouseX = evt.clientX; // Update initial mouse position
+            this.initialMouseY = evt.clientY; // Update initial mouse position
           }
         } else {
           this.touchTracking.isTracking = false;

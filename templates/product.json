@@ -126,9 +126,9 @@
           "settings": {
             "heading": "Description",
             "icon": "question_mark",
-            "text": "<p>{{ product.description }}</p>",
+            "text": "{{ product.description }}",
             "page": "",
-            "open": false
+            "open": true
           }
         },
         "collapsible_content_aLhCAe": {
@@ -144,9 +144,9 @@
         "collapsible-content-2": {
           "type": "collapsible-content",
           "settings": {
-            "heading": "Delivery and Shipping",
-            "icon": "truck",
-            "text": "<p>Add some general information about your delivery and shipping policies.</p>",
+            "heading": "Sizing",
+            "icon": "ruler",
+            "text": "<p>For more information on sizing, please visit the sizing guide <a href=\"https://www.hellbunny.com/pages/size-guide\" title=\"Size Guide\"><span style=\"text-decoration:underline\">here</span></a></p>",
             "page": "",
             "open": false
           }
