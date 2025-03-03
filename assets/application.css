@@ -369,6 +369,18 @@
 }
 
 @media (min-width: 768px) {
+  .md\:tw-block {
+    display: block
+  }
+
+  .md\:tw-hidden {
+    display: none
+  }
+
+  .md\:\!tw-hidden {
+    display: none !important
+  }
+
   .md\:tw-w-\[400px\] {
     width: 400px
   }
