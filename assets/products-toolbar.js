@@ -121,6 +121,7 @@ if (!customElements.get('products-toolbar')) {
      * @param {string} layout - 'grid' or 'list' - the layout to change to.
      */
     handleLayoutChange(evt, layout) {
+      console.log('working')
       this.productsGrid.dataset.layout = layout || evt.target.value;
       if (!layout) theme.storageUtil.set('products-layout', evt.target.value);
     }
