@@ -2457,7 +2457,7 @@ td {
 }
 .main-products-grid[data-layout=list] .card .card__info-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
 }
 .main-products-grid[data-layout=list] .card .card__info-inner {
