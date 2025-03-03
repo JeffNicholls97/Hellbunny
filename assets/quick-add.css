@@ -308,11 +308,11 @@
 }
 @media (min-width: 1280px) {
   .main-products-grid[data-layout=list] .card__quick-add {
-    padding-inline-start: 100px;
+    padding-inline-start: 0px;
   }
 }
 @media (min-width: 1536px) {
   .main-products-grid[data-layout=list] .card__quick-add {
-    padding-inline-start: 150px;
+    padding-inline-start: 0px;
   }
 }
