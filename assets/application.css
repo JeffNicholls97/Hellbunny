@@ -122,16 +122,12 @@
   inset: 0px
 }
 
-.tw-left-0 {
-  left: 0px
+.tw-right-0 {
+  right: 0px
 }
 
 .tw-top-0 {
   top: 0px
-}
-
-.tw-right-0 {
-  right: 0px
 }
 
 .tw-z-50 {
@@ -142,16 +138,12 @@
   margin-bottom: 5rem
 }
 
-.tw-mt-3 {
-  margin-top: 0.75rem
-}
-
 .tw-mr-5 {
   margin-right: 1.25rem
 }
 
-.tw-block {
-  display: block
+.tw-mt-3 {
+  margin-top: 0.75rem
 }
 
 .\!tw-block {
@@ -162,12 +154,12 @@
   display: flex
 }
 
-.tw-hidden {
-  display: none
-}
-
 .\!tw-hidden {
   display: none !important
+}
+
+.tw-hidden {
+  display: none
 }
 
 .tw-h-full {
@@ -186,29 +178,16 @@
   max-height: 10em
 }
 
-.tw-w-\[400px\] {
-  width: 400px
+.tw-w-\[300px\] {
+  width: 300px
 }
 
 .tw-w-full {
   width: 100%
 }
 
-.tw-w-3\/4 {
-  width: 75%
-}
-
-.tw-w-\[300px\] {
-  width: 300px
-}
-
 .tw-max-w-full {
   max-width: 100%
-}
-
-.tw--translate-x-full {
-  --tw-translate-x: -100%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
 
 .tw-translate-x-0 {
