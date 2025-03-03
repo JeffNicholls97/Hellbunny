@@ -69,9 +69,9 @@ main-menu.main-menu.main-menu--left-mob {
             {% render 'icon-search' %}
             <span class="visually-hidden">{{ 'general.icon_labels.search' | t }}</span>
           </a>
-    <div class="tw-block md:!tw-hidden">
+    {% comment %} <div class="tw-block md:!tw-hidden">
       {% render 'nav-mobile' %}
-    </div>
+    </div> {% endcomment %}
     <div class="header__logo logo{% if section.settings.logo_center %} text-center{% endif %} flex js-closes-menu">
       {%- if request.page_type == 'index' and section.settings.logo_h1 -%}
         <h1 class="logo__h1 m-0">
