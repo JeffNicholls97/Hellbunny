@@ -328,22 +328,27 @@ if (!customElements.get('gallery-zoom')) {
      */
     trackInputMovement(evt) {
       if (!this.isZoomedIn) return; // Only handle events when zoomed in
-      evt.preventDefault();
+      evt.preventDefault(); // Prevent default behavior
 
-      const deltaX = evt.clientX - this.initialMouseX;
-      const deltaY = evt.clientY - this.initialMouseY;
+      if (evt.buttons === 1) { // Check if the left mouse button is pressed
+        const deltaX = evt.clientX - this.initialMouseX;
+        const deltaY = evt.clientY - this.initialMouseY;
 
-      // Check if the movement exceeds the drag threshold
-      if (Math.abs(deltaX) > this.dragThreshold || Math.abs(deltaY) > this.dragThreshold) {
-        this.isDragging = true; // Set dragging flag
-      }
+        // Check if the movement exceeds the drag threshold
+        if (Math.abs(deltaX) > this.dragThreshold || Math.abs(deltaY) > this.dragThreshold) {
+          this.isDragging = true; // Set dragging flag
+        }
 
-      if (this.isDragging) {
-        // Update the pan based on mouse movement
-        this.alterCurrentPanBy(deltaX, deltaY);
-        // Update initial mouse position for the next movement
-        this.initialMouseX = evt.clientX;
-        this.initialMouseY = evt.clientY;
+        if (this.isDragging) {
+          // Update the pan based on mouse movement
+          this.alterCurrentPanBy(deltaX, deltaY);
+          // Update initial mouse position for the next movement
+          this.initialMouseX = evt.clientX;
+          this.initialMouseY = evt.clientY;
+        }
+      } else {
+        // Reset dragging flag if mouse button is released
+        this.isDragging = false;
       }
     }
 
@@ -456,14 +461,12 @@ if (!customElements.get('gallery-zoom')) {
         this.initialMouseX = evt.clientX;
         this.initialMouseY = evt.clientY;
         this.isDragging = false; // Reset dragging flag
-        this.trackInputMovement(evt); // Call to initialize dragging
-        console.log('Mouse Down:', evt.clientX, evt.clientY);
+        evt.preventDefault(); // Prevent default behavior
       }
     }
 
     onMouseUp(evt) {
       this.isDragging = false; // Reset dragging flag when mouse is released
-      console.log('Mouse Up');
     }
   }
 
