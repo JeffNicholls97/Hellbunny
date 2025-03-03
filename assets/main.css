@@ -2454,6 +2454,7 @@ td {
   flex: 0 0 calc(50% - var(--gutter) * 2);
   margin-inline-end: var(--gutter);
   background-color: inherit;
+  margin-right:0px;
 }
 .main-products-grid[data-layout=list] .card .card__info-container {
   display: flex;
