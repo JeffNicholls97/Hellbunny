@@ -1069,7 +1069,7 @@ class MainMenu extends HTMLElement {
     this.firstLevelSingleLinks = this.querySelectorAll('.main-nav__item--primary:not(.main-nav__item-content)');
     this.nav = this.querySelector('.main-nav');
     this.overlay = document.querySelector('.js-overlay');
-    this.searchIcon = document.querySelector('.header__icons .js-show-search');
+    this.searchIcon = document.querySelectorAll('.header__icons .js-show-search');
     this.sidebarLinks = this.querySelectorAll('.js-sidebar-hover');
     this.elementsWhichCloseMenus = document.querySelectorAll('.js-closes-menu');
 
