@@ -136,7 +136,7 @@
           "settings": {
             "heading": "Shipping Information",
             "icon": "truck",
-            "text": "<p>Orders placed before 12 pm Monday - Thursday will be posted with our Next Day Shipping service. If you place an order after 12 pm on Thursdays or over a weekend, your order will be sent on the next working day, for instance, Saturday orders will be posted on Monday. To read in full, please click <a href=\"https://www.hellbunny.com/pages/faqs-delivery\" target=\"_blank\" title=\"Delivery\"><span style=\"text-decoration:underline\">here.</span></a></p>",
+            "text": "<p>{{ block.settings.page.metafields.custom.delivery_and_returns | metafield_tag }}</p>",
             "page": "",
             "open": false
           }
