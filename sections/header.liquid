@@ -65,10 +65,14 @@ main-menu.main-menu.main-menu--left-mob {
   {%- if search_is_minimised -%} data-is-search-minimised="true"{%- endif -%}
   style="--header-transition-speed: 300ms">
   <header class="header__grid{% if section.settings.logo_center %} header__grid--centered-logo{% else %} header__grid--left-logo{% endif %} container flex flex-wrap items-center">
-    <div class="tw-block md:!tw-hidden">
+    <a class="header__icon tw-ml-[40px] tw-block md:!tw-hidden {{ search_button_class }} js-show-search-mobile" href="{{ routes.search_url }}" aria-controls="search-bar">
+            {% render 'icon-search' %}
+            <span class="visually-hidden">{{ 'general.icon_labels.search' | t }}</span>
+          </a>
+    {% comment %} <div class="tw-block md:!tw-hidden">
       {% render 'nav-mobile' %}
-    </div>
-    <div class="header__logo logo{% if section.settings.logo_center %} text-center{% endif %} flex js-closes-menu">
+    </div> {% endcomment %}
+    <div class="header__logo logo{% if section.settings.logo_center %} text-center{% endif %} flex js-closes-menu tw-ml-[41px] md:tw-ml-0">
       {%- if request.page_type == 'index' and section.settings.logo_h1 -%}
         <h1 class="logo__h1 m-0">
       {%- endif -%}
@@ -119,7 +123,7 @@ main-menu.main-menu.main-menu--left-mob {
           </a>
         {%- endif -%}
 
-        <div class="tw-hidden md:tw-block">
+        <div class="tw-h-0 md:tw-h-auto">
           {% render 'nav-menu' %}
         </div>
         {% render 'predictive-search', id: 'header-search', show_search_types: show_search_types %}
@@ -140,6 +144,10 @@ main-menu.main-menu.main-menu--left-mob {
               assign search_button_class = "hidden md:block"
             endif
           -%}
+          <a class="header__icon !tw-hidden md:!tw-block {{ search_button_class }} js-show-search" href="{{ routes.search_url }}" aria-controls="search-bar">
+            {% render 'icon-search' %}
+            <span class="visually-hidden">{{ 'general.icon_labels.search' | t }}</span>
+          </a>
         {%- endunless -%}
       {%- endif -%}
       {%- if shop.customer_accounts_enabled -%}

@@ -142,6 +142,10 @@
   top: -52px
 }
 
+.tw-top-\[-57px\] {
+  top: -57px
+}
+
 .tw-z-50 {
   z-index: 50
 }
@@ -164,6 +168,14 @@
 
 .tw-ml-\[31px\] {
   margin-left: 31px
+}
+
+.tw-ml-\[40px\] {
+  margin-left: 40px
+}
+
+.tw-ml-\[41px\] {
+  margin-left: 41px
 }
 
 .\!tw-block {
@@ -229,6 +241,11 @@
 
 .tw-translate-x-full {
   --tw-translate-x: 100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+
+.tw-rotate-90 {
+  --tw-rotate: 90deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
 
@@ -417,6 +434,10 @@
 
   .md\:tw-block {
     display: block
+  }
+
+  .md\:\!tw-block {
+    display: block !important
   }
 
   .md\:tw-hidden {
