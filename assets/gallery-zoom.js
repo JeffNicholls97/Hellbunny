@@ -92,6 +92,12 @@ if (!customElements.get('gallery-zoom')) {
         this.nextBtn.addEventListener('click', this.selectNextThumb.bind(this));
         this.zoomContainer.addEventListener('click', this.onZoomContainerClick.bind(this));
         new ResizeObserver(() => this.setInitialImagePosition()).observe(this);
+
+        // Add event listeners for mouse events
+        this.zoomContainer.addEventListener('mousedown', this.onMouseDown.bind(this));
+        this.zoomContainer.addEventListener('mousemove', this.trackInputMovement.bind(this));
+        this.zoomContainer.addEventListener('mouseup', this.onMouseUp.bind(this));
+        this.zoomContainer.addEventListener('mouseleave', this.onMouseUp.bind(this)); // Handle mouse leaving the container
       }
 
       document.documentElement.classList.add('gallery-zoom-open');
@@ -324,66 +330,20 @@ if (!customElements.get('gallery-zoom')) {
       if (!this.isZoomedIn) return; // Only handle events when zoomed in
       evt.preventDefault();
 
-      if (evt.type === 'touchmove' && evt.touches.length > 0) {
-        // Handle touch movement (if applicable)
-        const touch1 = evt.touches[0];
-        if (!this.touchTracking.isTracking) {
-          this.touchTracking.isTracking = true;
-          this.touchTracking.lastTouchX = touch1.clientX;
-          this.touchTracking.lastTouchY = touch1.clientY;
-        } else {
-          this.alterCurrentPanBy(
-            (touch1.clientX - this.touchTracking.lastTouchX) * this.touchPanModifier,
-            (touch1.clientY - this.touchTracking.lastTouchY) * this.touchPanModifier
-          );
-          this.touchTracking.lastTouchX = touch1.clientX;
-          this.touchTracking.lastTouchY = touch1.clientY;
-        }
+      const deltaX = evt.clientX - this.initialMouseX;
+      const deltaY = evt.clientY - this.initialMouseY;
 
-        if (evt.touches.length === 2) {
-          // pinch
-          const touch2 = evt.touches[1];
-          const pinchDistance = Math.sqrt((touch1.clientX - touch2.clientX) ** 2 + (touch1.clientY - touch2.clientY) ** 2);
-          if (!this.pinchTracking.isTracking) {
-            this.pinchTracking.lastPinchDistance = pinchDistance;
-            this.pinchTracking.isTracking = true;
-          } else {
-            const pinchDelta = pinchDistance - this.pinchTracking.lastPinchDistance;
-            this.alterCurrentTransformZoomBy(pinchDelta * this.pinchZoomMultiplier);
-            this.pinchTracking.lastPinchDistance = pinchDistance;
-          }
-        } else {
-          this.pinchTracking.isTracking = false;
-        }
-      } else {
-        // Handle mouse movement
-        if (evt.buttons === 1) { // Check if the left mouse button is pressed
-          if (!this.isDragging) {
-            // Store initial mouse position
-            this.initialMouseX = evt.clientX;
-            this.initialMouseY = evt.clientY;
-            this.isDragging = false; // Reset dragging flag
-          }
+      // Check if the movement exceeds the drag threshold
+      if (Math.abs(deltaX) > this.dragThreshold || Math.abs(deltaY) > this.dragThreshold) {
+        this.isDragging = true; // Set dragging flag
+      }
 
-          const deltaX = evt.clientX - this.initialMouseX;
-          const deltaY = evt.clientY - this.initialMouseY;
-
-          // Check if the movement exceeds the drag threshold
-          if (Math.abs(deltaX) > this.dragThreshold || Math.abs(deltaY) > this.dragThreshold) {
-            this.isDragging = true; // Set dragging flag
-          }
-
-          if (this.isDragging) {
-            // Update the pan based on mouse movement
-            this.alterCurrentPanBy(deltaX, deltaY);
-            // Update initial mouse position for the next movement
-            this.initialMouseX = evt.clientX;
-            this.initialMouseY = evt.clientY;
-          }
-        } else {
-          // Reset dragging flag if mouse button is released
-          this.isDragging = false;
-        }
+      if (this.isDragging) {
+        // Update the pan based on mouse movement
+        this.alterCurrentPanBy(deltaX, deltaY);
+        // Update initial mouse position for the next movement
+        this.initialMouseX = evt.clientX;
+        this.initialMouseY = evt.clientY;
       }
     }
 
@@ -480,7 +440,7 @@ if (!customElements.get('gallery-zoom')) {
       this.currentTransform.panY = panY;
       this.currentTransform.zoom = zoom;
       this.updateImagePosition();
-    } 
+    }
 
     /**
      * Call to stop tracking touch events.
@@ -489,6 +449,21 @@ if (!customElements.get('gallery-zoom')) {
       this.pinchTracking.isTracking = false;
       this.touchTracking.isTracking = false;
       this.isDragging = false; // Reset dragging flag when touch ends
+    }
+
+    onMouseDown(evt) {
+      if (this.isZoomedIn) {
+        this.initialMouseX = evt.clientX;
+        this.initialMouseY = evt.clientY;
+        this.isDragging = false; // Reset dragging flag
+        this.trackInputMovement(evt); // Call to initialize dragging
+        console.log('Mouse Down:', evt.clientX, evt.clientY);
+      }
+    }
+
+    onMouseUp(evt) {
+      this.isDragging = false; // Reset dragging flag when mouse is released
+      console.log('Mouse Up');
     }
   }
 
