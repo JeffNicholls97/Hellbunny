@@ -2429,7 +2429,7 @@ td {
 
 .card--row,
 .main-products-grid[data-layout=list] .card {
-  flex-direction: row;
+  flex-direction: column;
   max-width: none;
 }
 
