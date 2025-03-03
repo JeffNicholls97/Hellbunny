@@ -323,8 +323,9 @@ if (!customElements.get('gallery-zoom')) {
     trackInputMovement(evt) {
       if (!this.isZoomedIn) return; // Only handle events when zoomed in
       evt.preventDefault();
+
       if (evt.type === 'touchmove' && evt.touches.length > 0) {
-        // pan
+        // Handle touch movement (if applicable)
         const touch1 = evt.touches[0];
         if (!this.touchTracking.isTracking) {
           this.touchTracking.isTracking = true;
@@ -355,13 +356,15 @@ if (!customElements.get('gallery-zoom')) {
           this.pinchTracking.isTracking = false;
         }
       } else {
-        // Change mousemove to implement drag-to-pan
-        if (!this.touchTracking.isTracking && evt.buttons === 1) {
+        // Handle mouse movement
+        if (evt.buttons === 1) { // Check if the left mouse button is pressed
           if (!this.isDragging) {
-            this.initialMouseX = evt.clientX; // Store initial mouse position
-            this.initialMouseY = evt.clientY; // Store initial mouse position
+            // Store initial mouse position
+            this.initialMouseX = evt.clientX;
+            this.initialMouseY = evt.clientY;
             this.isDragging = false; // Reset dragging flag
           }
+
           const deltaX = evt.clientX - this.initialMouseX;
           const deltaY = evt.clientY - this.initialMouseY;
 
@@ -371,15 +374,14 @@ if (!customElements.get('gallery-zoom')) {
           }
 
           if (this.isDragging) {
-            this.alterCurrentPanBy(
-              deltaX * this.touchPanModifier,
-              deltaY * this.touchPanModifier
-            );
-            this.initialMouseX = evt.clientX; // Update initial mouse position
-            this.initialMouseY = evt.clientY; // Update initial mouse position
+            // Update the pan based on mouse movement
+            this.alterCurrentPanBy(deltaX, deltaY);
+            // Update initial mouse position for the next movement
+            this.initialMouseX = evt.clientX;
+            this.initialMouseY = evt.clientY;
           }
         } else {
-          this.touchTracking.isTracking = false;
+          this.isDragging = false; // Reset dragging flag if mouse button is released
         }
       }
     }
