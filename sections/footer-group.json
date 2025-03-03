@@ -18,9 +18,9 @@
           "type": "item",
           "settings": {
             "icon": "chat_bubble",
-            "custom_icon": "shopify://shop_images/united-kingdom_1.png",
-            "heading": "Designed in the UK",
-            "text": "",
+            "custom_icon": "shopify://shop_images/united-kingdom_6828c186-988a-4cb8-abab-53bec964fbcd.png",
+            "heading": "Designed in the",
+            "text": "<p>United Kingdom</p>",
             "link": ""
           }
         },
@@ -28,6 +28,7 @@
           "type": "item",
           "settings": {
             "icon": "box",
+            "custom_icon": "shopify://shop_images/Klarna.png",
             "heading": "Buy Now, Pay Later",
             "text": "<p>with Klarna</p>",
             "link": ""
@@ -37,6 +38,7 @@
           "type": "item",
           "settings": {
             "icon": "return",
+            "custom_icon": "shopify://shop_images/Delivery.png",
             "heading": "Free Delivery on",
             "text": "<p>all orders over £65</p>",
             "link": ""
@@ -46,6 +48,7 @@
           "type": "item",
           "settings": {
             "icon": "dollar_sign",
+            "custom_icon": "shopify://shop_images/Heart.png",
             "heading": "Sizes from",
             "text": "<p>XS to 6XL</p>",
             "link": ""
