@@ -2641,6 +2641,7 @@ td {
     flex: 1;
     max-width: 100%;
     margin-inline-end: calc(10 * var(--space-unit));
+    margin-right:0px;
   }
   .main-products-grid[data-layout=list] .card .card__info {
     flex: 1 1 auto;
