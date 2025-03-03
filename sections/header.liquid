@@ -50,7 +50,7 @@
     text-transform: uppercase;
     letter-spacing: 3px;
     margin: 0px 10px 0px 10px !important;
-    font-size: 13px;
+    font-size: 11px;
 }
 main-menu.main-menu.main-menu--left-mob {
     background-color: transparent !important;
@@ -116,7 +116,9 @@ main-menu.main-menu.main-menu--left-mob {
           </a>
         {%- endif -%}
 
-        {% render 'nav-menu' %}
+        <div class="tw-hidden tw-md:block">
+          {% render 'nav-menu' %}
+        </div>
         {% render 'predictive-search', id: 'header-search', show_search_types: show_search_types %}
       </div>
     {%- elsif section.settings.logo_center -%}
