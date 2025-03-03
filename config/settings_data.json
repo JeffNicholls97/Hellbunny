@@ -374,7 +374,7 @@
     "coll_show_link": false,
     "coll_border_color": "#f2f2f2",
     "prod_card_image_ratio": "shortest",
-    "prod_card_image_fit": "cover",
+    "prod_card_image_fit": "contain",
     "card_hover_action": "second_image",
     "card_show_weight": false,
     "card_show_vendor": false,
