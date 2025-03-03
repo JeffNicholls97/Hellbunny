@@ -104,7 +104,7 @@ if (!customElements.get('gallery-zoom')) {
       document.documentElement.classList.add('gallery-zoom-open');
       this.addEventListener('keyup', this.handleKeyup.bind(this));
       setTimeout(() => this.classList.remove('gallery-zoom--pre-reveal'), 10);
-    }
+    } 
 
     // eslint-disable-next-line class-methods-use-this
     disconnectedCallback() {
