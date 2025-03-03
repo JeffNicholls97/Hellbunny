@@ -42,6 +42,7 @@
       "blocks": {
         "columns_biYGfU": {
           "type": "columns",
+          "disabled": true,
           "settings": {
             "title": "New In",
             "collection_images": "large",
