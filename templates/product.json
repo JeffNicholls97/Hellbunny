@@ -165,15 +165,14 @@
         },
         "message-3": {
           "type": "message",
-          "disabled": true,
           "settings": {
             "icon": "none",
-            "title": "<p>Add a stand out message for your customers</p>",
+            "title": "<p>Need help? Speak to us via live chat between 9am-5pm GMT Mon-Fri and 9am-5pm GMT on weekends.</p>",
             "close": "once",
             "show_over_media": false,
             "visibility_duration": 7,
-            "bg_color": "#e4edfa",
-            "text_color": "#1a66d2"
+            "bg_color": "#f4f4f4",
+            "text_color": "#2a2b2a"
           }
         }
       },
