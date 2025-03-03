@@ -336,7 +336,7 @@ if (!customElements.get('gallery-zoom')) {
         const deltaY = evt.clientY - this.initialMouseY;
 
         // Check if the movement exceeds the drag threshold
-        if (Math.abs(deltaX) > this.dragThreshold || Math.abs(deltaY) > this.dragThreshold) {
+        if (!this.isDragging && (Math.abs(deltaX) > this.dragThreshold || Math.abs(deltaY) > this.dragThreshold)) {
           this.isDragging = true; // Set dragging flag
         }
 
@@ -396,7 +396,8 @@ if (!customElements.get('gallery-zoom')) {
           this.isZoomedIn = true;
         }
       }
-      this.isDragging = false; // Reset dragging flag after click handling
+      // Reset dragging flag after click handling
+      this.isDragging = false; 
     }
 
     /**
@@ -467,7 +468,10 @@ if (!customElements.get('gallery-zoom')) {
     }
 
     onMouseUp(evt) {
-      this.isDragging = false; // Reset dragging flag when mouse is released
+      // Reset dragging flag when mouse is released
+      if (this.isDragging) {
+        this.isDragging = false; // Only reset if dragging was true
+      }
     }
   }
 
