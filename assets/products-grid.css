@@ -30,6 +30,14 @@
 .main-products-grid[data-layout=list] .grid {
   grid-template-columns: repeat(2,minmax(0,1fr));
 }
+
+@media only screen and (max-width:37.5em) { 
+	.main-products-grid[data-layout=list] .grid {
+    grid-template-columns: repeat(1,minmax(0,1fr));
+  }
+}
+
+
 /* .main-products-grid:not(.main-products-grid--contained)[data-layout=list] .grid {
   row-gap: 0;
 }
