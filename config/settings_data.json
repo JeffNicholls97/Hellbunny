@@ -480,8 +480,7 @@
       "a.predictive-result.flex.items-start.focus-inset.js-search-link .predictive-result__media img {width: 448px !important; height: auto !important;}",
       ".footer__meta {display: flex; flex-direction: column; align-items: center; text-align: center;}",
       ".footer__payment {display: flex; flex-direction: column; align-items: center;}",
-      ".payment-icons {display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;}",
-      "@media (min-width: 768px) {.md\\:tw-w-\\[400px\\] {width: 550px; }}"
+      ".payment-icons {display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;}"
     ]
   }
 }
