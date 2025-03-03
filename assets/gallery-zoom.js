@@ -73,10 +73,10 @@ if (!customElements.get('gallery-zoom')) {
           lastTouchX: 0,
           lastTouchY: 0
         };
-        this.isDragging = false; // Add a flag to track dragging state
-        this.dragThreshold = 5; // Set a threshold for drag detection
-        this.initialMouseX = 0; // Track initial mouse X position
-        this.initialMouseY = 0; // Track initial mouse Y position
+        this.isDragging = false; // Flag to track dragging state
+        this.dragThreshold = 5; // Threshold for drag detection
+        this.initialMouseX = 0; // Initial mouse X position
+        this.initialMouseY = 0; // Initial mouse Y position
 
         // events
         this.querySelectorAll('.gallery-zoom__thumb').forEach((el) => {
@@ -381,7 +381,8 @@ if (!customElements.get('gallery-zoom')) {
             this.initialMouseY = evt.clientY;
           }
         } else {
-          this.isDragging = false; // Reset dragging flag if mouse button is released
+          // Reset dragging flag if mouse button is released
+          this.isDragging = false;
         }
       }
     }
