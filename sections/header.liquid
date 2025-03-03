@@ -117,6 +117,15 @@ main-menu.main-menu.main-menu--left-mob {
             </span>
             <span class="visually-hidden">{{ 'general.icon_labels.search' | t }}</span>
           </a>
+          <a class="header__icon header__icon--search-left absolute hidden md:block js-show-search-left" href="{{ routes.search_url }}" aria-controls="search-bar">
+            <span class="header__icon--search-left-search">
+              {% render 'icon-search' %}
+            </span>
+            <span class="header__icon--search-left-close">
+              {% render 'icon-close' %}
+            </span>
+            <span class="visually-hidden">{{ 'general.icon_labels.search' | t }}</span>
+          </a>
         {%- endif -%}
 
         <div class="tw-h-0 md:tw-h-auto">
