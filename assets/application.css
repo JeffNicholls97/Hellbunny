@@ -431,6 +431,10 @@
     display: block
   }
 
+  .md\:\!tw-block {
+    display: block !important
+  }
+
   .md\:tw-hidden {
     display: none
   }

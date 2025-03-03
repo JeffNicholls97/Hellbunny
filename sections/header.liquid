@@ -144,7 +144,7 @@ main-menu.main-menu.main-menu--left-mob {
               assign search_button_class = "hidden md:block"
             endif
           -%}
-          <a class="header__icon !tw-hidden md:tw-block {{ search_button_class }} js-show-search" href="{{ routes.search_url }}" aria-controls="search-bar">
+          <a class="header__icon !tw-hidden md:!tw-block {{ search_button_class }} js-show-search" href="{{ routes.search_url }}" aria-controls="search-bar">
             {% render 'icon-search' %}
             <span class="visually-hidden">{{ 'general.icon_labels.search' | t }}</span>
           </a>
