@@ -335,9 +335,13 @@ if (!customElements.get('gallery-zoom')) {
         const deltaX = evt.clientX - this.initialMouseX;
         const deltaY = evt.clientY - this.initialMouseY;
 
+        // Log the delta values for debugging
+        console.log('Delta X:', deltaX, 'Delta Y:', deltaY);
+
         // Check if the movement exceeds the drag threshold
         if (!this.isDragging && (Math.abs(deltaX) > this.dragThreshold || Math.abs(deltaY) > this.dragThreshold)) {
           this.isDragging = true; // Set dragging flag
+          console.log('Dragging started'); // Log when dragging starts
         }
 
         if (this.isDragging) {
@@ -464,15 +468,14 @@ if (!customElements.get('gallery-zoom')) {
         this.initialMouseY = evt.clientY;
         this.isDragging = false; // Reset dragging flag
         evt.preventDefault(); // Prevent default behavior
-        console.log('Mouse Down:', evt.clientX, evt.clientY);
-        console.log('Dragging:', this.isDragging);
-        console.log('Click Event Triggered');
+        console.log('Mouse Down:', evt.clientX, evt.clientY); // Log mouse down position
       }
     }
 
     onMouseUp(evt) {
       // Reset dragging flag when mouse is released
       if (this.isDragging) {
+        console.log('Mouse Up - Dragging:', this.isDragging); // Log dragging state on mouse up
         this.isDragging = false; // Only reset if dragging was true
       }
     }
