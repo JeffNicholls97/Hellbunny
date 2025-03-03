@@ -65,9 +65,9 @@ main-menu.main-menu.main-menu--left-mob {
   {%- if search_is_minimised -%} data-is-search-minimised="true"{%- endif -%}
   style="--header-transition-speed: 300ms">
   <header class="header__grid{% if section.settings.logo_center %} header__grid--centered-logo{% else %} header__grid--left-logo{% endif %} container flex flex-wrap items-center">
-    <div class="tw-block md:!tw-hidden">
+    {% comment %} <div class="tw-block md:!tw-hidden">
       {% render 'nav-mobile' %}
-    </div>
+    </div> {% endcomment %}
     <div class="header__logo logo{% if section.settings.logo_center %} text-center{% endif %} flex js-closes-menu">
       {%- if request.page_type == 'index' and section.settings.logo_h1 -%}
         <h1 class="logo__h1 m-0">
@@ -119,7 +119,7 @@ main-menu.main-menu.main-menu--left-mob {
           </a>
         {%- endif -%}
 
-        <div class="tw-hidden md:tw-block">
+        <div class="">
           {% render 'nav-menu' %}
         </div>
         {% render 'predictive-search', id: 'header-search', show_search_types: show_search_types %}
