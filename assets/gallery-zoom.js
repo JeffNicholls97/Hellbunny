@@ -12,7 +12,11 @@ if (!customElements.get('gallery-zoom-open')) {
       const mediaGallery = this.closest('media-gallery');
       const zoomDevice = mediaGallery.dataset.zoomEnabled;
 
-      if (zoomDevice.length === 0 || (zoomDevice === 'mobile' && !theme.mediaMatches.md) || (zoomDevice === 'desktop' && theme.mediaMatches.md)) {
+      if (
+        zoomDevice.length === 0 ||
+        (zoomDevice === 'mobile' && !theme.mediaMatches.md) ||
+        (zoomDevice === 'desktop' && theme.mediaMatches.md)
+      ) {
         // Add to document on first open
         if (!mediaGallery.galleryModal.parentElement) {
           document.body.appendChild(mediaGallery.galleryModal);
@@ -30,8 +34,6 @@ if (!customElements.get('gallery-zoom-open')) {
 
   window.customElements.define('gallery-zoom-open', GalleryZoomOpen);
 }
-
-/* eslint-disable max-len */
 
 if (!customElements.get('gallery-zoom')) {
   class GalleryZoom extends HTMLElement {
@@ -55,7 +57,7 @@ if (!customElements.get('gallery-zoom')) {
         this.wheelZoomMultiplier = -0.001;
         this.pinchZoomMultiplier = 0.003;
         this.touchPanModifier = 1.0;
-        this.isZoomedIn = false;  // Add this flag to track zoom state
+        this.isZoomedIn = false;
 
         // vars
         this.currentZoomImage = null;
@@ -73,6 +75,11 @@ if (!customElements.get('gallery-zoom')) {
           lastTouchX: 0,
           lastTouchY: 0
         };
+        this.isDragging = false;
+        this.dragThreshold = 5;
+        this.initialMouseX = 0;
+        this.initialMouseY = 0;
+        this.dragged = false; // Flag to track if a drag occurred
 
         // events
         this.querySelectorAll('.gallery-zoom__thumb').forEach((el) => {
@@ -82,12 +89,19 @@ if (!customElements.get('gallery-zoom')) {
         this.addEventListener('touchmove', this.trackInputMovement.bind(this));
         this.addEventListener('mousemove', this.trackInputMovement.bind(this));
         this.addEventListener('wheel', this.trackWheel.bind(this));
-        // prevent pan while swiping thumbnails
+        // Prevent pan while swiping thumbnails
         this.thumbContainer.addEventListener('touchmove', (evt) => evt.stopPropagation());
         this.previousBtn.addEventListener('click', this.selectPreviousThumb.bind(this));
         this.nextBtn.addEventListener('click', this.selectNextThumb.bind(this));
         this.zoomContainer.addEventListener('click', this.onZoomContainerClick.bind(this));
         new ResizeObserver(() => this.setInitialImagePosition()).observe(this);
+
+        // Add event listeners for mouse events
+        this.zoomContainer.addEventListener('mousedown', this.onMouseDown.bind(this));
+        this.zoomContainer.addEventListener('mousemove', this.trackInputMovement.bind(this));
+        this.zoomContainer.addEventListener('mouseup', this.onMouseUp.bind(this));
+        this.zoomContainer.addEventListener('mouseleave', this.onMouseUp.bind(this));
+        this.zoomContainer.addEventListener('dragstart', (evt) => evt.preventDefault());
       }
 
       document.documentElement.classList.add('gallery-zoom-open');
@@ -95,18 +109,13 @@ if (!customElements.get('gallery-zoom')) {
       setTimeout(() => this.classList.remove('gallery-zoom--pre-reveal'), 10);
     }
 
-    // eslint-disable-next-line class-methods-use-this
+    // Remove the document class on disconnect.
     disconnectedCallback() {
       document.documentElement.classList.remove('gallery-zoom-open');
     }
 
     /**
      * Helper for creating a DOM element.
-     * @param {string} type - Element type.
-     * @param {string} className - Class to apply to element.
-     * @param {Element} appendTo - Element to add to as a child.
-     * @param {string} innerHTML - Inner HTML to apply to element.
-     * @returns {Element} - The element created.
      */
     static createEl(type, className, appendTo, innerHTML) {
       const el = document.createElement(type);
@@ -121,11 +130,12 @@ if (!customElements.get('gallery-zoom')) {
     }
 
     init(currentMediaId) {
-      // Toggle thumbnail visibility based on the current state of media grouping
       if (this.mediaGallery.dataset.mediaGroupingEnabled) {
         let visibleThumbCount = 0;
         Array.from(this.thumbContainer.children).forEach((thumb) => {
-          const mediaGalleryImage = this.mediaGallery.querySelector(`.media-viewer__item[data-media-id="${thumb.dataset.mediaId}"]`);
+          const mediaGalleryImage = this.mediaGallery.querySelector(
+            `.media-viewer__item[data-media-id="${thumb.dataset.mediaId}"]`
+          );
           thumb.hidden = mediaGalleryImage?.style.display === 'none';
           if (!thumb.hidden) visibleThumbCount += 1;
         });
@@ -133,16 +143,11 @@ if (!customElements.get('gallery-zoom')) {
       }
 
       this.selectThumb(
-        [...this.thumbContainer.children].find((el) => el.dataset.mediaId === currentMediaId)
-         || this.thumbContainer.firstElementChild
+        [...this.thumbContainer.children].find((el) => el.dataset.mediaId === currentMediaId) ||
+          this.thumbContainer.firstElementChild
       );
     }
 
-    /**
-     * Update pan values based on input event coordinates.
-     * @param {number} inputX - Mouse/touch input X.
-     * @param {number} inputY - Mouse/touch input Y.
-     */
     panZoomImageFromCoordinate(inputX, inputY) {
       const midX = this.clientWidth / 2;
       const midY = this.clientHeight / 2;
@@ -150,11 +155,9 @@ if (!customElements.get('gallery-zoom')) {
       const offsetFromCentreX = inputX - midX;
       const offsetFromCentreY = inputY - midY;
 
-      // Calculate the maximum pan values based on image size
       const maxPanX = (this.currentZoomImage.naturalWidth * this.currentTransform.zoom - this.clientWidth) / 2.0;
       const maxPanY = (this.currentZoomImage.naturalHeight * this.currentTransform.zoom - this.clientHeight) / 2.0;
 
-      // Calculate pan values proportional to click position
       let finalOffsetX = 0;
       let finalOffsetY = 0;
 
@@ -167,21 +170,14 @@ if (!customElements.get('gallery-zoom')) {
         finalOffsetY = Math.round(-offsetFromCentreY * offsetMultiplierY);
       }
 
-      // Apply the pan values
       this.currentTransform.panX = finalOffsetX;
       this.currentTransform.panY = finalOffsetY;
-      this.alterCurrentPanBy(0, 0); // sanitise bounds
+      this.alterCurrentPanBy(0, 0);
       this.updateImagePosition();
     }
 
-    /**
-     * Update pan values by a delta.
-     * @param {number} x - Distance to pan X.
-     * @param {number} y - Distance to pan Y.
-     */
     alterCurrentPanBy(x, y) {
       this.currentTransform.panX += x;
-      // limit offset to keep most of image on screen
       let panXMax = (this.currentZoomImage.naturalWidth * this.currentTransform.zoom - this.clientWidth) / 2.0;
       panXMax = Math.max(panXMax, 0);
       this.currentTransform.panX = Math.min(this.currentTransform.panX, panXMax);
@@ -195,9 +191,6 @@ if (!customElements.get('gallery-zoom')) {
       this.updateImagePosition();
     }
 
-    /**
-     * Position the current image in the centre, zoomed out
-     */
     setInitialImagePosition() {
       this.currentZoomImage.style.top = `${this.clientHeight / 2 - this.currentZoomImage.clientHeight / 2}px`;
       this.currentZoomImage.style.left = `${this.clientWidth / 2 - this.currentZoomImage.clientWidth / 2}px`;
@@ -206,19 +199,12 @@ if (!customElements.get('gallery-zoom')) {
       this.updateImagePosition();
     }
 
-    /**
-     * Set current zoom image transform based on pan & zoom values.
-     */
     updateImagePosition() {
       requestAnimationFrame(() => {
         this.currentZoomImage.style.transform = `translate3d(${this.currentTransform.panX}px, ${this.currentTransform.panY}px, 0) scale(${this.currentTransform.zoom})`;
       });
     }
 
-    /**
-     * Select a thumbnail.
-     * @param {Element} thumb - Thumbnail to select.
-     */
     selectThumb(thumb) {
       let activeThumb;
 
@@ -235,13 +221,13 @@ if (!customElements.get('gallery-zoom')) {
       const activeThumbIndex = visibleThumbs.indexOf(activeThumb);
       if (this.counterCurrent) this.counterCurrent.textContent = activeThumbIndex + 1;
 
-      // If the thumb isn't visible, scroll to it
+      // Scroll to thumbnail if necessary
       this.scrollToThumb(activeThumb);
 
       this.previousBtn.disabled = activeThumbIndex === 0;
-      this.nextBtn.disabled = (activeThumbIndex === (visibleThumbs.length - 1));
+      this.nextBtn.disabled = activeThumbIndex === (visibleThumbs.length - 1);
 
-      // replace zoom image
+      // Replace zoom image
       this.zoomContainer.classList.add('gallery-zoom__zoom-container--loading');
       this.currentZoomImage = GalleryZoom.createEl('img', 'gallery-zoom__zoom-image');
       this.currentZoomImage.alt = thumb.querySelector('.gallery-zoom__thumb-img')?.alt;
@@ -256,10 +242,6 @@ if (!customElements.get('gallery-zoom')) {
       this.zoomContainer.replaceChildren(this.currentZoomImage);
     }
 
-    /**
-     * Scrolls the thumbnail slider to the active thumbnail if necessary
-     * @param {Element} thumb - Thumbnail to scroll to.
-     */
     scrollToThumb(thumb) {
       const thumbSliderRect = this.thumbSlider.getBoundingClientRect();
       const thumbRect = thumb.getBoundingClientRect();
@@ -274,10 +256,6 @@ if (!customElements.get('gallery-zoom')) {
       }
     }
 
-    /**
-     * Select previous thumbnail.
-     * @param {Event} evt - Click event, if triggered by pagination.
-     */
     selectPreviousThumb(evt) {
       if (evt) evt.preventDefault();
       if (this.thumbContainer.childElementCount < 2) return;
@@ -293,10 +271,6 @@ if (!customElements.get('gallery-zoom')) {
       this.selectThumb(previous);
     }
 
-    /**
-     * Select next thumbnail.
-     * @param {Event} evt - Click event, if triggered by pagination.
-     */
     selectNextThumb(evt) {
       if (evt) evt.preventDefault();
       if (this.thumbContainer.childElementCount < 2) return;
@@ -312,117 +286,66 @@ if (!customElements.get('gallery-zoom')) {
       this.selectThumb(next);
     }
 
-    /**
-     * Call to stop tracking touch events.
-     */
-    stopTrackingTouch() {
-      this.pinchTracking.isTracking = false;
-      this.touchTracking.isTracking = false;
-    }
-
-    /**
-     * Handle mouse and touch events.
-     * @param {object} evt - Event object.
-     */
     trackInputMovement(evt) {
-      if (!this.isZoomedIn) return; // Only handle events when zoomed in
+      if (!this.isZoomedIn) return;
       evt.preventDefault();
-      if (evt.type === 'touchmove' && evt.touches.length > 0) {
-        // pan
-        const touch1 = evt.touches[0];
-        if (!this.touchTracking.isTracking) {
-          this.touchTracking.isTracking = true;
-          this.touchTracking.lastTouchX = touch1.clientX;
-          this.touchTracking.lastTouchY = touch1.clientY;
-        } else {
-          this.alterCurrentPanBy(
-            (touch1.clientX - this.touchTracking.lastTouchX) * this.touchPanModifier,
-            (touch1.clientY - this.touchTracking.lastTouchY) * this.touchPanModifier
-          );
-          this.touchTracking.lastTouchX = touch1.clientX;
-          this.touchTracking.lastTouchY = touch1.clientY;
+
+      if (evt.buttons === 1) {
+        const deltaX = evt.clientX - this.initialMouseX;
+        const deltaY = evt.clientY - this.initialMouseY;
+
+        // Check if movement exceeds threshold
+        if (!this.isDragging && (Math.abs(deltaX) > this.dragThreshold || Math.abs(deltaY) > this.dragThreshold)) {
+          this.isDragging = true;
+          this.dragged = true;
         }
 
-        if (evt.touches.length === 2) {
-          // pinch
-          const touch2 = evt.touches[1];
-          const pinchDistance = Math.sqrt((touch1.clientX - touch2.clientX) ** 2 + (touch1.clientY - touch2.clientY) ** 2);
-          if (!this.pinchTracking.isTracking) {
-            this.pinchTracking.lastPinchDistance = pinchDistance;
-            this.pinchTracking.isTracking = true;
-          } else {
-            const pinchDelta = pinchDistance - this.pinchTracking.lastPinchDistance;
-            this.alterCurrentTransformZoomBy(pinchDelta * this.pinchZoomMultiplier);
-            this.pinchTracking.lastPinchDistance = pinchDistance;
-          }
-        } else {
-          this.pinchTracking.isTracking = false;
+        if (this.isDragging) {
+          this.alterCurrentPanBy(deltaX, deltaY);
+          this.initialMouseX = evt.clientX;
+          this.initialMouseY = evt.clientY;
         }
       } else {
-        // Change mousemove to implement drag-to-pan
-        if (!this.touchTracking.isTracking && evt.buttons === 1) {
-          this.touchTracking.isTracking = true;
-          this.touchTracking.lastTouchX = evt.clientX;
-          this.touchTracking.lastTouchY = evt.clientY;
-        } else if (this.touchTracking.isTracking && evt.buttons === 1) {
-          this.alterCurrentPanBy(
-            (evt.clientX - this.touchTracking.lastTouchX) * this.touchPanModifier,
-            (evt.clientY - this.touchTracking.lastTouchY) * this.touchPanModifier
-          );
-          this.touchTracking.lastTouchX = evt.clientX;
-          this.touchTracking.lastTouchY = evt.clientY;
-        } else {
-          this.touchTracking.isTracking = false;
-        }
+        this.isDragging = false;
       }
     }
 
-    /**
-     * Handle mouse wheel scroll - use for zoom.
-     * @param {object} evt - Event object.
-     */
     trackWheel(evt) {
-      if (!this.isZoomedIn) return; // Only handle wheel events when zoomed in
+      if (!this.isZoomedIn) return;
       evt.preventDefault();
       if (evt.deltaY !== 0) {
         this.alterCurrentTransformZoomBy(evt.deltaY * this.wheelZoomMultiplier);
       }
     }
 
-    /**
-     * Handle click on a thumbnail image.
-     * @param {object} evt - Event object.
-     */
     onThumbClick(evt) {
       evt.preventDefault();
       this.selectThumb(evt.currentTarget);
     }
 
-    /**
-     * Handle click on the main zoom image. (Toggle zoom in/out.)
-     * @param {object} evt - Event object.
-     */
     onZoomContainerClick(evt) {
       evt.preventDefault();
 
-      if (this.isZoomedIn) {
-        this.setCurrentTransform(0, 0, 0.4);
-        this.isZoomedIn = false;
-      } else {
-        // Calculate scale needed to fit container width
-        const fullWidthScale = this.clientWidth / this.currentZoomImage.naturalWidth;
-        // First set the zoom level
-        this.setCurrentTransform(0, 0, fullWidthScale);
-        // Then calculate and apply the pan based on click position
-        this.panZoomImageFromCoordinate(evt.clientX, evt.clientY);
-        this.isZoomedIn = true;
+      // If a drag occurred, ignore the click to prevent zoom toggle
+      if (this.dragged) {
+        this.dragged = false;
+        return;
       }
+
+      if (!this.isDragging) {
+        if (this.isZoomedIn) {
+          this.setCurrentTransform(0, 0, 0.4);
+          this.isZoomedIn = false;
+        } else {
+          const fullWidthScale = this.clientWidth / this.currentZoomImage.naturalWidth;
+          this.setCurrentTransform(0, 0, fullWidthScale);
+          this.panZoomImageFromCoordinate(evt.clientX, evt.clientY);
+          this.isZoomedIn = true;
+        }
+      }
+      this.isDragging = false;
     }
 
-    /**
-     * Handle key events.
-     * @param {object} evt - Event object.
-     */
     handleKeyup(evt) {
       switch (evt.key) {
         case 'ArrowLeft':
@@ -436,36 +359,45 @@ if (!customElements.get('gallery-zoom')) {
       }
     }
 
-    /**
-     * Update zoom amount by a delta.
-     * @param {number} delta - Amount to adjust.
-     */
     alterCurrentTransformZoomBy(delta) {
       this.currentTransform.zoom += delta;
-      
-      // Set minimum zoom to 0.4
+      // Ensure zoom doesn't go below 0.4
       this.currentTransform.zoom = Math.max(this.currentTransform.zoom, 0.4);
-      
-      // Set maximum zoom to full width scale
+      // Limit zoom to full-width scale
       const fullWidthScale = this.clientWidth / this.currentZoomImage.naturalWidth;
       this.currentTransform.zoom = Math.min(this.currentTransform.zoom, fullWidthScale);
-
-      // reasses pan bounds
+      // Reassess pan bounds
       this.alterCurrentPanBy(0, 0);
       this.updateImagePosition();
     }
 
-    /**
-     * Set current zoom image transform to specific values.
-     * @param {number} panX - Pan X value.
-     * @param {number} panY - Pan Y value.
-     * @param {number} zoom - Current zoom amount.
-     */
     setCurrentTransform(panX, panY, zoom) {
       this.currentTransform.panX = panX;
       this.currentTransform.panY = panY;
       this.currentTransform.zoom = zoom;
       this.updateImagePosition();
+    }
+
+    stopTrackingTouch() {
+      this.pinchTracking.isTracking = false;
+      this.touchTracking.isTracking = false;
+      this.isDragging = false;
+    }
+
+    onMouseDown(evt) {
+      if (this.isZoomedIn) {
+        this.initialMouseX = evt.clientX;
+        this.initialMouseY = evt.clientY;
+        this.isDragging = false;
+        this.dragged = false; // Reset dragged flag
+        evt.preventDefault();
+      }
+    }
+
+    onMouseUp(evt) {
+      if (this.isDragging) {
+        this.isDragging = false;
+      }
     }
   }
 

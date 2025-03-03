@@ -114,6 +114,10 @@
   position: absolute
 }
 
+.\!tw-absolute {
+  position: absolute !important
+}
+
 .tw-relative {
   position: relative
 }
@@ -122,16 +126,20 @@
   inset: 0px
 }
 
-.tw-left-0 {
-  left: 0px
+.tw-right-0 {
+  right: 0px
 }
 
 .tw-top-0 {
   top: 0px
 }
 
-.tw-right-0 {
-  right: 0px
+.tw-left-0 {
+  left: 0px
+}
+
+.tw-top-\[-52px\] {
+  top: -52px
 }
 
 .tw-z-50 {
@@ -142,32 +150,44 @@
   margin-bottom: 5rem
 }
 
-.tw-mt-3 {
-  margin-top: 0.75rem
-}
-
 .tw-mr-5 {
   margin-right: 1.25rem
 }
 
-.tw-block {
-  display: block
+.tw-mt-3 {
+  margin-top: 0.75rem
+}
+
+.tw-ml-\[21px\] {
+  margin-left: 21px
+}
+
+.tw-ml-\[31px\] {
+  margin-left: 31px
 }
 
 .\!tw-block {
   display: block !important
 }
 
+.tw-block {
+  display: block
+}
+
+.tw-inline-block {
+  display: inline-block
+}
+
 .tw-flex {
   display: flex
 }
 
-.tw-hidden {
-  display: none
-}
-
 .\!tw-hidden {
   display: none !important
+}
+
+.tw-hidden {
+  display: none
 }
 
 .tw-h-full {
@@ -178,6 +198,10 @@
   height: 100vh
 }
 
+.tw-h-0 {
+  height: 0px
+}
+
 .tw-max-h-\[1000px\] {
   max-height: 1000px
 }
@@ -186,29 +210,16 @@
   max-height: 10em
 }
 
-.tw-w-\[400px\] {
-  width: 400px
+.tw-w-\[300px\] {
+  width: 300px
 }
 
 .tw-w-full {
   width: 100%
 }
 
-.tw-w-3\/4 {
-  width: 75%
-}
-
-.tw-w-\[300px\] {
-  width: 300px
-}
-
 .tw-max-w-full {
   max-width: 100%
-}
-
-.tw--translate-x-full {
-  --tw-translate-x: -100%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
 
 .tw-translate-x-0 {
@@ -261,6 +272,10 @@
   gap: 1rem
 }
 
+.tw-gap-3 {
+  gap: 0.75rem
+}
+
 .tw-overflow-hidden {
   overflow: hidden
 }
@@ -271,6 +286,10 @@
 
 .tw-rounded-lg {
   border-radius: 0.5rem
+}
+
+.tw-rounded-\[6px\] {
+  border-radius: 6px
 }
 
 .tw-border {
@@ -291,8 +310,17 @@
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
 }
 
+.tw-bg-\[\#f6f6f6\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(246 246 246 / var(--tw-bg-opacity, 1))
+}
+
 .tw-p-10 {
   padding: 2.5rem
+}
+
+.tw-p-\[11px\] {
+  padding: 11px
 }
 
 .tw-px-4 {
@@ -308,6 +336,11 @@
 .tw-py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem
+}
+
+.tw-py-\[7px\] {
+  padding-top: 7px;
+  padding-bottom: 7px
 }
 
 .tw-font-bold {
@@ -378,7 +411,32 @@
 }
 
 @media (min-width: 768px) {
+  .md\:tw-ml-0 {
+    margin-left: 0px
+  }
+
+  .md\:tw-block {
+    display: block
+  }
+
+  .md\:tw-hidden {
+    display: none
+  }
+
+  .md\:\!tw-hidden {
+    display: none !important
+  }
+
+  .md\:tw-h-auto {
+    height: auto
+  }
+
   .md\:tw-w-\[400px\] {
     width: 400px
+  }
+
+  .md\:tw-py-0 {
+    padding-top: 0px;
+    padding-bottom: 0px
   }
 }

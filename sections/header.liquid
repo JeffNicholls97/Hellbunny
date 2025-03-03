@@ -64,8 +64,15 @@ main-menu.main-menu.main-menu--left-mob {
   {%- if section.settings.enable_sticky -%} data-is-sticky="true"{%- endif -%}
   {%- if search_is_minimised -%} data-is-search-minimised="true"{%- endif -%}
   style="--header-transition-speed: 300ms">
-  <header class="header__grid{% if section.settings.logo_center %} header__grid--centered-logo{% else %} header__grid--left-logo{% endif %} container flex flex-wrap items-center">
-    <div class="header__logo logo{% if section.settings.logo_center %} text-center{% endif %} flex js-closes-menu">
+  <header class="header__grid{% if section.settings.logo_center %} header__grid--centered-logo{% else %} header__grid--left-logo{% endif %} container flex flex-wrap items-center tw-py-[7px] md:tw-py-0">
+    <a class="header__icon {{ search_button_class }} js-show-search" href="{{ routes.search_url }}" aria-controls="search-bar">
+            {% render 'icon-search' %}
+            <span class="visually-hidden">{{ 'general.icon_labels.search' | t }}</span>
+          </a>
+    {% comment %} <div class="tw-block md:!tw-hidden">
+      {% render 'nav-mobile' %}
+    </div> {% endcomment %}
+    <div class="header__logo logo{% if section.settings.logo_center %} text-center{% endif %} flex js-closes-menu tw-ml-[31px] md:tw-ml-0">
       {%- if request.page_type == 'index' and section.settings.logo_h1 -%}
         <h1 class="logo__h1 m-0">
       {%- endif -%}
@@ -116,14 +123,16 @@ main-menu.main-menu.main-menu--left-mob {
           </a>
         {%- endif -%}
 
-        {% render 'nav-menu' %}
+        <div class="tw-h-0 md:tw-h-auto">
+          {% render 'nav-menu' %}
+        </div>
         {% render 'predictive-search', id: 'header-search', show_search_types: show_search_types %}
       </div>
     {%- elsif section.settings.logo_center -%}
       <div class="header__search"></div>
     {%- endif -%}
 
-    <div class="header__icons flex justify-end mis-auto js-closes-menu">
+    <div class="header__icons tw-gap-3 flex justify-end mis-auto js-closes-menu">
       {%- if section.settings.enable_search and search_is_minimised -%}
         {%- unless section.settings.logo_center and section.settings.minimise_search_mobile == false and section.settings.minimise_search_desktop -%}
           {%- liquid
@@ -135,10 +144,6 @@ main-menu.main-menu.main-menu--left-mob {
               assign search_button_class = "hidden md:block"
             endif
           -%}
-          <a class="header__icon {{ search_button_class }} js-show-search" href="{{ routes.search_url }}" aria-controls="search-bar">
-            {% render 'icon-search' %}
-            <span class="visually-hidden">{{ 'general.icon_labels.search' | t }}</span>
-          </a>
         {%- endunless -%}
       {%- endif -%}
       {%- if shop.customer_accounts_enabled -%}
