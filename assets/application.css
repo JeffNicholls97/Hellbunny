@@ -150,6 +150,10 @@
   display: block !important
 }
 
+.tw-block {
+  display: block
+}
+
 .tw-flex {
   display: flex
 }
