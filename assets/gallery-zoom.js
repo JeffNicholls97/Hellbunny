@@ -480,7 +480,7 @@ if (!customElements.get('gallery-zoom')) {
       this.currentTransform.panY = panY;
       this.currentTransform.zoom = zoom;
       this.updateImagePosition();
-    }
+    } 
 
     /**
      * Call to stop tracking touch events.
