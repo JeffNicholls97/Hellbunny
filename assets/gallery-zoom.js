@@ -464,6 +464,9 @@ if (!customElements.get('gallery-zoom')) {
         this.initialMouseY = evt.clientY;
         this.isDragging = false; // Reset dragging flag
         evt.preventDefault(); // Prevent default behavior
+        console.log('Mouse Down:', evt.clientX, evt.clientY);
+        console.log('Dragging:', this.isDragging);
+        console.log('Click Event Triggered');
       }
     }
 
