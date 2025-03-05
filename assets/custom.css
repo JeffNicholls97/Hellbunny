@@ -117,3 +117,14 @@ a.predictive-result.flex.items-start.focus-inset.js-search-link
   transition: all 0.3s ease-in-out;
   z-index: 1;
 }
+
+.filter__content ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 10px; /* Adjust spacing between items */
+}
+
+.filter__content li {
+  display: flex;
+  align-items: center;
+}
