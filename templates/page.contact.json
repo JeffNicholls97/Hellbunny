@@ -17,50 +17,16 @@
         "heading_align": "text-center"
       }
     },
-    "image-banner": {
-      "type": "image-banner",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Contact Us",
-            "heading_size": "h1",
-            "heading_h1": true
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Please visit our help pages for answers to some of the most commonly asked questions.</p>",
-            "enlarge_text": true
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
-      "disabled": true,
-      "settings": {
-        "url": "",
-        "height_mode": "fixed",
-        "fixed_height_desktop": 560,
-        "fixed_height_mobile": 440,
-        "overlay_position": "justify-start items-center",
-        "overlay_text_align": "text-start",
-        "mob_center_text": true,
-        "mobile_stacked": false,
-        "color_scheme": "white",
-        "full_width": true,
-        "transparent_content_color": "#ffffff",
-        "tint_color": "#000000",
-        "tint_opacity": 40,
-        "prevent_animation": false
-      }
-    },
     "form": {
       "type": "contact-form",
       "blocks": {
+        "text_XgwgN7": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We are happy to help! Complete the form below and our customer care team will in touch as soon as possible.</p>",
+            "half_width": false
+          }
+        },
         "contact-name-2": {
           "type": "name",
           "settings": {
@@ -102,6 +68,7 @@
         }
       },
       "block_order": [
+        "text_XgwgN7",
         "contact-name-2",
         "contact-email-3",
         "custom_NiVUYn",
@@ -109,10 +76,10 @@
         "contact-body-5"
       ],
       "settings": {
-        "heading": "Drop us an email",
+        "heading": "Need assistance?",
         "heading_align": "text-center",
         "image_position": "top",
-        "color_scheme": "1",
+        "color_scheme": "none",
         "full_width": false,
         "button_style": "btn btn--primary"
       }
@@ -157,7 +124,6 @@
   },
   "order": [
     "main",
-    "image-banner",
     "form",
     "newsletter"
   ]
