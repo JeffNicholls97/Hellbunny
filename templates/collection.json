@@ -34,7 +34,7 @@
         "stick_on_scroll": true,
         "show_filter_counts": false,
         "expand_filters": false,
-        "max_filter_options": 7,
+        "max_filter_options": 50,
         "enable_sorting": true,
         "show_feat_sort_opt": true,
         "sort_first": true
