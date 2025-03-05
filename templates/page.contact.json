@@ -84,6 +84,39 @@
         "button_style": "btn btn--primary"
       }
     },
+    "rich_text_wHJHfC": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_CNNHW6": {
+          "type": "heading",
+          "settings": {
+            "heading": "Customer Care",
+            "heading_size": "h3",
+            "heading_h1": false
+          }
+        },
+        "text_yntqqf": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Live Chat</h3><p>Talk to us over Facebook Messenger</p><p><strong>Email:</strong>help@hellbunny.com</p><h3>Press Email</h3><p><strong>Email:</strong><a href=\"mailto:info@popsoda.co.uk\">info@popsoda.co.uk</a></p><h3>Returns Address</h3><p>Hell Bunny Returns</p><p>48-50, Fowler Road,</p><p>Hainault Business Park,</p><p>Ilford,</p><p>Essex,</p><p>IG6 3UT</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_CNNHW6",
+        "text_yntqqf"
+      ],
+      "settings": {
+        "text_position": "justify-center",
+        "text_align": "text-center",
+        "mob_center_text": true,
+        "wide": true,
+        "color_scheme": "none",
+        "full_width": true,
+        "prevent_animation": false
+      }
+    },
     "newsletter": {
       "type": "newsletter",
       "blocks": {
@@ -125,6 +158,7 @@
   "order": [
     "main",
     "form",
+    "rich_text_wHJHfC",
     "newsletter"
   ]
 }
