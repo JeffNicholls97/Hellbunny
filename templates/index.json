@@ -216,7 +216,8 @@
       ],
       "custom_css": [
         "ul.grid.grid-cols-2.sm\\:grid-cols-3.xl\\:grid-cols-4.gap-x-theme.gap-y-10 {gap: 2px;}",
-        "@media (min-width: 1280px) {.xl\\:grid-cols-4 {grid-template-columns: repeat(3, minmax(0, 1fr)); }}"
+        "@media (min-width: 1280px) {.xl\\:grid-cols-4 {grid-template-columns: repeat(3, minmax(0, 1fr)); }}",
+        "@media (max-width: 639px) {/* Tailwind's 'sm' breakpoint */ .grid {grid-template-columns: 1fr !important; /* Makes each item take full width */ } .card__media .img-fit {width: 100%; height: auto; }}"
       ],
       "settings": {
         "title": "Our Collections",
