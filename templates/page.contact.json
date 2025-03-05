@@ -91,7 +91,7 @@
           "type": "heading",
           "settings": {
             "heading": "Customer Care",
-            "heading_size": "h3",
+            "heading_size": "h2",
             "heading_h1": false
           }
         },
@@ -157,8 +157,8 @@
   },
   "order": [
     "main",
-    "form",
     "rich_text_wHJHfC",
+    "form",
     "newsletter"
   ]
 }
