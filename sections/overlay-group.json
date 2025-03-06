@@ -13,9 +13,7 @@
   "sections": {
     "cart-drawer": {
       "type": "cart-drawer",
-      "custom_css": [
-        ".media {padding-top: 66.66%; /* For 3:2 aspect ratio */}"
-      ],
+      "custom_css": [],
       "settings": {
         "show_cart_page_link": true,
         "show_backorder_text": true,
@@ -45,7 +43,7 @@
         "button_style": "btn btn--secondary",
         "text_color": "#ffffff",
         "tint_color": "#000000",
-        "tint_opacity": 20
+        "tint_opacity": 35
       }
     },
     "product-compare": {
