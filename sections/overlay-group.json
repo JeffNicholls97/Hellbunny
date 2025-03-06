@@ -13,6 +13,9 @@
   "sections": {
     "cart-drawer": {
       "type": "cart-drawer",
+      "custom_css": [
+        ".media {padding-top: 66.66%; /* For 3:2 aspect ratio */}"
+      ],
       "settings": {
         "show_cart_page_link": true,
         "show_backorder_text": true,
