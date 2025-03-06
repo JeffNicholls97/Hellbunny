@@ -24,7 +24,7 @@
         "show_additional_checkout_buttons": false,
         "show_checkout_button": true,
         "cart_terms_page": "",
-        "show_shipping_calculator": true,
+        "show_shipping_calculator": false,
         "shipping_calculator_default_country": "United Kingdom",
         "promoted_products_visibility": "always",
         "promoted_products_heading": "Promoted products",
