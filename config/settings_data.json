@@ -432,7 +432,7 @@
     "show_currency_code": false,
     "cart_icon": "cart",
     "cart_type": "drawer",
-    "show_recommendations": true,
+    "show_recommendations": false,
     "recommendations_heading": "You may also like...",
     "recommendations_to_show": 3,
     "recommendations_layout": "carousel",
