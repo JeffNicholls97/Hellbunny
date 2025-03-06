@@ -12,8 +12,8 @@
     "image_banner_JGm6dC": {
       "type": "image-banner",
       "settings": {
-        "image_desktop": "shopify://shop_images/Desktop_Kocho_Banner.png",
-        "image_mobile": "shopify://shop_images/Mobile_Kocho_Banner.png",
+        "image_desktop": "shopify://shop_images/Suzon_Web_Banners_1.png",
+        "image_mobile": "shopify://shop_images/Suzon_Mobile_Banners.png",
         "url": "",
         "height_mode": "auto",
         "fixed_height_desktop": 600,
