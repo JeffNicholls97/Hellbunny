@@ -13,7 +13,9 @@
   "sections": {
     "cart-drawer": {
       "type": "cart-drawer",
-      "custom_css": [],
+      "custom_css": [
+        ".img-fit {width: 100%; /* Ensures the image fills the container */ height: 100%; /* Adjusts height to maintain aspect ratio */ object-fit: cover; /* Ensures the image covers the area without distortion */ image-rendering: crisp-edges; /* Prevents blurriness on some browsers */}"
+      ],
       "settings": {
         "show_cart_page_link": true,
         "show_backorder_text": true,
