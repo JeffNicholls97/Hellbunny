@@ -435,7 +435,7 @@
     "show_recommendations": true,
     "recommendations_heading": "You may also like...",
     "recommendations_to_show": 3,
-    "recommendations_layout": "list",
+    "recommendations_layout": "carousel",
     "cart_shaking": true,
     "cart_shaking_frequency": 2,
     "show_free_shipping_notice": true,
