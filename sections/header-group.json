@@ -90,7 +90,8 @@
       ],
       "custom_css": [
         ".cc-header--sticky .header.is-out {margin-bottom: 0px !important; transition: unset !important;}",
-        ".cc-header--sticky .main-menu__disclosure {max-height: unset !important; transition: unset !important;}"
+        ".cc-header--sticky .main-menu__disclosure {max-height: unset !important; transition: unset !important;}",
+        ".media {padding-top: 66.66%; /* For 3:2 aspect ratio */}"
       ],
       "settings": {
         "enable_sticky": true,
