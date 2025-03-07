@@ -5238,7 +5238,7 @@ body > .os-scrollbar {
     display: none;
   }
   .header__icons {
-    order: 2;
+    order: 0;
   }
   .main-menu {
     order: 3;
