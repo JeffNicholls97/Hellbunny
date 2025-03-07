@@ -5573,7 +5573,7 @@ body > .os-scrollbar {
   .header__icons { order: 2; }
  }
 
- @media (min-width: 1300px) {
+ @media (min-width: 1380px) {
   a.main-nav__item {
     text-transform: uppercase;
     letter-spacing: 3px;
