@@ -5169,7 +5169,7 @@ body > .os-scrollbar {
 
 .header__search {
   flex: 0 0 100%;
-  order: 0;
+  order: 2;
 }
 
 @media (max-width: 768.98px) {
@@ -5210,7 +5210,7 @@ body > .os-scrollbar {
   .header__search {
     display: block;
     flex: 6 1 auto;
-    order: 1;
+    order: 0;
     margin-top: 0;
   }
   .header__search.header__search--collapsible predictive-search {
