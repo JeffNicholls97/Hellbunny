@@ -5238,7 +5238,7 @@ body > .os-scrollbar {
     display: none;
   }
   .header__icons {
-    order: 2;
+    order: 0;
   }
   .main-menu {
     order: 3;
@@ -5319,6 +5319,12 @@ body > .os-scrollbar {
   text-decoration-line: underline;
 }
 @media (min-width: 600px){
+  a.main-nav__item {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0px 5px 0px 5px !important;
+    font-size: 13px;
+}
   .sm\:col-span-2{
     grid-column: span 2 / span 2;
   }
@@ -5563,3 +5569,6 @@ body > .os-scrollbar {
     grid-template-columns: repeat(8, minmax(0, 1fr));
   }
 }
+@media (min-width: 1350px) {
+  .header__icons { order: 2; }
+ }
