@@ -5569,6 +5569,15 @@ body > .os-scrollbar {
     grid-template-columns: repeat(8, minmax(0, 1fr));
   }
 }
-@media (min-width: 1170px) {
+@media (min-width: 1172px) {
   .header__icons { order: 2; }
+ }
+
+ @media (min-width: 1380px) {
+  a.main-nav__item {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0px 10px 0px 10px !important;
+    font-size: 13px;
+}
  }
