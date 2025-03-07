@@ -5569,3 +5569,9 @@ body > .os-scrollbar {
     grid-template-columns: repeat(8, minmax(0, 1fr));
   }
 }
+
+@media (min-width: 769px) {
+  .header__icons {
+    order: 2;
+  }
+}
