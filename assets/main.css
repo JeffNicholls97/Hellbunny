@@ -5527,6 +5527,12 @@ body > .os-scrollbar {
   .lg\:overflow-hidden{
     overflow: hidden;
   }
+  a.main-nav__item {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0px 5px 0px 5px !important;
+    font-size: 13px;
+}
 }
 @media (min-width: 1280px){
   .xl\:col-span-2{
