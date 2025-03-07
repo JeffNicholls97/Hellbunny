@@ -5569,9 +5569,3 @@ body > .os-scrollbar {
     grid-template-columns: repeat(8, minmax(0, 1fr));
   }
 }
-
-@media (min-width: 1441px) {
-  .header__search {
-    order: 0;
-  }
-}
