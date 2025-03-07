@@ -5210,7 +5210,7 @@ body > .os-scrollbar {
   .header__search {
     display: block;
     flex: 6 1 auto;
-    order: 0;
+    order: 1;
     margin-top: 0;
   }
   .header__search.header__search--collapsible predictive-search {
@@ -5238,7 +5238,7 @@ body > .os-scrollbar {
     display: none;
   }
   .header__icons {
-    order: 1;
+    order: 2;
   }
   .main-menu {
     order: 3;
@@ -5527,12 +5527,6 @@ body > .os-scrollbar {
   .lg\:overflow-hidden{
     overflow: hidden;
   }
-  a.main-nav__item {
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin: 0px 5px 0px 5px !important;
-    font-size: 13px;
-}
 }
 @media (min-width: 1280px){
   .xl\:col-span-2{
@@ -5569,9 +5563,3 @@ body > .os-scrollbar {
     grid-template-columns: repeat(8, minmax(0, 1fr));
   }
 }
-
-/* @media (min-width: 1350px) {
-  .header__icons {
-    order: 2;
-  }
-} */
