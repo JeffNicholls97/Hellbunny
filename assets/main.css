@@ -5570,7 +5570,7 @@ body > .os-scrollbar {
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1350px) {
   .header__icons {
     order: 2;
   }
