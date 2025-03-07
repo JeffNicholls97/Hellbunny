@@ -5564,8 +5564,8 @@ body > .os-scrollbar {
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1440px) {
   .header__search {
-    order: 0;
+    order: 2;
   }
 }
