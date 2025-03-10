@@ -236,10 +236,10 @@
     "featured_collection_KEenRw": {
       "type": "featured-collection",
       "settings": {
-        "title": "50s Dresses",
+        "title": "Vintage Inspired",
         "heading_align": "text-start",
         "show_view_all": true,
-        "collection": "default-category-dresses-style-50s-dresses",
+        "collection": "vintage-inspired",
         "layout": "carousel",
         "card_size_mobile": "large",
         "card_size": "small",
