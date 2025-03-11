@@ -14,7 +14,7 @@
       "settings": {
         "image_desktop": "shopify://shop_images/Suzon_Web_Banners_1.png",
         "image_mobile": "shopify://shop_images/Suzon_Mobile_Banners.png",
-        "url": "",
+        "url": "shopify://collections/all-new-in",
         "height_mode": "auto",
         "fixed_height_desktop": 600,
         "fixed_height_mobile": 350,
