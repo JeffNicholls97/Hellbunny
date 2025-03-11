@@ -33,7 +33,13 @@
     x-transition:leave-start="tw-translate-x-0"
     x-transition:leave-end="tw-translate-x-full"
   x-show="showFilterSidebar" class="md:tw-w-[400px] tw-absolute tw-w-[300px] tw-right-0 tw-top-0 tw-z-50 tw-overflow-y-auto tw-flex tw-flex-row tw-items-start tw-justify-start tw-bg-white tw-p-10 tw-h-screen">
+  {% if results.is_search %}
+    {% render 'facet-filters', results: search %}
+  {% elsif results.is_collection %}
     {% render 'facet-filters', results: collection %}
+  {% else %}
+    {% render 'facet-filters' %}
+  {% endif %}
   </div>
 </div>
 
