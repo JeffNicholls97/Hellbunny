@@ -12,8 +12,8 @@
     "image_banner_JGm6dC": {
       "type": "image-banner",
       "settings": {
-        "image_desktop": "shopify://shop_images/Suzon_Web_Banners_1.png",
-        "image_mobile": "shopify://shop_images/Suzon_Mobile_Banners.png",
+        "image_desktop": "shopify://shop_images/133_web_banners_2.png",
+        "image_mobile": "shopify://shop_images/133_mobile_banners.png",
         "url": "shopify://collections/all-new-in",
         "height_mode": "auto",
         "fixed_height_desktop": 600,
