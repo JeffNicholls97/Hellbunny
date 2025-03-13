@@ -133,7 +133,7 @@
       "settings": {
         "image_desktop": "shopify://shop_images/Smiley_Banner_Final_3.png",
         "image_mobile": "shopify://shop_images/Mobile_Smiley_Banner_1.png",
-        "url": "shopify://collections/all-new-in",
+        "url": "shopify://collections/smiley-x-hell-bunny",
         "height_mode": "auto",
         "fixed_height_desktop": 600,
         "fixed_height_mobile": 350,
