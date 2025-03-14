@@ -17,14 +17,13 @@
         "announcement-1": {
           "type": "announcement",
           "settings": {
-            "text": "<p>UP TO 80% OFF - NEW STYLES ADDED  <a href=\"https://www.hellbunny.com/collections/default-category-sale\" title=\"https://www.hellbunny.com/collections/default-category-sale\">Shop Now</a></p>"
+            "text": "<p>Subscribe to our newsletter below for 10% off your first order! <a href=\"/collections/all-new-in\" title=\"All New In\">Shop New In</a></p>"
           }
         }
       },
       "block_order": [
         "announcement-1"
       ],
-      "disabled": true,
       "settings": {
         "link1": "",
         "link1_label": "",
