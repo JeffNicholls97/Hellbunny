@@ -77,7 +77,7 @@
         "column_UeEp3C": {
           "type": "column",
           "settings": {
-            "enable_media": true,
+            "enable_media": false,
             "media_scale": 100,
             "heading": "Register for a Trade Account",
             "text": "<p>Sign up on the <strong>Pop Soda Trade Website</strong> to access wholesale pricing and order directly.</p>",
@@ -88,7 +88,7 @@
         "column_R9LQFp": {
           "type": "column",
           "settings": {
-            "enable_media": true,
+            "enable_media": false,
             "media_scale": 100,
             "heading": "Browse & Order",
             "text": "<p>Explore our latest collections and place your order with ease.</p>",
@@ -99,7 +99,7 @@
         "column_BrEXqg": {
           "type": "column",
           "settings": {
-            "enable_media": true,
+            "enable_media": false,
             "media_scale": 100,
             "heading": "Receive Your Stock & Start Selling!",
             "text": "<p>Elevate your store’s alternative fashion offering with Hell Bunny’s bold and beautiful designs.</p>",
