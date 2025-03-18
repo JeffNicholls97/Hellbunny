@@ -38,6 +38,10 @@
 .second-image-container.hidden {
   display: none;
 }
+
+.second-image-container img {
+    mix-blend-mode: unset !important;
+}
 </style>
 
 <product-card-image-slider class="carousel relative block" inactive{% if attrs != blank %} {{ attrs }}{% endif %}>
