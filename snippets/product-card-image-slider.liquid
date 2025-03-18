@@ -62,9 +62,13 @@
     <div class="slider slider--no-scrollbar" id="slider-{{ product.id }}">
       <ul class="slider__grid grid grid-flow-col auto-cols-1 small__grid" role="list">
         {%- for media in product_media -%}
-          <li class="slider__item{% if forloop.first %} first-item-hover{% endif %}"{% if product.featured_media.id == media.id %} aria-current="true"{% endif %} data-media-id="{{ media.id }}">
+          {%- assign is_active = false -%}
+          {%- if product.featured_media.id == media.id or forloop.first -%}
+            {%- assign is_active = true -%}
+          {%- endif -%}
+          <li class="slider__item{% if is_active %} first-item-hover{% endif %}"{% if product.featured_media.id == media.id %} aria-current="true"{% endif %} data-media-id="{{ media.id }}">
             <a href="{{ product_url | default: product.url }}" aria-label="{{ product.title | escape }}" class="media block relative{% if image_blend %} image-blend{% endif %} js-prod-link"{% if image_ratio %} style="padding-top: {{ 1 | divided_by: image_ratio | times: 100 }}%;"{% endif %} tabindex="-1">
-              {%- capture attributes %}data-media-id="{{ media.id }}"{% if forloop.first and product_media.size > 1 %} data-second-image-id="{{ product_media[1].id }}" data-has-second-image="true"{% endif %}{% endcapture -%}
+              {%- capture attributes %}data-media-id="{{ media.id }}"{% if is_active and product_media.size > 1 %} data-second-image-id="{{ product_media[1].id }}" data-has-second-image="true"{% endif %}{% endcapture -%}
               {% render 'image',
                 image: media.preview_image,
                 widths: '320, 460, 600, 700, 800, 900, 1200',
@@ -73,13 +77,13 @@
                 lazy_load: true,
                 lazy_load_is_native: true,
                 sizes: image_sizes,
-                class: image_class | append: forloop.first and product_media.size > 1 ? ' first-image-hover' : '',
+                class: image_class | append: is_active and product_media.size > 1 ? ' first-image-hover' : '',
                 attributes: attributes,
                 disable_focal_point: true,
                 quality: image_quality
               %}
               
-              {% if forloop.first and product_media.size > 1 %}
+              {% if is_active and product_media.size > 1 %}
                 <div class="second-image-container hidden absolute inset-0 w-full h-full">
                   {% render 'image',
                     image: product_media[1].preview_image,
