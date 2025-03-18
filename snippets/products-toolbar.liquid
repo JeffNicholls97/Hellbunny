@@ -16,23 +16,6 @@
     assign filters_enabled = false
   endif
 %}
-<<<<<<< HEAD
-<products-toolbar class="products-toolbar flex items-center mb-8{% if settings.enable_compare and settings.compare_toggle != "none" %} products-toolbar--compare{% if section.settings.show_layout_toggle and sort_or_filters_visible %} products-toolbar--compare-shift-xs mt-16{% endif %}{% endif %} no-js-hidden" id="products-toolbar">
-  {%- if filters_enabled -%}
-    <div class="products-toolbar__filter">
-      <button type="button" class="products-toolbar__filter-btn flex justify-between items-center text-current font-bold {% if section.settings.filters_open_lg %}is-active {% endif %}js-toggle-filters" aria-controls="facet-filters" aria-expanded="false">
-        <span class="hidden md:block">{{ 'products.filtering.filter' | t }}</span>
-        {%- if section.settings.enable_sorting -%}
-          <span class="md:hidden">{{ 'products.filtering.filter_sort' | t }}</span>
-        {%- else -%}
-          <span class="md:hidden">{{ 'products.filtering.filter' | t }}</span>
-        {%- endif -%}
-        {% render 'icon-filter' %}
-      </button>
-    </div>
-  {%- endif -%}
-
-=======
 <div x-show="showFilterSidebar" class="tw-fixed tw-right-0 tw-top-0 tw-z-50">
   <span
   x-transition:enter="tw-transition-opacity tw-duration-300"
@@ -61,7 +44,6 @@
 </div>
 
 <products-toolbar class="products-toolbar flex items-center mb-8{% if settings.enable_compare and settings.compare_toggle != "none" %} products-toolbar--compare{% if section.settings.show_layout_toggle and sort_or_filters_visible %} products-toolbar--compare-shift-xs mt-16{% endif %}{% endif %} no-js-hidden" id="products-toolbar">
->>>>>>> development_branch
   {%- if section.settings.enable_sorting -%}
     <div class="products-toolbar__sort{% if filters_enabled %} hidden md:block{% endif %}">
       {%- liquid
@@ -94,6 +76,8 @@
     </div>
     <script src="{{ 'custom-select.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
+
+  <span class="products-count"><span class="tw-font-bold">{{ results.products_count }}</span> Products</span>
 
   {%- if settings.enable_compare and settings.compare_toggle != "none" -%}
     <div class="products-toolbar__compare end">
