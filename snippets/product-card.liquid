@@ -39,6 +39,13 @@
 
   if settings.card_hover_action == 'slideshow' and product_images.size > 1
     assign show_slideshow = true
+    assign show_hover_image = true
+
+    if product_images.size >= product.featured_media.position
+      assign hover_image = product_images[product.featured_media.position]
+    else
+      assign hover_image = product_images[0]
+    endif
   endif
 
   if image_ratio == nil
