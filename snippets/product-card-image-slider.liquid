@@ -58,8 +58,8 @@
     <div class="slider slider--no-scrollbar" id="slider-{{ product.id }}">
       <ul class="slider__grid grid grid-flow-col auto-cols-1 small__grid" role="list">
         {%- for media in product_media -%}
+          <li>{{ media[1] }}</li>
           <li class="slider__item{% if forloop.first %} first-item-hover{% endif %}"{% if product.featured_media.id == media.id %} aria-current="true"{% endif %} data-media-id="{{ media.id }}">
-            <li>{{ media[1] }}</li>
             <a href="{{ product_url | default: product.url }}" aria-label="{{ product.title | escape }}" class="media block relative{% if image_blend %} image-blend{% endif %} js-prod-link"{% if image_ratio %} style="padding-top: {{ 1 | divided_by: image_ratio | times: 100 }}%;"{% endif %} tabindex="-1">
               {%- capture attributes %}data-media-id="{{ media.id }}"{% if forloop.first and forloop.index0 == 0 and product_media[1] != blank %} data-second-image-id="{{ product_media[1].id }}" data-has-second-image="true"{% endif %}{% endcapture -%}
               {% render 'image',
