@@ -133,4 +133,5 @@ a.predictive-result.flex.items-start.focus-inset.js-search-link
 button.btn.product__form--add-to-cart.btn.btn--secondary-accent.button.button--full-width.product-form__buttons {
     background: #f6f6f6 !important;
     border-radius: 6px !important;
+    width: 100%;
 }
