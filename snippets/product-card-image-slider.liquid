@@ -61,10 +61,12 @@
   <div class="relative">
     <div class="slider slider--no-scrollbar" id="slider-{{ product.id }}">
       <ul class="slider__grid grid grid-flow-col auto-cols-1 small__grid" role="list">
+        {%- assign found_visible_item = false -%}
         {%- for media in product_media -%}
           {%- assign is_active = false -%}
-          {%- if product.featured_media.id == media.id or forloop.first -%}
+          {%- if product.featured_media.id == media.id or (forloop.first and not found_visible_item) -%}
             {%- assign is_active = true -%}
+            {%- assign found_visible_item = true -%}
           {%- endif -%}
           <li class="slider__item{% if is_active %} first-item-hover{% endif %}"{% if product.featured_media.id == media.id %} aria-current="true"{% endif %} data-media-id="{{ media.id }}">
             <a href="{{ product_url | default: product.url }}" aria-label="{{ product.title | escape }}" class="media block relative{% if image_blend %} image-blend{% endif %} js-prod-link"{% if image_ratio %} style="padding-top: {{ 1 | divided_by: image_ratio | times: 100 }}%;"{% endif %} tabindex="-1">
