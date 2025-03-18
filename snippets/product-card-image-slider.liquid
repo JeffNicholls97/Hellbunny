@@ -77,7 +77,7 @@
           </li>
         {%- endfor -%}
         <div class="second-image-hover">
-          {{ product.media }}
+          {{ product.featured_media.position }}
           {% render 'image',
           image: media,
           widths: '320, 460, 600, 700, 800, 900, 1200',
