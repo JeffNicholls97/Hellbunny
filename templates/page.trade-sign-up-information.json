@@ -70,10 +70,113 @@
         "tint_opacity": 40,
         "prevent_animation": false
       }
+    },
+    "multi_column_mRyVAx": {
+      "type": "multi-column",
+      "blocks": {
+        "column_UeEp3C": {
+          "type": "column",
+          "settings": {
+            "enable_media": true,
+            "media_scale": 100,
+            "heading": "Register for a Trade Account",
+            "text": "<p>Sign up on the <strong>Pop Soda Trade Website</strong> to access wholesale pricing and order directly.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "column_R9LQFp": {
+          "type": "column",
+          "settings": {
+            "enable_media": true,
+            "media_scale": 100,
+            "heading": "Browse & Order",
+            "text": "<p>Explore our latest collections and place your order with ease.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "column_BrEXqg": {
+          "type": "column",
+          "settings": {
+            "enable_media": true,
+            "media_scale": 100,
+            "heading": "Receive Your Stock & Start Selling!",
+            "text": "<p>Elevate your store’s alternative fashion offering with Hell Bunny’s bold and beautiful designs.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_UeEp3C",
+        "column_R9LQFp",
+        "column_BrEXqg"
+      ],
+      "settings": {
+        "title": "",
+        "heading_align": "text-start",
+        "button_label": "",
+        "button_link": "",
+        "layout": "carousel",
+        "column_size": "medium",
+        "column_align": "left",
+        "media_align": "text-center",
+        "image_ratio": "1",
+        "color_scheme": "1",
+        "button_style": "btn btn--secondary"
+      }
+    },
+    "rich_text_apiaEX": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_iqV7cY": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join the Hell Bunny Family Today!",
+            "heading_size": "h3",
+            "heading_h1": false
+          }
+        },
+        "text_JhFCqz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Hell Bunny is more than a brand—it’s a movement. If you’re ready to offer your customers unique, high-quality alternative fashion, <strong>sign up now</strong> on the <strong>Pop Soda Trade Website</strong> and become an official Hell Bunny stockist.</p>",
+            "enlarge_text": true
+          }
+        },
+        "button_AcwbVC": {
+          "type": "button",
+          "settings": {
+            "button_1_label": "REGISTER NOW",
+            "button_1_link": "",
+            "button_1_style": "btn--primary",
+            "button_2_label": "",
+            "button_2_link": "",
+            "button_2_style": "btn btn--primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_iqV7cY",
+        "text_JhFCqz",
+        "button_AcwbVC"
+      ],
+      "settings": {
+        "text_position": "justify-center",
+        "text_align": "text-center",
+        "mob_center_text": true,
+        "wide": false,
+        "color_scheme": "none",
+        "full_width": true,
+        "prevent_animation": false
+      }
     }
   },
   "order": [
     "main",
-    "image_banner_ADTBfk"
+    "image_banner_ADTBfk",
+    "multi_column_mRyVAx",
+    "rich_text_apiaEX"
   ]
 }
