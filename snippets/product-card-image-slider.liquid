@@ -30,20 +30,6 @@
   endif
 -%}
 
-<style>
-  .first-item-hover:hover .second-image-container {
-  display: block !important;
-}
-
-.second-image-container.hidden {
-  display: none;
-}
-
-.second-image-container img {
-    mix-blend-mode: unset !important;
-}
-</style>
-
 <product-card-image-slider class="carousel relative block" inactive{% if attrs != blank %} {{ attrs }}{% endif %}>
   <div class="carousel__controls absolute w-full">
     <div class="slider-nav slide-nav--inline flex items-center justify-between no-js-hidden">
@@ -61,19 +47,10 @@
   <div class="relative">
     <div class="slider slider--no-scrollbar" id="slider-{{ product.id }}">
       <ul class="slider__grid grid grid-flow-col auto-cols-1 small__grid" role="list">
-        {%- assign found_visible_item = false -%}
         {%- for media in product_media -%}
-          {%- assign is_active = false -%}
-          {%- if product.featured_media.id == media.id -%}
-            {%- assign is_active = true -%}
-            {%- assign found_visible_item = true -%}
-          {%- elsif forloop.first and found_visible_item == false -%}
-            {%- assign is_active = true -%}
-            {%- assign found_visible_item = true -%}
-          {%- endif -%}
-          <li class="slider__item{% if is_active %} first-item-hover{% endif %}"{% if product.featured_media.id == media.id %} aria-current="true"{% endif %} data-media-id="{{ media.id }}">
+          <li class="slider__item"{% if product.featured_media.id == media.id %} aria-current="true"{% endif %} data-media-id="{{ media.id }}">
             <a href="{{ product_url | default: product.url }}" aria-label="{{ product.title | escape }}" class="media block relative{% if image_blend %} image-blend{% endif %} js-prod-link"{% if image_ratio %} style="padding-top: {{ 1 | divided_by: image_ratio | times: 100 }}%;"{% endif %} tabindex="-1">
-              {%- capture attributes %}data-media-id="{{ media.id }}"{% if is_active and product_media.size > 1 %} data-second-image-id="{{ product_media[1].id }}" data-has-second-image="true"{% endif %}{% endcapture -%}
+              {%- capture attributes %}data-media-id="{{ media.id }}"{% endcapture -%}
               {% render 'image',
                 image: media.preview_image,
                 widths: '320, 460, 600, 700, 800, 900, 1200',
@@ -82,29 +59,11 @@
                 lazy_load: true,
                 lazy_load_is_native: true,
                 sizes: image_sizes,
-                class: image_class | append: is_active and product_media.size > 1 ? ' first-image-hover' : '',
+                class: image_class,
                 attributes: attributes,
                 disable_focal_point: true,
                 quality: image_quality
               %}
-              
-              {% if is_active and product_media.size > 1 %}
-                <div class="second-image-container hidden absolute inset-0 w-full h-full">
-                  {% render 'image',
-                    image: product_media[1].preview_image,
-                    widths: '320, 460, 600, 700, 800, 900, 1200',
-                    src_width: 460,
-                    src_placeholder: true,
-                    lazy_load: true,
-                    lazy_load_is_native: true,
-                    sizes: image_sizes,
-                    class: image_class | append: ' second-image',
-                    attributes: 'data-second-image="true"',
-                    disable_focal_point: true,
-                    quality: image_quality
-                  %}
-                </div>
-              {% endif %}
             </a>
           </li>
         {%- endfor -%}
@@ -112,41 +71,3 @@
     </div>
   </div>
 </product-card-image-slider>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const productCards = document.querySelectorAll('product-card-image-slider');
-    
-    productCards.forEach(card => {
-      const items = card.querySelectorAll('.slider__item');
-      const secondImageContainers = card.querySelectorAll('.second-image-container');
-      
-      // Remove all first-item-hover classes
-      items.forEach(item => {
-        item.classList.remove('first-item-hover');
-      });
-      
-      // Hide all second image containers
-      secondImageContainers.forEach(container => {
-        container.classList.add('hidden');
-      });
-      
-      // Find first visible item
-      for (let i = 0; i < items.length; i++) {
-        const item = items[i];
-        if (window.getComputedStyle(item).display !== 'none' && !item.hasAttribute('hidden')) {
-          // Add hover class to first visible item
-          item.classList.add('first-item-hover');
-          
-          // Show second image container if it exists
-          const secondImageContainer = item.querySelector('.second-image-container');
-          if (secondImageContainer) {
-            secondImageContainer.classList.remove('hidden');
-          }
-          
-          break;
-        }
-      }
-    });
-  });
-</script>
