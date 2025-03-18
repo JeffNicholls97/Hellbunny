@@ -122,7 +122,7 @@ data-default-image="{{ product.featured_image | img_url: '533x' }}"
       </div>
     {%- endif -%}
 
-    <div class="card__media test{% if show_hover_image %} has-hover-image{% endif %} relative">
+    <div class="card__media{% if show_hover_image %} has-hover-image{% endif %} relative">
       {%- if show_slideshow -%}
         {%- render 'product-card-image-slider',
           product: product,
