@@ -64,7 +64,10 @@
         {%- assign found_visible_item = false -%}
         {%- for media in product_media -%}
           {%- assign is_active = false -%}
-          {%- if product.featured_media.id == media.id or (forloop.first and not found_visible_item) -%}
+          {%- if product.featured_media.id == media.id -%}
+            {%- assign is_active = true -%}
+            {%- assign found_visible_item = true -%}
+          {%- elsif forloop.first and found_visible_item == false -%}
             {%- assign is_active = true -%}
             {%- assign found_visible_item = true -%}
           {%- endif -%}
