@@ -112,3 +112,41 @@
     </div>
   </div>
 </product-card-image-slider>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const productCards = document.querySelectorAll('product-card-image-slider');
+    
+    productCards.forEach(card => {
+      const items = card.querySelectorAll('.slider__item');
+      const secondImageContainers = card.querySelectorAll('.second-image-container');
+      
+      // Remove all first-item-hover classes
+      items.forEach(item => {
+        item.classList.remove('first-item-hover');
+      });
+      
+      // Hide all second image containers
+      secondImageContainers.forEach(container => {
+        container.classList.add('hidden');
+      });
+      
+      // Find first visible item
+      for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+        if (window.getComputedStyle(item).display !== 'none' && !item.hasAttribute('hidden')) {
+          // Add hover class to first visible item
+          item.classList.add('first-item-hover');
+          
+          // Show second image container if it exists
+          const secondImageContainer = item.querySelector('.second-image-container');
+          if (secondImageContainer) {
+            secondImageContainer.classList.remove('hidden');
+          }
+          
+          break;
+        }
+      }
+    });
+  });
+</script>
