@@ -67,7 +67,21 @@
             </a>
           </li>
         {%- endfor -%}
-        <img class="second-hover-image" src="{{ product_media[1] }}" />
+        <div class="second-image-hover">
+          {% render 'image',
+          image: product_media[1],
+          widths: '320, 460, 600, 700, 800, 900, 1200',
+          src_width: 460,
+          src_placeholder: true,
+          lazy_load: true,
+          lazy_load_is_native: true,
+          sizes: image_sizes,
+          class: image_class,
+          attributes: attributes,
+          disable_focal_point: true,
+          quality: image_quality
+        %}
+        </div>
       </ul>
     </div>
   </div>
