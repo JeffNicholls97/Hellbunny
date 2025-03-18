@@ -44,15 +44,6 @@
     </div>
   </div>
 
-  <style>
-    .slider__grid:hover .second-image-hover {
-    display: block!important;
-}
-.second-image-hover {
-    display: none;
-}
-  </style>
-
   <div class="relative">
     <div class="slider slider--no-scrollbar" id="slider-{{ product.id }}">
       <ul class="slider__grid grid grid-flow-col auto-cols-1 small__grid" role="list">
@@ -76,21 +67,6 @@
             </a>
           </li>
         {%- endfor -%}
-        <div class="second-image-hover">
-          {% render 'image',
-          image: product.media[product.featured_media.position],
-          widths: '320, 460, 600, 700, 800, 900, 1200',
-          src_width: 460,
-          src_placeholder: true,
-          lazy_load: true,
-          lazy_load_is_native: true,
-          sizes: image_sizes,
-          class: image_class,
-          attributes: attributes,
-          disable_focal_point: true,
-          quality: image_quality
-        %}
-        </div>
       </ul>
     </div>
   </div>

@@ -13,10 +13,10 @@ if (!customElements.get('products-toolbar')) {
       this.sortBy = this.querySelector('.products-toolbar__sort');
       this.productsGrid = document.querySelector('.main-products-grid');
 
-      // if (this.filtersColumn) {
-      //   this.filterToggle = this.querySelector('.js-toggle-filters');
-      //   this.filterToggle.addEventListener('click', this.toggleFilters.bind(this));
-      // }
+      if (this.filtersColumn) {
+        this.filterToggle = this.querySelector('.js-toggle-filters');
+        this.filterToggle.addEventListener('click', this.toggleFilters.bind(this));
+      }
 
       if (this.layoutSwitcher) {
         this.layoutSwitcher.addEventListener('change', this.handleLayoutChange.bind(this));

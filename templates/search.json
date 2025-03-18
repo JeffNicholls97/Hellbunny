@@ -11,29 +11,7 @@
   "sections": {
     "main": {
       "type": "main-search",
-      "settings": {
-        "show_search_title": true,
-        "show_search_input": true,
-        "heading_align": "text-center",
-        "products_per_page": 16,
-        "card_size": "medium",
-        "show_layout_toggle": true,
-        "enable_filtering": true,
-        "filters_open_lg": false,
-        "stick_on_scroll": false,
-        "show_filter_counts": true,
-        "expand_filters": false,
-        "max_filter_options": 7,
-        "enable_sorting": true,
-        "sort_first": true,
-        "show_article_featured_image": true,
-        "show_article_tags": false,
-        "show_article_excerpt": false,
-        "show_article_author": true,
-        "show_article_date": true,
-        "show_page_date": true,
-        "show_page_excerpt": true
-      }
+      "settings": {}
     }
   },
   "order": [

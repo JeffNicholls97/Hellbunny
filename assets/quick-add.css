@@ -158,7 +158,6 @@
   .mob\:card__quick-add--below {
     position: static;
     padding: calc(4 * var(--space-unit)) 0 0 0;
-    display:none;
   }
   .mob\:card__quick-add--below .btn {
     padding-right: 10px;
@@ -309,12 +308,11 @@
 }
 @media (min-width: 1280px) {
   .main-products-grid[data-layout=list] .card__quick-add {
-    padding-inline-start: 0px;
-    display: none;
+    padding-inline-start: 100px;
   }
 }
 @media (min-width: 1536px) {
   .main-products-grid[data-layout=list] .card__quick-add {
-    padding-inline-start: 0px;
+    padding-inline-start: 150px;
   }
 }

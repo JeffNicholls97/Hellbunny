@@ -235,7 +235,8 @@
         },
         "newsletter-form-3": {
           "type": "form",
-          "settings": {}
+          "settings": {
+          }
         }
       },
       "block_order": [

@@ -12,9 +12,9 @@
     "image_banner_JGm6dC": {
       "type": "image-banner",
       "settings": {
-        "image_desktop": "shopify://shop_images/133_web_banners_2.png",
-        "image_mobile": "shopify://shop_images/133_mobile_banners.png",
-        "url": "shopify://collections/all-new-in",
+        "image_desktop": "shopify://shop_images/Haze_Blouse_Sale_Web_Banner.png",
+        "image_mobile": "shopify://shop_images/Haze_Blouse_Sale_Mobile_Banner_Final_2.png",
+        "url": "",
         "height_mode": "auto",
         "fixed_height_desktop": 600,
         "fixed_height_mobile": 350,
@@ -128,27 +128,6 @@
         "button_style": "btn btn--secondary"
       }
     },
-    "image_banner_CbNCFL": {
-      "type": "image-banner",
-      "settings": {
-        "image_desktop": "shopify://shop_images/Smiley_Banner_Final_3.png",
-        "image_mobile": "shopify://shop_images/Mobile_Smiley_Banner_1.png",
-        "url": "shopify://collections/smiley-x-hell-bunny",
-        "height_mode": "auto",
-        "fixed_height_desktop": 600,
-        "fixed_height_mobile": 350,
-        "overlay_position": "justify-center items-center",
-        "overlay_text_align": "text-center",
-        "mob_center_text": false,
-        "mobile_stacked": false,
-        "color_scheme": "white",
-        "full_width": true,
-        "transparent_content_color": "#ffffff",
-        "tint_color": "#000000",
-        "tint_opacity": 0,
-        "prevent_animation": false
-      }
-    },
     "scrolling-banner": {
       "type": "scrolling-banner",
       "blocks": {
@@ -211,8 +190,8 @@
         "collection-0": {
           "type": "collection",
           "settings": {
-            "collection": "back-in-stock",
-            "image": "shopify://shop_images/Back_In_Stock_Tile_2.png"
+            "collection": "default-category-collections-hearts",
+            "image": "shopify://shop_images/Valentine_s_Romance_isnt_dead.png"
           }
         },
         "collection-1": {
@@ -237,8 +216,7 @@
       ],
       "custom_css": [
         "ul.grid.grid-cols-2.sm\\:grid-cols-3.xl\\:grid-cols-4.gap-x-theme.gap-y-10 {gap: 2px;}",
-        "@media (min-width: 1280px) {.xl\\:grid-cols-4 {grid-template-columns: repeat(3, minmax(0, 1fr)); }}",
-        "@media (max-width: 639px) {/* Tailwind's 'sm' breakpoint */ .grid {grid-template-columns: 1fr !important; /* Makes each item take full width */ } .card__media .img-fit {width: 100%; height: auto; }}"
+        "@media (min-width: 1280px) {.xl\\:grid-cols-4 {grid-template-columns: repeat(3, minmax(0, 1fr)); }}"
       ],
       "settings": {
         "title": "Our Collections",
@@ -257,10 +235,10 @@
     "featured_collection_KEenRw": {
       "type": "featured-collection",
       "settings": {
-        "title": "Vintage Inspired",
+        "title": "50s Dresses",
         "heading_align": "text-start",
         "show_view_all": true,
-        "collection": "vintage-inspired",
+        "collection": "default-category-dresses-style-50s-dresses",
         "layout": "carousel",
         "card_size_mobile": "large",
         "card_size": "small",
@@ -1132,7 +1110,6 @@
     "image_banner_JGm6dC",
     "promo-grid",
     "featured-collection",
-    "image_banner_CbNCFL",
     "scrolling-banner",
     "collection-list",
     "featured_collection_KEenRw",

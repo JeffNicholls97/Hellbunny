@@ -848,7 +848,6 @@ class StoreHeader extends HTMLElement {
     super();
     this.menu = this.querySelector('.main-menu__content');
     this.searchToggle = this.querySelector('.js-show-search');
-    this.searchToggleMobile = this.querySelector('.js-show-search-mobile');
     this.searchToggleLeft = this.querySelector('.js-show-search-left');
     this.mobNavToggle = this.querySelector('.main-menu__toggle');
     this.shakeyCartIcon = this.querySelector('.header__icon--cart-shake');
@@ -891,7 +890,6 @@ class StoreHeader extends HTMLElement {
     if (this.dataset.isSearchMinimised) {
       if (this.searchToggle) {
         this.searchToggle.addEventListener('click', this.handleSearchToggleClick.bind(this));
-        this.searchToggleMobile.addEventListener('click', this.handleSearchToggleClick.bind(this));
       }
 
       if (this.searchToggleLeft) {
