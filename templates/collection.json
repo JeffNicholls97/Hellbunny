@@ -15,7 +15,7 @@
         "show_collection_title": true,
         "show_product_count": true,
         "show_collection_description": true,
-        "text_align": "text-start",
+        "text_align": "items-center text-center",
         "collection_image": "none",
         "use_product_image": false,
         "text_width": "wide",
@@ -34,7 +34,7 @@
         "stick_on_scroll": true,
         "show_filter_counts": false,
         "expand_filters": false,
-        "max_filter_options": 7,
+        "max_filter_options": 50,
         "enable_sorting": true,
         "show_feat_sort_opt": true,
         "sort_first": true
