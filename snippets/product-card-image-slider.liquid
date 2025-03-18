@@ -30,6 +30,16 @@
   endif
 -%}
 
+<style>
+  .first-item-hover:hover .second-image-container {
+  display: block !important;
+}
+
+.second-image-container.hidden {
+  display: none;
+}
+</style>
+
 <product-card-image-slider class="carousel relative block" inactive{% if attrs != blank %} {{ attrs }}{% endif %}>
   <div class="carousel__controls absolute w-full">
     <div class="slider-nav slide-nav--inline flex items-center justify-between no-js-hidden">
