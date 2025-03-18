@@ -178,7 +178,7 @@ data-default-image="{{ product.featured_image | img_url: '533x' }}"
             {%- endif -%}
 
             {%- if show_hover_image -%}
-              {%- assign class = class | replace: 'card__main-image', 'card__hover-image' -%}
+              {% comment %} {%- assign class = class | replace: 'card__main-image', 'card__hover-image' -%} {% endcomment %}
               {% render 'image',
                 image: hover_image,
                 widths: '320, 460, 600, 700, 800, 900, 1200',
