@@ -12,8 +12,8 @@
     "image_banner_JGm6dC": {
       "type": "image-banner",
       "settings": {
-        "image_desktop": "shopify://shop_images/133_web_banners_2.png",
-        "image_mobile": "shopify://shop_images/133_mobile_banners.png",
+        "image_desktop": "shopify://shop_images/Copy_of_133_web_banners.png",
+        "image_mobile": "shopify://shop_images/Copy_of_133_web_banners_1809_x_2362_px_1.png",
         "url": "shopify://collections/all-new-in",
         "height_mode": "auto",
         "fixed_height_desktop": 600,
