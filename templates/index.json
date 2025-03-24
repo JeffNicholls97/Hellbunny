@@ -208,32 +208,32 @@
     "collection-list": {
       "type": "collection-list",
       "blocks": {
-        "collection-0": {
+        "collection_MVwpGH": {
           "type": "collection",
           "settings": {
-            "collection": "back-in-stock",
-            "image": "shopify://shop_images/Back_In_Stock_Tile_2.png"
+            "collection": "default-category-clothing-denim",
+            "image": "shopify://shop_images/3_80c7766d-4294-461c-b849-af3af301532c.png"
           }
         },
-        "collection-1": {
+        "collection_MM3Hb4": {
           "type": "collection",
           "settings": {
-            "collection": "chinese-new-year",
-            "image": "shopify://shop_images/Venom_dress_mobile_2.png"
+            "collection": "default-category-collections-spring-florals",
+            "image": "shopify://shop_images/1_6217d2c7-60dd-47d3-bd1f-23369531ae38.png"
           }
         },
-        "collection-2": {
+        "collection_dPfVdD": {
           "type": "collection",
           "settings": {
-            "collection": "default-category-clothing-coats-jackets",
-            "image": "shopify://shop_images/Coats_Jackets_Tile.png"
+            "collection": "clothing-skirts",
+            "image": "shopify://shop_images/4.png"
           }
         }
       },
       "block_order": [
-        "collection-0",
-        "collection-1",
-        "collection-2"
+        "collection_MVwpGH",
+        "collection_MM3Hb4",
+        "collection_dPfVdD"
       ],
       "custom_css": [
         "ul.grid.grid-cols-2.sm\\:grid-cols-3.xl\\:grid-cols-4.gap-x-theme.gap-y-10 {gap: 2px;}",
