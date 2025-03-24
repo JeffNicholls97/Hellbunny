@@ -46,11 +46,17 @@
 
   <style>
     .slider__grid:hover .second-image-hover {
-    display: block!important;
-}
-.second-image-hover {
-    display: none;
-}
+      display: block !important;
+    }
+    .second-image-hover {
+      display: none;
+    }
+    @media screen and (max-width: 1024px) {
+      /* Disable the hover effect for tablet and down */
+      .slider__grid:hover .second-image-hover {
+        display: none !important;
+      }
+    }
   </style>
 
   <div class="relative">
