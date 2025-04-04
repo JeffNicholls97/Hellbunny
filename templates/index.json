@@ -12,8 +12,8 @@
     "image_banner_JGm6dC": {
       "type": "image-banner",
       "settings": {
-        "image_desktop": "shopify://shop_images/Copy_of_133_web_banners_4500_x_1645_px_1.png",
-        "image_mobile": "shopify://shop_images/Copy_of_133_web_banners_1809_x_2362_px_2.png",
+        "image_desktop": "shopify://shop_images/Edited_Grunge_Web.png",
+        "image_mobile": "shopify://shop_images/1_3a663661-82ce-44b0-8fde-50737d4c998e.png",
         "url": "shopify://collections/all-new-in",
         "height_mode": "auto",
         "fixed_height_desktop": 600,
@@ -131,9 +131,9 @@
     "image_banner_CbNCFL": {
       "type": "image-banner",
       "settings": {
-        "image_desktop": "shopify://shop_images/Smiley_Banner_Final_3.png",
-        "image_mobile": "shopify://shop_images/Mobile_Smiley_Banner_1.png",
-        "url": "shopify://collections/smiley-x-hell-bunny",
+        "image_desktop": "shopify://shop_images/SPRING_PRINTS_3220_x_1600_px_2.png",
+        "image_mobile": "shopify://shop_images/SPRING_PRINTS_3220_x_1600_px_1809_x_2362_px_1.png",
+        "url": "shopify://collections/vintage-inspired",
         "height_mode": "auto",
         "fixed_height_desktop": 600,
         "fixed_height_mobile": 350,
@@ -211,8 +211,8 @@
         "collection_MVwpGH": {
           "type": "collection",
           "settings": {
-            "collection": "default-category-clothing-denim",
-            "image": "shopify://shop_images/3_9a5587d5-59d0-4d44-ba5c-cf3bcd74258f.png"
+            "collection": "smiley-x-hell-bunny",
+            "image": "shopify://shop_images/1_0d5759b5-a052-48ff-a447-db1c2d75e18c.png"
           }
         },
         "collection_MM3Hb4": {
