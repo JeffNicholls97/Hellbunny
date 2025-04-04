@@ -25,9 +25,7 @@
   {%- render 'doc-head-social' -%}
 
   <link rel="preload" href="{{ 'main.css' | asset_url }}" as="style">
-  {{ 'custom.css' | asset_url | stylesheet_tag }}
   {{ 'application.css' | asset_url | stylesheet_tag }}
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
   {%- style %}
     {{- settings.body_font | font_face: font_display: 'swap' -}}
@@ -304,55 +302,7 @@
   {%- endif -%}
 </head>
 
-
-
-<body x-data="{ showFilterSidebar: false }" {% if settings.animations_enabled != "disabled" %} class="cc-animate-enabled"{% endif %}>
-  <script>
-  window.addEventListener('load', function() {
-  var _learnq = window._learnq || [];
-  function addedToCart() {
-   fetch(`${window.location.origin}/cart.js`)
-   .then(res => res.clone().json().then(data => {
-    var cart = {
-      total_price: data.total_price/100,
-      $value: data.total_price/100,
-      total_discount: data.total_discount,
-      original_total_price: data.original_total_price/100,
-      items: data.items
-    }
-    if (item !== 'undefined') {
-      cart = Object.assign(cart, item)
-    }
-    if (klAjax) {
-       _learnq.push(['track', 'Added to Cart', cart]);
-       klAjax = false;
-      }
-   }))
-  };
-  (function (ns, fetch) {
-    ns.fetch = function() {
-      const response = fetch.apply(this, arguments);
-      response.then(res => {
-        if (`${window.location.origin}/cart/add.js`
-          .includes(res.url) && res.url !== '') {
-              addedToCart()
-        }
-      });
-      return response
-     }
-  }(window, window.fetch));
-  var klAjax = true;
-  var atcButtons = document.querySelectorAll("form[action*='/cart/add'] button[type='submit']");
-  for (var i = 0; i < atcButtons.length; i++) {
-    atcButtons[i].addEventListener("click", function() {
-      if (klAjax) {
-        _learnq.push(['track', 'Added to Cart', item]);
-        klAjax = false;
-      }
-    })
-  }
-  });
-</script>
+<body{% if settings.animations_enabled != "disabled" %} class="cc-animate-enabled"{% endif %}>
   <a class="skip-link btn btn--primary visually-hidden" href="#main-content" data-ce-role="skip">
     {{- 'accessibility.skip_to_content' | t -}}
   </a>
