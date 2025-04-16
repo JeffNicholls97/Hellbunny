@@ -1,21 +1,7 @@
-.facets.drawer {
-  max-width: 550px;
-  height: var(--viewport-height, 100vh);
-  overflow: hidden;
-  border-radius: 0;
-}
 .facets.drawer:not([open]) {
-  transform: translate3d(-100%, 0, 0);
+  transform: none;
 }
-.facets .drawer__content {
-  overflow: auto;
-}
-.facets .drawer__footer {
-  position: -webkit-sticky;
-  position: sticky;
-  bottom: 0;
-  background-color: rgba(var(--drawer-bg-color));
-}
+
 .facets .disclosure {
   margin: 0 2px;
   border-bottom: 1px solid rgba(var(--text-color)/0.15);

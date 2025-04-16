@@ -17,7 +17,7 @@
         "announcement-1": {
           "type": "announcement",
           "settings": {
-            "text": "<p>UP TO 80% OFF - NEW STYLES ADDED  <a href=\"https://www.hellbunny.com/collections/default-category-sale\" title=\"https://www.hellbunny.com/collections/default-category-sale\">Shop Now</a></p>"
+            "text": "<p>Subscribe to our newsletter below for 10% off your first order! <a href=\"/collections/all-new-in\" title=\"All New In\">Shop New In</a></p>"
           }
         }
       },
@@ -42,6 +42,7 @@
       "blocks": {
         "columns_biYGfU": {
           "type": "columns",
+          "disabled": true,
           "settings": {
             "title": "New In",
             "collection_images": "large",
@@ -86,6 +87,10 @@
       "block_order": [
         "columns_biYGfU"
       ],
+      "custom_css": [
+        ".cc-header--sticky .header.is-out {margin-bottom: 0px !important; transition: unset !important;}",
+        ".cc-header--sticky .main-menu__disclosure {max-height: unset !important; transition: unset !important;}"
+      ],
       "settings": {
         "enable_sticky": true,
         "mobile_menu_position": "burger-left",
@@ -98,7 +103,7 @@
         "enable_search": true,
         "minimise_search_mobile": true,
         "minimise_search_desktop": true,
-        "menu": "main-menu",
+        "menu": "new-site-main-menu",
         "menu_center": true,
         "repeat_links": true,
         "menu_featured_link": "Sale",

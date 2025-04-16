@@ -81,7 +81,7 @@
       <custom-pagination class="main-products-grid{% if settings.card_contain %} main-products-grid--contained{% endif %} flex" data-layout="grid" data-compare="{{ compare_toggle }}" data-infinite-scroll="{{ settings.pagination_infinite }}" data-pause-infinite-scroll="false">
         {%- if search.filters != empty and section.settings.enable_filtering -%}
           <div class="main-products-grid__filters{% if section.settings.filters_open_lg == false %} lg:js-hidden{% endif %}">
-            {% render 'facet-filters', results: search %}
+            {% comment %} {% render 'facet-filters', results: search %} {% endcomment %}
           </div>
         {%- endif -%}
 

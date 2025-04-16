@@ -375,19 +375,20 @@
     "coll_border_color": "#f2f2f2",
     "prod_card_image_ratio": "shortest",
     "prod_card_image_fit": "cover",
-    "card_hover_action": "second_image",
+    "card_hover_action": "slideshow",
     "card_show_weight": false,
     "card_show_vendor": false,
     "card_show_subtitle": true,
     "card_show_rating": true,
     "card_show_inventory": false,
-    "card_atc_mobile": "text_button_bottom",
+    "card_atc_mobile": "icon",
     "card_atc_desktop": "text_button_hover",
     "show_dividers": false,
-    "card_contain": true,
+    "card_contain": false,
     "card_bg_color": "#ffffff",
     "card_text_color": "#26262b",
     "card_border_color": "#f2f2f2",
+    "enable_compare": false,
     "compare_toggle": "toggle_off",
     "compare_empty_field_text": "N/A",
     "inventory_threshold_low": 20,
@@ -415,6 +416,7 @@
     "variant_picker_color_style": "variant-images",
     "variant_picker_swatch_shape": "portrait",
     "card_colors_style": "variant-images",
+    "card_swatch_shape": "square",
     "filter_color_style": "swatches",
     "social_facebook_url": "https://www.facebook.com/hellbunnyclothing",
     "social_youtube_url": "https://www.youtube.com/@hellbunnyshorts",
@@ -430,16 +432,18 @@
     "show_currency_code": false,
     "cart_icon": "cart",
     "cart_type": "drawer",
-    "show_recommendations": true,
+    "show_recommendations": false,
     "recommendations_heading": "You may also like...",
     "recommendations_to_show": 3,
+    "recommendations_layout": "carousel",
     "cart_shaking": true,
     "cart_shaking_frequency": 2,
     "show_free_shipping_notice": true,
-    "free_shipping_minimum": "GBP:100",
+    "free_shipping_minimum": "GBP:65",
     "free_shipping_color_scheme": "none",
     "animations_enabled": "mobile_desktop",
-    "image_quality": "1",
+    "favicon": "shopify://shop_images/HELLBUNNY_Logo_Full_Black_1.png",
+    "image_quality": "0.75",
     "show_blur_messages": true,
     "blur_message_delay": 4,
     "vibrate_on_atc": true,
@@ -460,14 +464,50 @@
         "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
         "settings": {}
+      },
+      "1366455014531238847": {
+        "type": "shopify://apps/wishlist-hero/blocks/customize-style-block/a9a5079b-59e8-47cb-b659-ecf1c60b9b72",
+        "disabled": false,
+        "settings": {
+          "Btn_color": "",
+          "WishlistButtonTextColor": "",
+          "Ico_color": "",
+          "HeaderFontSize": 30,
+          "ProductNameFontSize": 18,
+          "PriceFontSize": 16,
+          "PriceColor": ""
+        }
+      },
+      "7870687481494312845": {
+        "type": "shopify://apps/wishlist-hero/blocks/app-embed/a9a5079b-59e8-47cb-b659-ecf1c60b9b72",
+        "disabled": false,
+        "settings": {
+          "customThemeName": "~",
+          "additionalWLButtonCssClasses": "",
+          "additionalWLCartBubbleCssClasses": "",
+          "extraHTMLToAppend": "",
+          "disableAutomaticButtonAddition": false
+        }
       }
     }
   },
   "platform_customizations": {
     "custom_css": [
-      "a.main-nav__item {text-transform: uppercase; letter-spacing: 3px; margin: 0px 0px 0px 70px;}",
+      "a.main-nav__item {text-transform: uppercase; letter-spacing: 3px; margin: 0px 0px 0px 20px;}",
       ".main-menu {--nav-line-color: rgba(var(--nav-child-text-color) / 0.2); font-family: var(--navigation-font-family); font-style: var(--navigation-font-style); font-weight: var(--navigation-font-weight); background: #f6f6f6 !important; padding: 5px; border-radius: 6px 6px 0px 0px;}",
-      ".header__icon {padding: 11px; background: #f6f6f6; border-radius: 6px;}"
+      ".header__icon {padding: 11px; background: #f6f6f6; border-radius: 6px;}",
+      ".predictive-search__list {display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 1rem !important;}",
+      "#psearch-products .predictive-result__media img {width: 448px !important; height: auto !important; max-width: none !important;}",
+      ".predictive-result__list-suggestions {display: block !important;}",
+      ".predictive-result__list-suggestions li {display: block !important; width: 100%; margin-bottom: 0.5rem;}",
+      ".predictive-result--suggestion {display: block !important;}",
+      "a.predictive-result.flex.items-start.focus-inset.js-search-link {flex-direction: column !important; align-items: center;}",
+      "a.predictive-result.flex.items-start.focus-inset.js-search-link .predictive-result__media img {width: 448px !important; height: auto !important;}",
+      ".footer__meta {display: flex; flex-direction: column; align-items: center; text-align: center;}",
+      ".footer__payment {display: flex; flex-direction: column; align-items: center;}",
+      ".payment-icons {display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;}",
+      ".md\\:tw-w-\\[400px\\] {width: 365px;}",
+      "@media (max-width: 768px) {.gallery-zoom__zoom-image {transform: scale(0.6) !important; }}"
     ]
   }
 }

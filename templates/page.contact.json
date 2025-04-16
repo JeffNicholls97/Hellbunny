@@ -1,1 +1,164 @@
-{"sections":{"main":{"type":"main-contact","disabled":true,"settings":{"show_contact_title":false}},"image-banner":{"type":"image-banner","blocks":{"heading":{"type":"heading","settings":{"heading":"Contact Us","heading_size":"h1","heading_h1":true}},"text":{"type":"text","settings":{"text":"<p>Please visit our help pages for answers to some of the most commonly asked questions.<\/p>","enlarge_text":true}}},"block_order":["heading","text"],"settings":{"height_mode":"fixed","fixed_height_desktop":560,"fixed_height_mobile":440,"overlay_position":"justify-start items-center","overlay_text_align":"text-start","mob_center_text":true,"mobile_stacked":false,"color_scheme":"white","full_width":true}},"form":{"type":"contact-form","blocks":{"contact-name-2":{"type":"name","settings":{"required":true,"half_width":true}},"contact-email-3":{"type":"email","settings":{"required":true,"half_width":true}},"contact-dropdown-4":{"type":"dropdown","settings":{"title":"How can we help?","half_width":false}},"contact-body-5":{"type":"body","settings":{"required":true,"half_width":false}}},"block_order":["contact-name-2","contact-email-3","contact-dropdown-4","contact-body-5"],"settings":{"heading":"Drop us an email","heading_align":"text-center","image_position":"top","color_scheme":"1","full_width":false,"button_style":"btn btn--primary"}},"newsletter":{"type":"newsletter","blocks":{"newsletter-heading-0":{"type":"heading","settings":{"heading":"Sign up to our Newsletter","heading_size":"h5"}},"newsletter-text-1":{"type":"text","settings":{"enlarge_text":false}},"newsletter-form-2":{"type":"form","settings":{}}},"block_order":["newsletter-heading-0","newsletter-text-1","newsletter-form-2"],"settings":{"overlay_position":"justify-center","text_align":"text-center","color_scheme":"default","full_width":true}}},"order":["main","image-banner","form","newsletter"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-contact",
+      "disabled": true,
+      "settings": {
+        "show_contact_title": false,
+        "heading_align": "text-center"
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "blocks": {
+        "text_XgwgN7": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We are happy to help! Complete the form below and our customer care team will in touch as soon as possible.</p>",
+            "half_width": false
+          }
+        },
+        "contact-name-2": {
+          "type": "name",
+          "settings": {
+            "required": true,
+            "half_width": true
+          }
+        },
+        "contact-email-3": {
+          "type": "email",
+          "settings": {
+            "required": true,
+            "half_width": true
+          }
+        },
+        "custom_NiVUYn": {
+          "type": "custom",
+          "settings": {
+            "title": "Email Address",
+            "type": "text",
+            "required": true,
+            "half_width": true
+          }
+        },
+        "custom_y4qCcc": {
+          "type": "custom",
+          "settings": {
+            "title": "Order Number",
+            "type": "text",
+            "required": true,
+            "half_width": true
+          }
+        },
+        "contact-body-5": {
+          "type": "body",
+          "settings": {
+            "required": true,
+            "half_width": false
+          }
+        }
+      },
+      "block_order": [
+        "text_XgwgN7",
+        "contact-name-2",
+        "contact-email-3",
+        "custom_NiVUYn",
+        "custom_y4qCcc",
+        "contact-body-5"
+      ],
+      "settings": {
+        "heading": "Need assistance?",
+        "heading_align": "text-center",
+        "image_position": "top",
+        "color_scheme": "none",
+        "full_width": false,
+        "button_style": "btn btn--primary"
+      }
+    },
+    "rich_text_wHJHfC": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_CNNHW6": {
+          "type": "heading",
+          "settings": {
+            "heading": "Customer Care",
+            "heading_size": "h2",
+            "heading_h1": false
+          }
+        },
+        "text_yntqqf": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Live Chat</h3><p>Talk to us over Facebook Messenger</p><p><strong>Email:</strong>help@hellbunny.com</p><h3>Press Email</h3><p><strong>Email:</strong><a href=\"mailto:info@popsoda.co.uk\">info@popsoda.co.uk</a></p><h3>Returns Address</h3><p>Hell Bunny Returns</p><p>48-50, Fowler Road,</p><p>Hainault Business Park,</p><p>Ilford,</p><p>Essex,</p><p>IG6 3UT</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_CNNHW6",
+        "text_yntqqf"
+      ],
+      "settings": {
+        "text_position": "justify-center",
+        "text_align": "text-center",
+        "mob_center_text": true,
+        "wide": true,
+        "color_scheme": "none",
+        "full_width": true,
+        "prevent_animation": false
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "newsletter-heading-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Sign up to our Newsletter",
+            "heading_size": "h5"
+          }
+        },
+        "newsletter-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Be the first to know about new collections and exclusive offers.</p>",
+            "enlarge_text": false
+          }
+        },
+        "newsletter-form-2": {
+          "type": "form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "newsletter-heading-0",
+        "newsletter-text-1",
+        "newsletter-form-2"
+      ],
+      "settings": {
+        "overlay_position": "justify-center",
+        "text_align": "text-center",
+        "color_scheme": "default",
+        "full_width": true,
+        "transparent_content_color": "#ffffff",
+        "tint_color": "#000000",
+        "tint_opacity": 20
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_wHJHfC",
+    "form",
+    "newsletter"
+  ]
+}

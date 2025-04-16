@@ -18,8 +18,9 @@
           "type": "item",
           "settings": {
             "icon": "chat_bubble",
-            "heading": "Visit our support center",
-            "text": "<p>Expert help & advice</p>",
+            "custom_icon": "shopify://shop_images/united-kingdom_6828c186-988a-4cb8-abab-53bec964fbcd.png",
+            "heading": "Designed in the",
+            "text": "<p>United Kingdom</p>",
             "link": ""
           }
         },
@@ -27,8 +28,9 @@
           "type": "item",
           "settings": {
             "icon": "box",
-            "heading": "Check your order status",
-            "text": "<p>Updates & tracking</p>",
+            "custom_icon": "shopify://shop_images/Klarna.png",
+            "heading": "Buy Now, Pay Later",
+            "text": "<p>with Klarna</p>",
             "link": ""
           }
         },
@@ -36,8 +38,9 @@
           "type": "item",
           "settings": {
             "icon": "return",
-            "heading": "Returns & exchanges",
-            "text": "<p>All you need to know</p>",
+            "custom_icon": "shopify://shop_images/Delivery.png",
+            "heading": "Free Delivery on",
+            "text": "<p>all orders over £65</p>",
             "link": ""
           }
         },
@@ -45,8 +48,9 @@
           "type": "item",
           "settings": {
             "icon": "dollar_sign",
-            "heading": "Price-match guarantee",
-            "text": "<p>Our promise to you</p>",
+            "custom_icon": "shopify://shop_images/Heart.png",
+            "heading": "Sizes from",
+            "text": "<p>XS to 6XL</p>",
             "link": ""
           }
         }
@@ -124,7 +128,7 @@
         "text_BNJEVn"
       ],
       "settings": {
-        "show_back_to_top": false,
+        "show_back_to_top": true,
         "show_payment_icons": true,
         "show_powered_by": false,
         "enable_country_selector": false,
